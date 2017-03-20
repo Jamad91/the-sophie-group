@@ -1,3 +1,9 @@
 body {
   background-image: url("./assets/crimson_wallpaper.png")
 }
+
+#navbar {
+  background-color: black;
+  color: #f5c800;
+  padding-top: 1%;
+}
