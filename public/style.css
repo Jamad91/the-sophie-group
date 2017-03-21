@@ -24,3 +24,32 @@ h3 {
   padding-bottom: 2%;
   margin: -0.5%;
 }
+
+#title {
+  margin-top: 2%
+}
+
+#main_img {
+  max-height: 30%;
+  max-width: 30%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+.flexbox-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+div.jumbotron {
+  margin-top: 1%;
+}

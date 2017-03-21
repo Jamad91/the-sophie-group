@@ -16,19 +16,15 @@ import Contact from './components/Contact'
 ReactDOM.render(
     <div>
       <Navbar />
-        <Router history={browserHistory}>
-          <Route path="/">
-            <Route path="home" component={Home} />
-            <Route path="buy" component={ForSale} />
-            <Route path="rent" component={ForRent} />
-            <Route path="contact" component={Contact} />
-            <IndexRoute component={Home} />
-          </Route>
-        </Router>
-      <div className="container flexbox-container">
-        <div className="jumbotron">
-        </div>
-      </div>
+      <Router history={browserHistory}>
+        <Route path="/">
+          <Route path="home" component={Home} />
+          <Route path="buy" component={ForSale} />
+          <Route path="rent" component={ForRent} />
+          <Route path="contact" component={Contact} />
+          <IndexRoute component={Home} />
+        </Route>
+      </Router>
     </div>,
   document.getElementById('app')
 );
