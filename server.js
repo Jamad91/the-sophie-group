@@ -2,12 +2,18 @@
 
 const express = require('express');
 const volleyball = require('volleyball');
+const path = require('path')
 
 const app = express();
 
 app.use(volleyball);
 
 app.use(express.static(__dirname));
+
+
+app.get('*', function (request, response){
+  response.sendFile(path.resolve(__dirname, 'index.html'))
+})
 
 const forSale = [{
   id: 1,
@@ -28,9 +34,9 @@ const forRent = [{
 }];
 
 
-app.get('/api/forsale', function (req, res) {
-  res.json(forSale.map(({id, name}) => ({id, name})));
-});
+// app.get('/api/buy', function (req, res) {
+//   res.json(forSale.map(({id, name}) => ({id, name})));
+// });
 
 // app.get('/api/puppies/:id', function (req, res) {
 //   const aPuppy = puppies.find(p => p.id === Number(req.params.id));
