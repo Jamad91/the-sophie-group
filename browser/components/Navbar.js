@@ -6,10 +6,27 @@ export default class Navbar extends Component {
     return (
       <div id="navbar">
         <h1>The Sophie Group</h1>
-        <h2>Building Serious Wealth Over Time</h2>
-        <Link href={"/buy"}>For Sale</Link>
-        <Link href={"/rent"}>For Rent</Link>
-        <Link href={"/contact"}>Contact</Link>
+        <h3>Building Serious Wealth Over Time</h3>
+        <Link href={"/home"}>
+          <div id="link">
+            Home
+          </div>
+        </Link>
+        <Link href={"/buy"}>
+          <div id="link">
+            For Sale
+          </div>
+        </Link>
+        <Link href={"/rent"}>
+          <div id="link">
+            For Rent
+          </div>
+        </Link>
+        <Link href={"/contact"}>
+          <div id="link">
+            Contact
+          </div>
+        </Link>
       </div>
     )
   }

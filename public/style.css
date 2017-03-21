@@ -1,9 +1,26 @@
 body {
-  background-image: url("./assets/crimson_wallpaper.png")
+  background-image: url("./assets/crimson_wallpaper.png");
+  text-align: center;
 }
 
 #navbar {
   background-color: black;
   color: #f5c800;
   padding-top: 1%;
+}
+
+#link {
+  color: #f5c800;
+  display: inline;
+  padding: 5%;
+  font-size: 120%;
+}
+
+h1 {
+  color: #f5c800;
+}
+
+h3 {
+  padding-bottom: 2%;
+  margin: -0.5%;
 }
