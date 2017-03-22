@@ -30,13 +30,27 @@ const forSale = [{
 }]
 
 const forRent = [{
-
+  id: 1,
+  title: '1600 Pennsylvania Ave.',
+  image: './public/assets/1600_Pennsylvania_Avenue.jpg'
+}, {
+  id: 2,
+  title: '31 Spooner St.',
+  image: './public/assets/31_Spooner_Street.jpg'
+}, {
+  id: 3,
+  title: '742 Evergreen Terrace',
+  image: './public/assets/742_Evergreen_Terrace.png'
 }];
 
 
-// app.get('/api/buy', function (req, res) {
-//   res.json(forSale.map(({id, name}) => ({id, name})));
-// });
+app.get('/api/buy', function (req, res) {
+  res.json(forSale.map(({id, name}) => ({id, name})));
+});
+
+app.get('/api/rent', function (req, res) {
+  res.json(forSale.map(({id, name}) => ({id, name})));
+});
 
 // app.get('/api/puppies/:id', function (req, res) {
 //   const aPuppy = puppies.find(p => p.id === Number(req.params.id));

@@ -8,7 +8,6 @@ export default class Contact extends Component {
         <div className="container flexbox-container">
           <div className="jumbotron">
             <div className="contactEntry">
-              <h3>Chano Rivera</h3>
               <div className="contactImage">
                 <img id="chanoPic" src="../../public/assets/profile-user.jpg"></img>
               </div>
@@ -16,11 +15,10 @@ export default class Contact extends Component {
                 <strong>Phone:</strong>
                 <p>(631) 835-7293</p>
                 <strong>Email:</strong>
-                <p>wonderingaround38@yahoo.com</p>
+                <p>chano.rivera@thesophiegroup.com</p>
               </div>
             </div>
             <div className="contactEntry">
-              <h3>Kelley Rivera</h3>
               <div className="contactImage">
                 <img id="chanoPic" src="../../public/assets/profile-user.jpg"></img>
               </div>
@@ -28,7 +26,7 @@ export default class Contact extends Component {
                 <strong>Phone:</strong>
                 <p>(631) 835-7293</p>
                 <strong>Email:</strong>
-                <p>wonderingaround38@yahoo.com</p>
+                <p>kelley.rivera@thesophiegroup.com</p>
               </div>
             </div>
           </div>
