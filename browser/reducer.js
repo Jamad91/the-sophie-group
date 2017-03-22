@@ -5,11 +5,12 @@ function forSaleReducer (state =[], action) {
 };
 
 function forRentReducer (state = [], action) {
-  
+  return state
 }
 
 const rootReducer = combineReducers({
-  forSale: forSaleReducer
+  forSale: forSaleReducer,
+  forRent: forRentReducer
 });
 
 export default rootReducer;
