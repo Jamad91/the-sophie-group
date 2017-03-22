@@ -3,6 +3,11 @@ body {
   text-align: center;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 #navbar {
   background-color: black;
   color: #f5c800;
@@ -32,6 +37,23 @@ h3 {
 #main_img {
   max-height: 30%;
   max-width: 30%;
+}
+
+.contactEntry {
+  display: inline-block;
+}
+
+.contactImage {
+  display: block;
+  height: 25%;
+  width: 25%;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 5px;
+}
+
+#chanoPic {
+  border-radius: 50%;
 }
 
 * {
