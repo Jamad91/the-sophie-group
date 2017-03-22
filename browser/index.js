@@ -14,17 +14,19 @@ import ForRent from './components/ForRent'
 import Contact from './components/Contact'
 
 ReactDOM.render(
-    <div>
-      <Navbar />
-      <Router history={browserHistory}>
-        <Route path="/">
-          <Route path="home" component={Home} />
-          <Route path="buy" component={ForSale} />
-          <Route path="rent" component={ForRent} />
-          <Route path="contact" component={Contact} />
-          <IndexRoute component={Home} />
-        </Route>
-      </Router>
-    </div>,
+    <Provider store={store}>
+      <div>
+        <Navbar />
+        <Router history={browserHistory}>
+          <Route path="/">
+            <Route path="home" component={Home} />
+            <Route path="buy" component={ForSale} />
+            <Route path="rent" component={ForRent} />
+            <Route path="contact" component={Contact} />
+            <IndexRoute component={Home} />
+          </Route>
+        </Router>
+      </div>
+    </Provider>,
   document.getElementById('app')
 );
