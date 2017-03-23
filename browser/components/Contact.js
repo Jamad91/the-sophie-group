@@ -6,7 +6,7 @@ export default class Contact extends Component {
       <div>
         <h1 id="title">Contact</h1>
         <div className="container flexbox-container">
-          <div className="jumbotron">
+          <div className="jumbotron contacts">
             <div className="contactEntry">
               <div className="contactImage">
                 <img id="chanoPic" src="../../public/assets/profile-user.jpg"></img>

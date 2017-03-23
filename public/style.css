@@ -43,6 +43,10 @@ h3 {
   align-items: center;
 }
 
+.contacts {
+  margin-left: 17%;
+}
+
 .contactEntry {
   display: inline;
 }
@@ -100,7 +104,6 @@ body, html {
 
 div.jumbotron {
   margin-top: 1%;
-  margin-right: -10%;
   justify-content: center;
   align-items: center;
 }
