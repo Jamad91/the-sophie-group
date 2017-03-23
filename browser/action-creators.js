@@ -13,6 +13,7 @@ export const loadForSales = function () {
     fetch('/api/buy')
       .then(res=> res.json())
       .then(properties => {
+        console.log('PRP', properties);
         const action = receiveForSales(properties);
         dispatch(action);
       })

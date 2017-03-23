@@ -13,6 +13,19 @@ import ForSale from './components/ForSale'
 import ForRent from './components/ForRent'
 import Contact from './components/Contact'
 
+// Actions
+import { loadForSales, loadForRents } from './action-creators'
+
+const onForSalesEnter = function() {
+  const thunk = loadForSales()
+  store.dispatch(thunk)
+}
+
+const onForRentsEnter = function () {
+  const thunk = loadForRents()
+  store.dispatch(thunk)
+}
+
 ReactDOM.render(
     <Provider store={store}>
       <div>
@@ -21,8 +34,8 @@ ReactDOM.render(
           <Route path="/">
             <Route path="home" component={Home} />
             <Route path="buy" component={ForSale} />
-            <Route path="rent" component={ForRent} />
-            <Route path="contact" component={Contact} />
+            <Route path="rent" component={ForRent} onEnter={onForRentsEnter}/>
+            <Route path="contact" component={Contact} onEnter={onForSalesEnter}/>
             <IndexRoute component={Home} />
           </Route>
         </Router>
