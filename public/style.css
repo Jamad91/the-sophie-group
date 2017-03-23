@@ -44,7 +44,9 @@ h3 {
 }
 
 .contacts {
-  margin-left: 17%;
+  display: inline-flex;
+  border: solid black 5px;
+
 }
 
 .contactEntry {
