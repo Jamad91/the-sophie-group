@@ -36,7 +36,7 @@ function forSaleReducer (state = DEFAULT_SALE, action) {
   }
 };
 
-function forRentReducer (state = DEFAULT_RENT, action) {
+function forRentReducer (state = [], action) {
   switch (action.type) {
     case RECEIVE_FOR_RENTS: return action.receivedForRents;
     default: return state
