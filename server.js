@@ -11,9 +11,9 @@ app.use(volleyball);
 app.use(express.static(__dirname));
 
 
-app.get('*', function (request, response){
-  response.sendFile(path.resolve(__dirname, 'index.html'))
-})
+// app.get('*', function (request, response){
+//   response.sendFile(path.resolve(__dirname, 'index.html'))
+// })
 
 const forSales = [{
   id: 1,

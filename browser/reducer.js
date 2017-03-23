@@ -29,7 +29,7 @@ const DEFAULT_RENT = [{
   image: './public/assets/742_Evergreen_Terrace.png'
 }];
 
-function forSaleReducer (state = DEFAULT_SALE, action) {
+function forSaleReducer (state = [], action) {
   switch (action.type) {
     case RECEIVE_FOR_SALES: return action.receivedForSales;
     default: return state;
