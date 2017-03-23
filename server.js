@@ -45,11 +45,11 @@ const forRents = [{
 
 
 app.get('/api/buy', function (req, res) {
-  res.json(forSales.map(({id, name}) => ({id, name})));
+  res.json(forSales.map(({id, title, image}) => ({id, title, image})));
 });
 
 app.get('/api/rent', function (req, res) {
-  res.json(forRents.map(({id, name}) => ({id, name})));
+  res.json(forRents.map(({id, title, image}) => ({id, title, image})));
 });
 
 app.listen(3000, function () {
