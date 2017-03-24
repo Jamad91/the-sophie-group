@@ -76,6 +76,14 @@ module.exports = app
     finalHandler(req, res)(err)
   })
 
+app.get('/api/buy', function (req, res) {
+  res.json(forSales.map(({id, title, image}) => ({id, title, image})));
+});
+
+app.get('/api/rent', function (req, res) {
+  res.json(forRents.map(({id, title, image}) => ({id, title, image})));
+});
+
 if (module === require.main) {
   // Start listening only if we're the main module.
   //
