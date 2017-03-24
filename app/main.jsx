@@ -31,12 +31,8 @@ const ExampleApp = connect(
 render (
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={ExampleApp}>
+      <Route path="/" component={Home}>
         <Route path="home" component={Home} />
-        <Route path="buy" component={ForSale} />
-        <Route path="rent" component={ForRent} onEnter={onForRentsEnter}/>
-        <Route path="contact" component={Contact} onEnter={onForSalesEnter}/>
-        <IndexRoute component={Home} />
       </Route>
       <Route path='*' component={NotFound} />
     </Router>

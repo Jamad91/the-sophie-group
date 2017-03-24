@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
-  auth: require('./auth').default,
-  forRent: require('./forRent').defualt,
-  forSale: require('./forSale').defualt
+  auth: require('./auth').default
 })
 
 export default rootReducer
