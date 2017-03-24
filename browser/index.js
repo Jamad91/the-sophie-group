@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 
 // Components
 import Navbar from './components/Navbar'
@@ -30,7 +30,7 @@ ReactDOM.render(
     <Provider store={store}>
       <div>
         <Navbar />
-        <Router history={browserHistory}>
+        <Router history={hashHistory}>
           <Route path="/">
             <Route path="home" component={Home} />
             <Route path="buy" component={ForSale} />
