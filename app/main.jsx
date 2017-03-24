@@ -9,6 +9,13 @@ import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import NotFound from './components/NotFound'
 
+import Navbar from './components/Navbar'
+import Home from './components/Home'
+import ForSale from './components/ForSale'
+import ForRent from './components/ForRent'
+import Contact from './components/Contact'
+
+
 const ExampleApp = connect(
   ({ auth }) => ({ user: auth })
 ) (

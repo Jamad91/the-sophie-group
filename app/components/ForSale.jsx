@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadForRents } from '../action-creators';
+
 // export default
-class ForRent extends Component {
-
-  componentDidMount() {
-    // this.props.onLoadForRents
-  }
-
+class ForSale extends Component {
   render () {
-    console.log(this.props);
-    const properties = this.props.forRents
-
+    console.log('WORKING?',this.props.forSales);
+    const properties = this.props.forSales
     return (
       <div>
-        <h1 id="title">For Rent</h1>
+        <h1 id="title">For Sale</h1>
           <div className="container flexbox-container">
             <div className="jumbo">
               {
@@ -38,19 +32,14 @@ class ForRent extends Component {
   }
 }
 
-const mapStateToProps = function (state) {
+const mapStateToProps = function(state) {
   return {
-    forRents: state.forRents
   }
 }
 
-const mapDispatchToProps = function (dispatch) {
+const mapDispatchToProps = function(dispatch) {
   return {
-    onLoadForRents: function () {
-      const thunk = loadForRents;
-      dispatch(thunk);
-    }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ForRent)
+export default connect(mapStateToProps, mapDispatchToProps)(ForSale);
