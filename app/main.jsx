@@ -31,8 +31,7 @@ const ExampleApp = connect(
 render (
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Navbar />
-      <Route path="/" component={Home}>
+      <Route path="/" component={Navbar}>
         <Route path="home" component={Home} />
       </Route>
       <Route path='*' component={NotFound} />
