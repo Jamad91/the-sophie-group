@@ -6,7 +6,9 @@
 
 const User = require('./user')
 const OAuth = require('./oauth')
+const ForSale = require('./forSale')
+const ForRent = require('./forRent')
 
 OAuth.belongsTo(User)
 User.hasOne(OAuth)
-module.exports = {User}
+module.exports = {User, ForSale, ForRent}
