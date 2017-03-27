@@ -7,7 +7,7 @@ export default class Home extends Component {
         <h1 id="title">About</h1>
         <div className="container flexbox-container">
           <div id="main_img">
-            <img src="../../public/assets/742_Evergreen_Terrace.png"></img>
+            <img src="./assets/742_Evergreen_Terrace.png"></img>
           </div>
         </div>
         <div className="container flexbox-container">

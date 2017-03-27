@@ -9,7 +9,7 @@ export default class Contact extends Component {
           <div className="jumbotron contacts">
             <div className="contactEntry">
               <div className="contactImage">
-                <img id="chanoPic" src="../../public/assets/profile-user.jpg"></img>
+                <img id="chanoPic" src="./assets/profile-user.jpg"></img>
               </div>
               <div className="contactContent">
                 <strong>Phone:</strong>
@@ -20,7 +20,7 @@ export default class Contact extends Component {
             </div>
             <div className="contactEntry">
               <div className="contactImage">
-                <img id="chanoPic" src="../../public/assets/profile-user.jpg"></img>
+                <img id="chanoPic" src="./assets/profile-user.jpg"></img>
               </div>
               <div className="contactContent">
                 <strong>Phone:</strong>
