@@ -22,9 +22,3 @@ If you don't have it, I'll complain and tell you how to install it.
 `/server` has the Express server and routes. `start.js` is the entry point.
 
 `/bin` has scripts. (Right now it has *one* script that creates a useful symlink.)
-
-## Conventions
-
-I use `require` and `module.exports` in `.js` files.
-
-I use `import` and `export` in `.jsx` files, unless `require` makes for cleaner code.

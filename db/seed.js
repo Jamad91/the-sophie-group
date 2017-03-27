@@ -5,9 +5,25 @@ const seedUsers = () => db.Promise.map([
   {name: 'Barack Obama', email: 'barack@example.gov', password: '1234'},
 ], user => db.model('users').create(user))
 
+const seedForRents = () => db.Promise.map([
+  {title: 'house1', description: 'this is the House 1', imageURL: "../public/assets/742_Evergreen_Terrace.png"},
+  {title: 'house2', description: 'this is the House 2', imageURL: "../public/assets/31_Spooner_Street.jpg"},
+  {title: 'house3', description: 'this is the House 3', imageURL: "../public/assets/1600_Pennsylvania_Avenue.jpg"}
+], forRent => db.model('forRent').create(forRent))
+
+const seedForSales = () => db.Promise.map([
+  {title: 'house3', description: 'this is the House AA', imageURL: "../public/assets/1600_Pennsylvania_Avenue.jpg"},
+  {title: 'house2', description: 'this is the House BB', imageURL: "../public/assets/31_Spooner_Street.jpg"},
+  {title: 'house1', description: 'this is the House CC', imageURL: "../public/assets/742_Evergreen_Terrace.png"},
+], forSale => db.model('forSale').create(forSale))
+
 db.didSync
   .then(() => db.sync({force: true}))
   .then(seedUsers)
   .then(users => console.log(`Seeded ${users.length} users OK`))
-  .catch(error => console.error(error))    
+  .then(seedForSales)
+  .then(forSales => console.log(`Seeded ${forSales.length} forSales OK`))
+  .then(seedForRents)
+  .then(forRents => console.log(`Seeded ${forRents.length} forRents OK`))
+  .catch(error => console.error(error))
   .finally(() => db.close())
