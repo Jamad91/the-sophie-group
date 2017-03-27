@@ -1,4 +1,4 @@
-const RECEIVE_FOR_SALES = 'RECEIVE_FOR_SALES';
+import {RECEIVE_FOR_SALES, SELECT_FOR_SALE} from 'APP/app/constants';
 
 const DEFAULT_STATE = {
   allForSales: [],
@@ -12,8 +12,9 @@ function forSalesReducer (state = DEFAULT_STATE, action) {
     case RECEIVE_FOR_SALES:
       newState.allForSales = action.forSales;
       break;
-    case SELECET_FOR_RENT:
+    case SELECT_FOR_SALE:
       newState.selectedForSale = action.forSale;
+      break;
     default:
       return state;
   }
@@ -21,4 +22,4 @@ function forSalesReducer (state = DEFAULT_STATE, action) {
   return newState
 };
 
-export default forSales
+export default forSalesReducer;

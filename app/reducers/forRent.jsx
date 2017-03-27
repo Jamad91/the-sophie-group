@@ -1,4 +1,4 @@
-const RECEIVE_FOR_RENTS = 'RECEIVE_FOR_RENTS';
+import {RECEIVE_FOR_RENTS, SELECT_FOR_RENT} from 'APP/app/constants';
 
 const DEFAULT_STATE = {
   allForRents: [],
@@ -12,7 +12,7 @@ function forRentsReducer (state = DEFAULT_STATE, action) {
     case RECEIVE_FOR_RENTS:
       newState.allForRents = action.forRents;
       break
-    case SELECET_FOR_RENT:
+    case SELECT_FOR_RENT:
       newState.selectedForRent = action.forRent;
       break;
     default:
