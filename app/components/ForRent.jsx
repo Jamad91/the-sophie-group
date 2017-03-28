@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// export default
-export default class ForRent extends Component {
+import { fetchForRents } from '../action-creators/forRents'
+
+class ForRent extends Component {
 
   render () {
+    console.log(this.props);
     return (
       <div>
         <h1 id="title">For Rent</h1>
@@ -16,14 +18,22 @@ export default class ForRent extends Component {
   }
 }
 
-// const mapStateToProps = function (state) {
-//   return {
-//   }
-// }
-//
-// const mapDispatchToProps = function (dispatch) {
-//   return {
-//   }
-// }
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(ForRent)
+const mapStateToProps = function (state) {
+  console.log('STATE', state);
+  return {
+    forRents: state.forRentsReducer.allForRents
+  }
+}
+
+const mapDispatchToProps = function (dispatch) {
+  console.log('DISPATCH',dispatch);
+
+  return {
+    onLoadForRents: function () {
+      const thunk = fetchForRents();
+      dispatch(thunk)
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ForRent)

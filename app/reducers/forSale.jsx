@@ -7,7 +7,8 @@ const DEFAULT_STATE = {
 
 function forSalesReducer (state = DEFAULT_STATE, action) {
   const newState = Object.assign({}, state)
-
+  console.log('REDCUER STATE', state);
+  console.log('REDCER NEWSTATE', newState);
   switch (action.type) {
     case RECEIVE_FOR_SALES:
       newState.allForSales = action.forSales;

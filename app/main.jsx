@@ -15,6 +15,8 @@ import ForSale from './components/ForSale'
 import ForRent from './components/ForRent'
 import Contact from './components/Contact'
 
+import { fetchForRents } from './action-creators/forRents'
+
 
 const ExampleApp = connect(
   ({ auth }) => ({ user: auth })
@@ -28,19 +30,26 @@ const ExampleApp = connect(
     </div>
 )
 
+const onForRentsEnter = function() {
+  const thunk = fetchForRents();
+  store.dispatch(thunk);
+}
+
 render (
-  <div>
-    <Navbar />
-    <Router history={browserHistory}>
-      <Route path="/">
-        <IndexRoute component={ Home } />
-        <Route path="home" component={Home} />
-        <Route path="buy" component={ForSale} />
-        <Route path="rent" component={ForRent} />
-        <Route path="contact" component={Contact} />
-      </Route>
-    </Router>
-  </div>,
+  <Provider store={store}>
+    <div>
+      <Navbar />
+      <Router history={browserHistory}>
+        <Route path="/">
+          <IndexRoute component={ Home } />
+          <Route path="home" component={Home} />
+          <Route path="buy" component={ForSale} />
+          <Route path="rent" component={ForRent} onEnter={onForRentsEnter}/>
+          <Route path="contact" component={Contact} />
+        </Route>
+      </Router>
+    </div>
+  </Provider>,
   document.getElementById('main')
 )
 // <IndexRedirect to="home" />

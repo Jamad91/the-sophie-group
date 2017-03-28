@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // export default
-export default class ForSale extends Component {
+class ForSale extends Component {
   render () {
     return (
       <div>
@@ -16,14 +16,16 @@ export default class ForSale extends Component {
   }
 }
 
-// const mapStateToProps = function(state) {
-//   return {
-//   }
-// }
-//
-// const mapDispatchToProps = function(dispatch) {
-//   return {
-//   }
-// }
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(ForSale);
+const mapStateToProps = function(state) {
+  return {
+    forSales: state.forSalesReducer.allForSales
+  }
+}
+
+const mapDispatchToProps = function(dispatch) {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ForSale);
