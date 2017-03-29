@@ -10,9 +10,6 @@ In two separate terminals. The vanilla `npm start` is for production — you won
 
 ## I need node >= 6.7.0
 
-If you don't have it, I'll complain and tell you how to install it.
-
-
 ## My anatomy
 
 `/app` has the React/Redux setup. `main.jsx` is the entry point.

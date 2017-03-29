@@ -52,6 +52,7 @@ render (
           <Route path="buy" component={ForSale} onEnter={onForSalesEnter} />
           <Route path="rent" component={ForRent} onEnter={onForRentsEnter}/>
           <Route path="contact" component={Contact} />
+          <Route path="login" component={ExampleApp} />
         </Route>
       </Router>
     </div>
