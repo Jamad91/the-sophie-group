@@ -23,18 +23,6 @@ export const fetchAllForRents = function() {
   }
 }
 
-// export const fetchForRents = function () {
-//   return function (dispatch) {
-//     fetch('/api/forrent')
-//       .then(res => res.json())
-//       .then(forrents => {
-//         const action = receivePuppies(forrents);
-//         dispatch(action);
-//       })
-//       .catch(err => console.error(err));
-//   };
-// };
-
 // export const fetchForRent = function(forRentId) {
 //   return dispatch => {
 //     axios.get(`/api/forRent/${forRentId}`)

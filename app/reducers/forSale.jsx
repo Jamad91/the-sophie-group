@@ -1,4 +1,4 @@
-import {RECEIVE_FOR_SALES, SELECT_FOR_SALE} from 'APP/app/constants';
+import {RECEIVE_ALL_FOR_SALES, SELECT_FOR_SALE} from 'APP/app/constants';
 
 const DEFAULT_STATE = {
   allForSales: []
@@ -7,11 +7,9 @@ const DEFAULT_STATE = {
 
 function forSalesReducer (state = DEFAULT_STATE, action) {
   const newState = Object.assign({}, state)
-  // console.log('REDCUER STATE', state);
-  // console.log('REDCER NEWSTATE', newState);
   switch (action.type) {
-    case RECEIVE_FOR_SALES:
-      newState.allForSales = action.forSales;
+    case RECEIVE_ALL_FOR_SALES:
+      newState.allForSales = action.allForSales;
       break;
     // case SELECT_FOR_SALE:
     //   newState.selectedForSale = action.forSale;

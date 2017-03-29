@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchAllForRents } from '../action-creators/forSale'
 
 // export default
 class ForSale extends Component {
   render () {
+    console.log('SALE PROPS', this.props);
     return (
       <div>
         <h1 id="title">For Sale</h1>
@@ -24,7 +26,10 @@ const mapStateToProps = function(state) {
 
 const mapDispatchToProps = function(dispatch) {
   return {
-
+    onLoadForSales: function() {
+      const thunk = fetchForSales();
+      dispatch(thunk)
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 // For Sales
-export const RECEIVE_FOR_SALES = 'RECEIVE_FOR_SALES';
+export const RECEIVE_ALL_FOR_SALES = 'RECEIVE_FOR_SALES';
 export const SELECT_FOR_SALE = 'SELECT_FOR_SALE';
 
 // For Rents

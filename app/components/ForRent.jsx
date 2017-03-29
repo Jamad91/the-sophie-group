@@ -5,7 +5,7 @@ import { fetchAllForRents } from '../action-creators/forRent'
 class ForRent extends Component {
 
   render () {
-    console.log('PROPS', this.props);
+    console.log('RENT PROPS', this.props);
     return (
       <div>
         <h1 id="title">For Rent</h1>
@@ -19,7 +19,6 @@ class ForRent extends Component {
 }
 
 const mapStateToProps = function (state) {
-  console.log('RENT STATE', state);
   return {
     forRents: state.forRentsReducer.allForRents
   }

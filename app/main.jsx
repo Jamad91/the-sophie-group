@@ -16,6 +16,7 @@ import ForRent from './components/ForRent'
 import Contact from './components/Contact'
 
 import { fetchAllForRents } from './action-creators/forRent'
+import { fetchAllForSales } from './action-creators/forSale'
 
 
 const ExampleApp = connect(
@@ -35,6 +36,11 @@ const onForRentsEnter = function() {
   store.dispatch(thunk);
 }
 
+const onForSalesEnter = function() {
+  const thunk = fetchAllForSales();
+  store.dispatch(thunk)
+}
+
 render (
   <Provider store={store}>
     <div>
@@ -43,7 +49,7 @@ render (
         <Route path="/">
           <IndexRoute component={ Home } />
           <Route path="home" component={Home} />
-          <Route path="buy" component={ForSale} />
+          <Route path="buy" component={ForSale} onEnter={onForSalesEnter} />
           <Route path="rent" component={ForRent} onEnter={onForRentsEnter}/>
           <Route path="contact" component={Contact} />
         </Route>
