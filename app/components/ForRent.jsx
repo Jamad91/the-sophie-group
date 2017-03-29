@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchForRents } from '../action-creators/forRents'
+import { fetchAllForRents } from '../action-creators/forRent'
 
 class ForRent extends Component {
 
   render () {
-    console.log(this.props);
+    console.log('PROPS', this.props);
     return (
       <div>
         <h1 id="title">For Rent</h1>
@@ -19,14 +19,14 @@ class ForRent extends Component {
 }
 
 const mapStateToProps = function (state) {
-  console.log('STATE', state);
+  console.log('RENT STATE', state);
   return {
     forRents: state.forRentsReducer.allForRents
   }
 }
 
 const mapDispatchToProps = function (dispatch) {
-  console.log('DISPATCH',dispatch);
+  // console.log('ISPATCH',dispatch);
 
   return {
     onLoadForRents: function () {

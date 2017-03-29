@@ -15,7 +15,7 @@ import ForSale from './components/ForSale'
 import ForRent from './components/ForRent'
 import Contact from './components/Contact'
 
-import { fetchForRents } from './action-creators/forRents'
+import { fetchAllForRents } from './action-creators/forRent'
 
 
 const ExampleApp = connect(
@@ -31,7 +31,7 @@ const ExampleApp = connect(
 )
 
 const onForRentsEnter = function() {
-  const thunk = fetchForRents();
+  const thunk = fetchAllForRents();
   store.dispatch(thunk);
 }
 
