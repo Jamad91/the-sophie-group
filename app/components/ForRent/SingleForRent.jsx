@@ -6,11 +6,11 @@ class SingleForRent extends Component {
 
   render() {
 
-    console.log('SELECTED RENT', this.props);
+    console.log('SELECTED RENT', this.props.forRent);
 
     return (
       <div>
-        <p>yo yo yo</p>
+        <h1>yo yo yo</h1>
       </div>
     )
 

@@ -43,23 +43,14 @@ const onForRentsEnter = function() {
 }
 
 const onForRentEnter = function(nextRouterState) {
-  const forRentId = nextRouterState.params.forRentId;
+  const forRentId = nextRouterState.params.id;
+  console.log('FORRENTID', nextRouterState.params.id);
   axios.get(`/api/forrent/${forRentId}`)
     .then(res => res.data)
     .then(property => {
       store.dispatch(fetchSingleForRent(property))
     })
 }
-
-
-// const onProductEnter = function(nextRouterState) {
-//   const productId = nextRouterState.params.productId;
-//   axios.get(`/api/products/${productId}`)
-//     .then(response => response.data)
-//     .then(product => {
-//       store.dispatch(receiveProduct(product))
-//     })
-// }
 
 const onForSalesEnter = function() {
   const thunk = fetchAllForSales();
@@ -76,9 +67,9 @@ render (
           <Route path="home" component={Home} />
           <Route path="buy" component={AllForSales} onEnter={onForSalesEnter} />
           <Route path="rent" component={AllForRents} onEnter={onForRentsEnter} />
+          <Route path="rent/add" component={AddRentPropertyForm} />
           <Route path="rent/:id" component={SingleForRent} onEnter={onForRentEnter} />
-          <Route path="add" component={AddRentPropertyForm} />
-          <Route path="contactrent" component={ContactRentForm} />
+          <Route path="rent/:id/contact" component={ContactRentForm} />
           <Route path="contact" component={Contact} />
           <Route path="login" component={ExampleApp} />
         </Route>
