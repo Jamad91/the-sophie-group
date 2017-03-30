@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAllForRents } from '../../action-creators/forSale'
 import { Link } from 'react-router';
+import AddSalePropertyForm from './AddSalePropertyForm';
 
 class AllForSale extends Component {
 
   render () {
 
-    const properties = this.props.forSales
+    const properties = this.props.forSales;
+    const user = this.props.user;
 
     return (
       <div>
@@ -30,7 +32,11 @@ class AllForSale extends Component {
                   )
                 })
               }
+              <div>
+                {user ? <AddSalePropertyForm /> : ''}
+              </div>
             </div>
+
           </div>
       </div>
     )
@@ -39,9 +45,10 @@ class AllForSale extends Component {
 }
 
 const mapStateToProps = function(state) {
-  return {
-    forSales: state.forSalesReducer.allForSales
-  }
+  return ({
+    forSales: state.forSalesReducer.allForSales,
+    user: state.auth
+  })
 }
 
 const mapDispatchToProps = function(dispatch) {

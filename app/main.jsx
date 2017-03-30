@@ -27,7 +27,7 @@ import SingleForRent from './components/ForRent/SingleForRent';
 import AddRentPropertyForm from './components/ForRent/AddRentPropertyForm';
 import ContactRentForm from './components/ForRent/ContactRentForm';
 
-
+// ACTIONS
 import { fetchAllForRents, fetchSingleForRent } from './action-creators/forRent';
 import { fetchAllForSales, fetchSingleForSale } from './action-creators/forSale';
 
@@ -62,7 +62,6 @@ const onForSalesEnter = function() {
 
 const onForSaleEnter = function(nextRouterState) {
   const forSaleId = nextRouterState.params.id;
-  console.log('FORSALEID', forSaleId);
   const thunk = fetchSingleForSale(forSaleId);
   store.dispatch(thunk)
 }

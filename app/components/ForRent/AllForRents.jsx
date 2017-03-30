@@ -3,20 +3,22 @@ import { connect } from 'react-redux';
 import { fetchAllForRents } from '../../action-creators/forRent';
 import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
+import AddRentPropertyForm from './AddRentPropertyForm'
 
 class AllForRent extends Component {
 
-  render (user) {
+  render () {
 
-    const properties = this.props.forRents
-    console.log('USER',user);
-    console.log('RENT PROPS', this.props);
+    const properties = this.props.forRents;
+    const user = this.props.user;
+    console.log('RENT PROPS', user);
     return (
       <div>
         <h1 id="title">For Rent</h1>
           <div className="container flexbox-container">
             <div className="jumbo">
               {
+
                 properties.map(property => {
                   return (
                     <div key={property.title} className="propertyEntry">
@@ -31,8 +33,14 @@ class AllForRent extends Component {
                     </div>
                   )
                 })
+
+
               }
+              <div>
+                {user ? <AddRentPropertyForm /> : ''}
+              </div>
             </div>
+
           </div>
       </div>
     )
@@ -40,11 +48,12 @@ class AllForRent extends Component {
 
 }
 
-const mapStateToProps = function (state, auth) {
-  return {
+const mapStateToProps = function (state) {
+  console.log(state.auth);
+  return ({
     forRents: state.forRentsReducer.allForRents,
-    user: auth
-  }
+    user: state.auth
+  })
 }
 
 const mapDispatchToProps = function (dispatch) {
