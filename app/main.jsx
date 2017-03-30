@@ -4,6 +4,7 @@ import React from 'react';
 import {Router, Route, IndexRedirect, IndexRoute, browserHistory} from 'react-router';
 import {render} from 'react-dom';
 import {connect, Provider} from 'react-redux';
+import axios from 'axios';
 
 import store from './store';
 import Login from './components/Login';
@@ -41,10 +42,24 @@ const onForRentsEnter = function() {
   store.dispatch(thunk);
 }
 
-const onForRentEnter = function() {
-  const thunk = fetchSingleForRent();
-  store.dispatch(thunk)
+const onForRentEnter = function(nextRouterState) {
+  const forRentId = nextRouterState.params.forRentId;
+  axios.get(`/api/forrent/${forRentId}`)
+    .then(res => res.data)
+    .then(property => {
+      store.dispatch(fetchSingleForRent(property))
+    })
 }
+
+
+// const onProductEnter = function(nextRouterState) {
+//   const productId = nextRouterState.params.productId;
+//   axios.get(`/api/products/${productId}`)
+//     .then(response => response.data)
+//     .then(product => {
+//       store.dispatch(receiveProduct(product))
+//     })
+// }
 
 const onForSalesEnter = function() {
   const thunk = fetchAllForSales();
@@ -61,7 +76,7 @@ render (
           <Route path="home" component={Home} />
           <Route path="buy" component={AllForSales} onEnter={onForSalesEnter} />
           <Route path="rent" component={AllForRents} onEnter={onForRentsEnter} />
-          <Route path="rent/:id" component={SingleForRent} />
+          <Route path="rent/:id" component={SingleForRent} onEnter={onForRentEnter} />
           <Route path="add" component={AddRentPropertyForm} />
           <Route path="contactrent" component={ContactRentForm} />
           <Route path="contact" component={Contact} />

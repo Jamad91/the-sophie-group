@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleForRent } from '../../action-creators/forRent';
 
-export default class SingleForRent extends Component {
+class SingleForRent extends Component {
 
   render() {
 
@@ -23,8 +23,9 @@ export default class SingleForRent extends Component {
 //   </div>
 // </div>
 const mapStateToProps = function(state) {
+  console.log('STATE',state);
   return {
-    forRent: state.forRentsReducer.singleForRent
+    forRent: state.forRentsReducer.selectedForRent
   }
 }
 
@@ -37,4 +38,4 @@ const mapDispatchToProps = function(dispatch) {
   }
 }
 
-// export default connect(mapStateToProps, mapDispatchToProps)(SingleForRent);
+export default connect(mapStateToProps, mapDispatchToProps)(SingleForRent);
