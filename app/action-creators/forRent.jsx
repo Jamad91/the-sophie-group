@@ -1,4 +1,4 @@
-import {RECEIVE_ALL_FOR_RENTS, SELECT_FOR_RENT} from 'APP/app/constants';
+import {RECEIVE_ALL_FOR_RENTS, SELECT_SINGLE_FOR_RENT} from 'APP/app/constants';
 
 import axios from 'axios';
 
@@ -10,7 +10,7 @@ const receiveAllForRents = allForRents => ({
 })
 
 const selectForRent = forRent => ({
-  type: SELECT_FOR_RENT,
+  type: SELECT_SINGLE_FOR_RENT,
   forRent
 })
 

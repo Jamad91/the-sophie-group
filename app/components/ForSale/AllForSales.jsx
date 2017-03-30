@@ -6,8 +6,6 @@ class AllForSale extends Component {
 
   render () {
 
-    console.log('SALE PROPS', this.props);
-
     const properties = this.props.forSales
 
     return (

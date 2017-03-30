@@ -18,6 +18,8 @@ import Contact from './components/Contact';
 // FOR SALE COMPONENTS
 import AllForSales from './components/ForSale/AllForSales';
 import SingleForSale from './components/ForSale/SingleForSale';
+import AddSalePropertyForm from './components/ForSale/AddSalePropertyForm';
+import ContactSaleForm from './components/ForSale/ContactSaleForm';
 
 // FOR RENT COMPONENTS
 import AllForRents from './components/ForRent/AllForRents';
@@ -58,8 +60,9 @@ const onForSalesEnter = function() {
   store.dispatch(thunk)
 }
 
-const onForSaleEnter = function() {
+const onForSaleEnter = function(nextRouterState) {
   const forSaleId = nextRouterState.params.id;
+  console.log('FORSALEID', forSaleId);
   const thunk = fetchSingleForSale(forSaleId);
   store.dispatch(thunk)
 }
@@ -73,7 +76,9 @@ render (
           <IndexRoute component={ Home } />
           <Route path="home" component={Home} />
           <Route path="buy" component={AllForSales} onEnter={onForSalesEnter} />
-          <Route path="buy/:id" component={SingleForSale} />
+          <Route path="buy/add" component={AddSalePropertyForm} />
+          <Route path="buy/:id" component={SingleForSale} onEnter={onForSaleEnter} />
+          <Route path="but/:id/contact" component={ContactSaleForm} />
           <Route path="rent" component={AllForRents} onEnter={onForRentsEnter} />
           <Route path="rent/add" component={AddRentPropertyForm} />
           <Route path="rent/:id" component={SingleForRent} onEnter={onForRentEnter} />

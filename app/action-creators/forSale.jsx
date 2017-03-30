@@ -1,4 +1,4 @@
-import {RECEIVE_ALL_FOR_SALES, SELECT_FOR_SALE} from 'APP/app/constants';
+import {RECEIVE_ALL_FOR_SALES, SELECT_SINGLE_FOR_SALE} from 'APP/app/constants';
 
 import axios from 'axios';
 
@@ -9,10 +9,10 @@ const receiveAllForSales = allForSales => ({
   allForSales
 })
 
-const selectForRent = forRent => {
-  type: SELECT_FOR_SALE,
+const selectForSale = forSale => ({
+  type: SELECT_SINGLE_FOR_SALE,
   forSale
-}
+})
 
 export const fetchAllForSales = function() {
   return dispatch => {
@@ -23,7 +23,7 @@ export const fetchAllForSales = function() {
   }
 }
 
-export const fetchForSale = function(forSaleId) {
+export const fetchSingleForSale = function(forSaleId) {
   return dispatch => {
     axios.get(`/api/forSale/${forSaleId}`)
     .then(res => {

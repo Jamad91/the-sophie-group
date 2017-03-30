@@ -5,7 +5,7 @@ import { fetchSingleForSale } from '../../action-creators/forSale';
 class SingleForSale extends Component {
 
   render() {
-
+    
     return (
       <div>
         <div className="container flexbox-container">
