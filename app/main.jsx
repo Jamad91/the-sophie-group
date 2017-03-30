@@ -5,24 +5,29 @@ import {Router, Route, IndexRedirect, IndexRoute, browserHistory} from 'react-ro
 import {render} from 'react-dom';
 import {connect, Provider} from 'react-redux';
 import axios from 'axios';
-
 import store from './store';
+
+// STATIC COMPONENTS
 import Login from './components/Login';
 import WhoAmI from './components/WhoAmI';
 import NotFound from './components/NotFound';
-
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Contact from './components/Contact';
+
+// FOR SALE COMPONENTS
 import AllForSales from './components/ForSale/AllForSales';
+import SingleForSale from './components/ForSale/SingleForSale';
+
+// FOR RENT COMPONENTS
 import AllForRents from './components/ForRent/AllForRents';
 import SingleForRent from './components/ForRent/SingleForRent';
 import AddRentPropertyForm from './components/ForRent/AddRentPropertyForm';
 import ContactRentForm from './components/ForRent/ContactRentForm';
-import Contact from './components/Contact';
 
 
 import { fetchAllForRents, fetchSingleForRent } from './action-creators/forRent';
-import { fetchAllForSales } from './action-creators/forSale';
+import { fetchAllForSales, fetchSingleForSale } from './action-creators/forSale';
 
 
 const ExampleApp = connect(
@@ -53,6 +58,12 @@ const onForSalesEnter = function() {
   store.dispatch(thunk)
 }
 
+const onForSaleEnter = function() {
+  const forSaleId = nextRouterState.params.id;
+  const thunk = fetchSingleForSale(forSaleId);
+  store.dispatch(thunk)
+}
+
 render (
   <Provider store={store}>
     <div>
@@ -62,6 +73,7 @@ render (
           <IndexRoute component={ Home } />
           <Route path="home" component={Home} />
           <Route path="buy" component={AllForSales} onEnter={onForSalesEnter} />
+          <Route path="buy/:id" component={SingleForSale} />
           <Route path="rent" component={AllForRents} onEnter={onForRentsEnter} />
           <Route path="rent/add" component={AddRentPropertyForm} />
           <Route path="rent/:id" component={SingleForRent} onEnter={onForRentEnter} />

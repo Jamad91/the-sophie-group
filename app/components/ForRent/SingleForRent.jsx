@@ -6,24 +6,21 @@ class SingleForRent extends Component {
 
   render() {
 
-    console.log('SELECTED RENT', this.props.forRent.title);
-
     return (
       <div>
-        <h1>yo yo yo</h1>
+        <div className="container flexbox-container">
+          <div className="jumbo">
+            <h1>yo yo yo</h1>
+            {this.props.forRent.title}
+          </div>
+        </div>
       </div>
     )
 
   }
 }
 
-// <div className="container flexbox-container">
-//   <div className="jumbo">
-//     {this.props.forRent.title}
-//   </div>
-// </div>
 const mapStateToProps = function(state) {
-  console.log('STATE',state);
   return {
     forRent: state.forRentsReducer.selectedForRent
   }
@@ -32,10 +29,9 @@ const mapStateToProps = function(state) {
 const mapDispatchToProps = function(dispatch, ownProps) {
   return {
     onLoadSingleForRent: function () {
-      console.log('OWNPROPS',ownProps);
-      const forRentId = ownProps.params.forRentId
+      const forRentId = ownProps.params.forRentId;
       const thunk = fetchSingleForRent(forRentId);
-      dispatch(thunk)
+      dispatch(thunk);
     }
   }
 }

@@ -11,9 +11,9 @@ router.get('/', (req, res, next) => {
   .catch(next)
 })
 
-router.get('/:forSaleId', (req, res, next) => {
-  ForSale.findById(req.params.forRentId)
-  .then(res.send.bind(res))
+router.get('/:id', (req, res, next) => {
+  ForSale.findById(req.params.id)
+  .then(house => res.json(house))
   .catch(next)
 })
 

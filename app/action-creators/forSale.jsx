@@ -8,11 +8,11 @@ const receiveAllForSales = allForSales => ({
   type: RECEIVE_ALL_FOR_SALES,
   allForSales
 })
-//
-// export const selectForRent = forRent => {
-//   type: SELECT_FOR_SALE,
-//   forSale
-// }
+
+const selectForRent = forRent => {
+  type: SELECT_FOR_SALE,
+  forSale
+}
 
 export const fetchAllForSales = function() {
   return dispatch => {
@@ -23,11 +23,11 @@ export const fetchAllForSales = function() {
   }
 }
 
-// export const fetchForSale = function(forSaleId) {
-//   return dispatch => {
-//     axios.get(`/api/forSale/${forSaleId}`)
-//     .then(res => {
-//       dispatch(selectForSale(res.data))
-//     })
-//   }
-// }
+export const fetchForSale = function(forSaleId) {
+  return dispatch => {
+    axios.get(`/api/forSale/${forSaleId}`)
+    .then(res => {
+      dispatch(selectForSale(res.data))
+    })
+  }
+}
