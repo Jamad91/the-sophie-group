@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { fetchSingleForSale } from '../../action-creators/forSale';
+import ContactSaleForm from './ContactSaleForm';
 
 class SingleForSale extends Component {
 
   render() {
-    
+
     return (
       <div>
         <div className="container flexbox-container">
@@ -14,6 +15,7 @@ class SingleForSale extends Component {
             {this.props.forSale.title}
           </div>
         </div>
+        <ContactSaleForm />
       </div>
     )
 

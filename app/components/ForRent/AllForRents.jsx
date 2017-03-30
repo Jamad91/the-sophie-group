@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAllForRents } from '../../action-creators/forRent';
-import { WhoAmI } from '../WhoAmI'
+import { WhoAmI } from '../WhoAmI';
+import { Link } from 'react-router';
 
 class AllForRent extends Component {
 
@@ -19,12 +20,14 @@ class AllForRent extends Component {
                 properties.map(property => {
                   return (
                     <div key={property.title} className="propertyEntry">
-                      <div className="propertyImage">
-                        <img src={property.imageURL}></img>
-                      </div>
-                      <div className="propertyName">
-                        <h3>{property.title}</h3>
-                      </div>
+                      <Link href={`/rent/${property.id}`}>
+                        <div className="propertyImage">
+                          <img src={property.imageURL}></img>
+                        </div>
+                        <div className="propertyName">
+                          <h3>{property.title}</h3>
+                        </div>
+                      </Link>
                     </div>
                   )
                 })

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAllForRents } from '../../action-creators/forSale'
+import { Link } from 'react-router';
 
 class AllForSale extends Component {
 
@@ -17,12 +18,14 @@ class AllForSale extends Component {
                 properties.map(property => {
                   return (
                     <div key={property.title} className="propertyEntry">
-                      <div className="propertyImage">
-                        <img src={property.imageURL}></img>
-                      </div>
-                      <div className="propertyName">
-                        <h3>{property.title}</h3>
-                      </div>
+                      <Link href={`/buy/${property.id}`}>
+                        <div className="propertyImage">
+                          <img src={property.imageURL}></img>
+                        </div>
+                        <div className="propertyName">
+                          <h3>{property.title}</h3>
+                        </div>
+                      </Link>
                     </div>
                   )
                 })

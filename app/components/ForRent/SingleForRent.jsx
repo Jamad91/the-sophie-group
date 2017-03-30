@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleForRent } from '../../action-creators/forRent';
+import ContactRentForm from './ContactRentForm'
 
 class SingleForRent extends Component {
 
@@ -14,6 +15,7 @@ class SingleForRent extends Component {
             {this.props.forRent.title}
           </div>
         </div>
+        <ContactRentForm />
       </div>
     )
 
