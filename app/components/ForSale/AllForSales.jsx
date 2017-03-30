@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAllForRents } from '../action-creators/forRent'
+import { fetchAllForRents } from '../../action-creators/forSale'
 
-class ForRent extends Component {
+class AllForSale extends Component {
 
   render () {
 
-    const properties = this.props.forRents
+    console.log('SALE PROPS', this.props);
 
-    console.log('RENT PROPS', this.props);
+    const properties = this.props.forSales
+
     return (
       <div>
-        <h1 id="title">For Rent</h1>
+        <h1 id="title">For Sale</h1>
           <div className="container flexbox-container">
             <div className="jumbo">
               {
@@ -36,21 +37,19 @@ class ForRent extends Component {
 
 }
 
-const mapStateToProps = function (state) {
+const mapStateToProps = function(state) {
   return {
-    forRents: state.forRentsReducer.allForRents
+    forSales: state.forSalesReducer.allForSales
   }
 }
 
-const mapDispatchToProps = function (dispatch) {
-  // console.log('ISPATCH',dispatch);
-
+const mapDispatchToProps = function(dispatch) {
   return {
-    onLoadForRents: function () {
-      const thunk = fetchForRents();
+    onLoadForSales: function() {
+      const thunk = fetchForSales();
       dispatch(thunk)
     }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ForRent)
+export default connect(mapStateToProps, mapDispatchToProps)(AllForSale);

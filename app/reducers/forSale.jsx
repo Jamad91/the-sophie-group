@@ -1,8 +1,8 @@
-import {RECEIVE_ALL_FOR_SALES, SELECT_FOR_SALE} from 'APP/app/constants';
+import {RECEIVE_ALL_FOR_SALES, SELECT_SINGLE_FOR_SALE} from 'APP/app/constants';
 
 const DEFAULT_STATE = {
-  allForSales: []
-  // selectedForSale: {}
+  allForSales: [],
+  selectedForSale: {}
 }
 
 function forSalesReducer (state = DEFAULT_STATE, action) {
@@ -11,9 +11,9 @@ function forSalesReducer (state = DEFAULT_STATE, action) {
     case RECEIVE_ALL_FOR_SALES:
       newState.allForSales = action.allForSales;
       break;
-    // case SELECT_FOR_SALE:
-    //   newState.selectedForSale = action.forSale;
-    //   break;
+    case SELECT_SINGLE_FOR_SALE:
+      newState.selectedForSale = action.forSale;
+      break;
     default:
       return state;
   }

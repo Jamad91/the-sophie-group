@@ -11,4 +11,10 @@ router.get('/', (req, res, next) => {
   .catch(next)
 })
 
+router.get('/:forSaleId', (req, res, next) => {
+  ForSale.findById(req.params.forRentId)
+  .then(res.send.bind(res))
+  .catch(next)
+})
+
 module.exports = router;
