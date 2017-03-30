@@ -15,9 +15,6 @@ router.get('/:id', (req, res, next) => {
   ForRent.findById(req.params.id)
   .then(house => res.json(house))
   .catch(next)
-  // ForRent.findAll()
-  // .then(res.send.bind(res))
-  // .catch(next)
 })
 
 module.exports = router;

@@ -44,12 +44,8 @@ const onForRentsEnter = function() {
 
 const onForRentEnter = function(nextRouterState) {
   const forRentId = nextRouterState.params.id;
-  console.log('FORRENTID', nextRouterState.params.id);
-  axios.get(`/api/forrent/${forRentId}`)
-    .then(res => res.data)
-    .then(property => {
-      store.dispatch(fetchSingleForRent(property))
-    })
+  const thunk = fetchSingleForRent(forRentId)
+  store.dispatch(thunk)
 }
 
 const onForSalesEnter = function() {

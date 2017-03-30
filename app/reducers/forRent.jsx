@@ -17,7 +17,6 @@ function forRentsReducer (state = DEFAULT_STATE, action) {
     default:
       return state
   }
-  console.log('SINGLE STATE', newState);
   return newState
 }
 

@@ -6,7 +6,7 @@ class SingleForRent extends Component {
 
   render() {
 
-    console.log('SELECTED RENT', this.props.forRent);
+    console.log('SELECTED RENT', this.props.forRent.title);
 
     return (
       <div>
@@ -29,10 +29,12 @@ const mapStateToProps = function(state) {
   }
 }
 
-const mapDispatchToProps = function(dispatch) {
+const mapDispatchToProps = function(dispatch, ownProps) {
   return {
     onLoadSingleForRent: function () {
-      const thunk = fetchSingleForRent();
+      console.log('OWNPROPS',ownProps);
+      const forRentId = ownProps.params.forRentId
+      const thunk = fetchSingleForRent(forRentId);
       dispatch(thunk)
     }
   }
