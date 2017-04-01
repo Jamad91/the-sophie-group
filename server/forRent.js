@@ -17,4 +17,10 @@ router.get('/:id', (req, res, next) => {
   .catch(next)
 })
 
+router.post('/', (req, res, next) => {
+  ForRent.create(req.params.id)
+  .then(forRent => res.status(201).json(forRent))
+  .catch(next)
+})
+
 module.exports = router;
