@@ -37,7 +37,7 @@ class AllForRent extends Component {
 
               }
               <div>
-                {user ? <AddRentPropertyForm /> : ''}
+                {user ? <AddRentPropertyForm /> : null}
               </div>
             </div>
 

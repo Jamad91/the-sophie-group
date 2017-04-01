@@ -16,27 +16,34 @@ class ForRentForm extends Component {
   }
 
   handleChange(evt) {
-    const target = evt.target.name;
-    let value = evt.target.value;
+    // const target = evt.target.name;
+    // let value = evt.target.value;
+    //
+    // switch(target) {
+    //   case "title":
+    //     this.setState({title: value});
+    //     break;
+    //   case "description":
+    //     this.setState({description: value});
+    //     break;
+    //   case "imageURL":
+    //     this.setState({imageURL: value});
+    //     break;
+    // }
 
-    switch(target) {
-      case "title":
-        this.setState({title: value});
-        break;
-      case "description":
-        this.setState({description: value});
-        break;
-      case "imageURL":
-        this.setState({imageURL: value});
-        break;
-    }
+    let newState = {}
+
+    newState[evt.target.name] = evt.target.value
+    newState[evt.target.description] = evt.target.value
+    newState[evt.target.imageURL] = evt.target.value
+
+    this.setState(newState)
   }
 
   handleSubmit(evt) {
-    console.log('SUBMIT BUTTTON HIT2', this.state);
-    evt.preventDefault()
+    evt.preventDefault();
+
     this.props.createForRent(this.state);
-    console.log('SUBMIT BUTTTON HIT', this.props);
     this.setState({
       title: '',
       description: '',
@@ -46,9 +53,6 @@ class ForRentForm extends Component {
   }
 
   render() {
-    console.log('FORM THIS', this);
-    console.log('FORM PROPS',this.props);
-    console.log('FORM STATE',this.state);
     return (
       <div className="container flexbox-container">
         <div className="jumbo">
