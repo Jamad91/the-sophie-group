@@ -18,8 +18,17 @@ router.get('/:id', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-  ForSale.create(req.params.id)
+  ForSale.create(req.body)
   .then(forRent => res.status(201).json(forRent))
+  .catch(next)
+})
+
+router.delete('/:id', (req, res, next) => {
+  ForSale.findById(req.params.id)
+  .then(forSale => {
+    forSale.destroy()
+  })
+  .then(() => {res.sendStatus(204)})
   .catch(next)
 })
 
