@@ -5,13 +5,26 @@ import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
 import AddRentPropertyForm from './AddRentPropertyForm'
 
+import store, { forRentsReducer } from 'APP/app/store'
+
 class AllForRent extends Component {
 
-  render () {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = store.getState();
+  // }
 
+  // componentDidMount() {
+  //   this.unsubscribe = store.subscribe() => {
+  //     this.setState(store.getState());
+  //   }
+  // }
+
+  render () {
     const properties = this.props.forRents;
     const user = this.props.user;
-    console.log('RENT PROPS', user);
+
+    console.log('PROPERTIES', properties);
     return (
       <div>
         <h1 id="title">For Rent</h1>
@@ -49,7 +62,7 @@ class AllForRent extends Component {
 }
 
 const mapStateToProps = function (state) {
-  console.log(state.auth);
+  console.log('RENTER STATE',state);
   return ({
     forRents: state.forRentsReducer.allForRents,
     user: state.auth

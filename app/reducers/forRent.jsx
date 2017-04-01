@@ -16,7 +16,9 @@ function forRentsReducer (state = DEFAULT_STATE, action) {
       newState.selectedForRent = action.forRent;
       break;
     case ADD_FOR_RENT_PROPERTY:
-      newState.allForRents.push(action.forRentInfo);
+      let dummy = newState.allForRents.slice(0)
+      dummy.push(action.forRentInfo)
+      newState.allForRents = dummy;
       break;
     default:
       return state
