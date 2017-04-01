@@ -34,9 +34,19 @@ export const fetchSingleForRent = function(forRentId) {
   }
 }
 
-export const addForRent = function(info) {
-  axios.post('/api/forrent', info)
-    .then(res => res.data)
+const addForRentProperty = forRentInfo => ({
+  type: ADD_FOR_RENT_PROPERTY,
+  forRentInfo
+})
+
+export const createForRent = function(info) {
+  console.log('ACTION');
+  return dispatch => {
+    console.log('DISPATCH');
+    dispatch(addForRentProperty(info))
+    axios.post('/api/forrent', info)
+      .catch(err => console.log("Weren't able to add property", err))
+    }
     // .then(property => {
     //   this.setState({
     //     allForRents: [...this.state.allForRents, property]
