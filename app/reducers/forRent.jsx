@@ -1,4 +1,4 @@
-import {RECEIVE_ALL_FOR_RENTS, SELECT_SINGLE_FOR_RENT, ADD_FOR_RENT_PROPERTY} from 'APP/app/constants';
+import {RECEIVE_ALL_FOR_RENTS, SELECT_SINGLE_FOR_RENT, ADD_FOR_RENT_PROPERTY, DELETE_FOR_RENT_PROPERTY} from 'APP/app/constants';
 
 const DEFAULT_STATE = {
   allForRents: [],
@@ -19,6 +19,9 @@ function forRentsReducer (state = DEFAULT_STATE, action) {
       dummy.push(action.forRentInfo)
       newState.allForRents = dummy;
       break;
+    case DELETE_FOR_RENT_PROPERTY:
+      console.log('ACTION MAN ID', action.forRentId);
+      console.log('STATESMAN', state);
     default:
       return state
   }

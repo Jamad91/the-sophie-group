@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAllForRents } from '../../action-creators/forRent';
+import { fetchAllForRents, deleteForRentProperty } from '../../action-creators/forRent';
 import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
 import AddRentPropertyForm from './AddRentPropertyForm'
@@ -8,6 +8,16 @@ import AddRentPropertyForm from './AddRentPropertyForm'
 import store, { forRentsReducer } from 'APP/app/store'
 
 class AllForRent extends Component {
+  constructor (props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(evt) {
+    let propertyId = +evt.target.dataset.id
+    this.props.deleteForRentProperty(propertyId)
+  }
+
 
   render () {
     const properties = this.props.forRents;
@@ -30,6 +40,14 @@ class AllForRent extends Component {
                           <h3>{property.title}</h3>
                         </div>
                       </Link>
+                      <div>
+                        {user
+                          ? <div data-id={property.id} onClick={(e) => this.handleClick(e)}>
+                              <img className="delete" src="./assets/delete.png"/>
+                            </div>
+                          : null
+                        }
+                      </div>
                     </div>
                   )
                 })
@@ -58,6 +76,9 @@ const mapDispatchToProps = function (dispatch) {
     onLoadForRents: function () {
       const thunk = fetchForRents();
       dispatch(thunk)
+    },
+    deleteForRentProperty: (propertyId) => {
+      dispatch(deleteForRentProperty(propertyId))
     }
   }
 }
