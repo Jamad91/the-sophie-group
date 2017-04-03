@@ -2,8 +2,6 @@ import {RECEIVE_ALL_FOR_RENTS, SELECT_SINGLE_FOR_RENT, ADD_FOR_RENT_PROPERTY} fr
 
 import axios from 'axios';
 
-import { hashHistory } from 'react-router'
-
 import store from 'APP/app/store'
 
 const receiveAllForRents = allForRents => ({
@@ -40,29 +38,9 @@ const addForRentProperty = forRentInfo => ({
 })
 
 export const createForRent = function(info) {
-  console.log('ACTION');
   return dispatch => {
-    console.log('DISPATCH');
     dispatch(addForRentProperty(info))
     axios.post('/api/forrent', info)
       .catch(err => console.log("Weren't able to add property", err))
     }
-    // .then(property => {
-    //   this.setState({
-    //     allForRents: [...this.state.allForRents, property]
-    //   }, () => {
-    //     browserHistory.push(`/rent/${property.id}`)
-    //   })
-    // })
-  // let newProperty = {}
-  // store.getState()
-  //   .forRentsReducer
-  //   .allForRents.forEach(forRent => {
-  //   if (forRent.id === newPropertyId) newProperty = forRent
-  // })
-  // return {
-  //   type: ADD_FOR_RENT_PROPERTY,
-  //   forRentId: newPropertyId,
-  //   forRent: newProperty
-  // }
 }

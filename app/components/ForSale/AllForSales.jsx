@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAllForRents } from '../../action-creators/forSale'
+import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
 import AddSalePropertyForm from './AddSalePropertyForm';
 
 class AllForSale extends Component {
 
   render () {
-
     const properties = this.props.forSales;
     const user = this.props.user;
 
@@ -33,7 +33,7 @@ class AllForSale extends Component {
                 })
               }
               <div>
-                {user ? <AddSalePropertyForm /> : ''}
+                {user ? <AddSalePropertyForm /> : null}
               </div>
             </div>
 

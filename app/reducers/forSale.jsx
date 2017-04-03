@@ -1,4 +1,4 @@
-import {RECEIVE_ALL_FOR_SALES, SELECT_SINGLE_FOR_SALE} from 'APP/app/constants';
+import {RECEIVE_ALL_FOR_SALES, SELECT_SINGLE_FOR_SALE, ADD_FOR_SALE_PROPERTY} from 'APP/app/constants';
 
 const DEFAULT_STATE = {
   allForSales: [],
@@ -14,10 +14,14 @@ function forSalesReducer (state = DEFAULT_STATE, action) {
     case SELECT_SINGLE_FOR_SALE:
       newState.selectedForSale = action.forSale;
       break;
+    case ADD_FOR_SALE_PROPERTY:
+      let dummy = newState.allForSales.slice(0)
+      dummy.push(action.forSaleInfo)
+      newState.allForSales = dummy;
+      break;
     default:
       return state;
   }
-
   return newState
 };
 

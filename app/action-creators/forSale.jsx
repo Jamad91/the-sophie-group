@@ -1,4 +1,4 @@
-import {RECEIVE_ALL_FOR_SALES, SELECT_SINGLE_FOR_SALE} from 'APP/app/constants';
+import {RECEIVE_ALL_FOR_SALES, SELECT_SINGLE_FOR_SALE, ADD_FOR_SALE_PROPERTY} from 'APP/app/constants';
 
 import axios from 'axios';
 
@@ -30,4 +30,17 @@ export const fetchSingleForSale = function(forSaleId) {
       dispatch(selectForSale(res.data))
     })
   }
+}
+
+const addForSaleProperty = forSaleInfo => ({
+  type: ADD_FOR_SALE_PROPERTY,
+  forSaleInfo
+})
+
+export const createForSale = function(info) {
+  return dispatch => {
+    dispatch(addForSaleProperty(info))
+    axios.post('/api/forsale', info)
+      .catch(err => console.log("Weren't able to add property", err))
+    }
 }

@@ -16,21 +16,6 @@ class ForRentForm extends Component {
   }
 
   handleChange(evt) {
-    // const target = evt.target.name;
-    // let value = evt.target.value;
-    //
-    // switch(target) {
-    //   case "title":
-    //     this.setState({title: value});
-    //     break;
-    //   case "description":
-    //     this.setState({description: value});
-    //     break;
-    //   case "imageURL":
-    //     this.setState({imageURL: value});
-    //     break;
-    // }
-
     let newState = {}
 
     newState[evt.target.name] = evt.target.value
@@ -57,7 +42,7 @@ class ForRentForm extends Component {
       <div className="container flexbox-container">
         <div className="jumbo">
           <div className="col-md-6 account-left">
-            <form id="userInfo" onSubmit={ this.handleSubmit }>
+            <form onSubmit={ this.handleSubmit }>
               <div className="account-top heading">
                 <h3>ADD A PROPERTY</h3>
               </div>

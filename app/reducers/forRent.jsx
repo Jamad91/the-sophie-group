@@ -7,7 +7,6 @@ const DEFAULT_STATE = {
 
 function forRentsReducer (state = DEFAULT_STATE, action) {
   const newState = Object.assign({}, state)
-  console.log('REDCUCTION MAN',action);
   switch (action.type) {
     case RECEIVE_ALL_FOR_RENTS:
       newState.allForRents = action.allForRents;
