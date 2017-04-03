@@ -38,6 +38,7 @@ class ForRentForm extends Component {
   }
 
   render() {
+    console.log('FORM', this.props);
     return (
       <div className="container flexbox-container">
         <div className="jumbo">

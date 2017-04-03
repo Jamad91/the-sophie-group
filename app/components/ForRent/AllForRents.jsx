@@ -20,9 +20,10 @@ class AllForRent extends Component {
 
 
   render () {
+    console.log('STUFF',this.props);
     const properties = this.props.forRents;
     const user = this.props.user;
-
+    console.log('PROERTIES', properties);
     return (
       <div>
         <h1 id="title">For Rent</h1>
@@ -73,13 +74,7 @@ const mapStateToProps = function (state) {
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    onLoadForRents: function () {
-      const thunk = fetchForRents();
-      dispatch(thunk)
-    },
-    deleteForRentProperty: (propertyId) => {
-      dispatch(deleteForRentProperty(propertyId))
-    }
+    deleteForRentProperty: (property) => dispatch(deleteForRentProperty(property))
   }
 }
 

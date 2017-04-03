@@ -6,7 +6,7 @@ const DEFAULT_STATE = {
 }
 
 function forRentsReducer (state = DEFAULT_STATE, action) {
-  const newState = Object.assign({}, state)
+  let newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_ALL_FOR_RENTS:
       newState.allForRents = action.allForRents;
@@ -20,8 +20,16 @@ function forRentsReducer (state = DEFAULT_STATE, action) {
       newState.allForRents = dummy;
       break;
     case DELETE_FOR_RENT_PROPERTY:
-      console.log('ACTION MAN ID', action.forRentId);
-      console.log('STATESMAN', state);
+      // console.log('1',newState.allForRents);
+      let d2 = newState.allForRents.slice(0)
+      d2 = d2.filter(property => {
+        console.log('PROPERTY', action);
+        return property.id !== action.forRentId
+      })
+      newState.allForRents = d2
+      console.log('2',newState.allForRents);
+      return newState
+      break;
     default:
       return state
   }
