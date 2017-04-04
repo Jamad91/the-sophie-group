@@ -1,4 +1,4 @@
-import {RECEIVE_ALL_FOR_SALES, SELECT_SINGLE_FOR_SALE, ADD_FOR_SALE_PROPERTY} from 'APP/app/constants';
+import {RECEIVE_ALL_FOR_SALES, SELECT_SINGLE_FOR_SALE, ADD_FOR_SALE_PROPERTY, DELETE_FOR_SALE_PROPERTY} from 'APP/app/constants';
 
 const DEFAULT_STATE = {
   allForSales: [],
@@ -19,6 +19,14 @@ function forSalesReducer (state = DEFAULT_STATE, action) {
       dummy.push(action.forSaleInfo)
       newState.allForSales = dummy;
       break;
+    case DELETE_FOR_SALE_PROPERTY:
+        let d2 = newState.allForSales.slice(0)
+        d2 = d2.filter(property => {
+          return property.id !== action.forSaleId
+        })
+        newState.allForSales = d2
+        return newState
+        break;
     default:
       return state;
   }

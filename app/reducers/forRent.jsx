@@ -20,15 +20,11 @@ function forRentsReducer (state = DEFAULT_STATE, action) {
       newState.allForRents = dummy;
       break;
     case DELETE_FOR_RENT_PROPERTY:
-      // console.log('1',newState.allForRents);
       let d2 = newState.allForRents.slice(0)
       d2 = d2.filter(property => {
-        // console.log('PROPERTY', property.id);
-        // console.log('ACTION', action);
         return property.id !== action.forRentId
       })
       newState.allForRents = d2
-      // console.log('2',newState.allForRents);
       return newState
       break;
     default:
