@@ -21,10 +21,8 @@ class AllForRent extends Component {
 
 
   render () {
-    // console.log('STUFF',this.props);
     const properties = this.props.forRents;
     const user = this.props.user;
-    // console.log('PROERTIES', properties);
     return (
       <div>
         <h1 id="title">For Rent</h1>
