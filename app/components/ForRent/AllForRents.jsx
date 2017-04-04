@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAllForRents, deleteForRentProperty, destroyForRentProperty } from '../../action-creators/forRent';
+import { fetchAllForRents, destroyForRentProperty } from '../../action-creators/forRent';
 import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
 import AddRentPropertyForm from './AddRentPropertyForm'

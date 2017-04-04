@@ -45,13 +45,12 @@ export const createForRent = function(info) {
     }
 }
 
-export const deleteForRentProperty = forRentId => ({
+const deleteForRentProperty = forRentId => ({
     type: DELETE_FOR_RENT_PROPERTY,
     forRentId
 })
 
 export const destroyForRentProperty = function(id) {
-  console.log('ID', id);
   return dispatch => {
     dispatch(deleteForRentProperty(id))
     axios.delete(`/api/forrent/${id}`)
