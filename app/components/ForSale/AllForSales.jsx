@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAllForRents } from '../../action-creators/forSale'
+import { fetchAllForRents, destroyForSaleProperty } from '../../action-creators/forSale'
 import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
 import AddSalePropertyForm from './AddSalePropertyForm';
 
 class AllForSale extends Component {
+  constructor (props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(evt) {
+    let propertyId = +evt.target.dataset.id
+    console.log('PROP ID', +evt.target.dataset.id);
+    this.props.destroyForSaleProperty(propertyId)
+  }
+
 
   render () {
     const properties = this.props.forSales;
@@ -28,6 +39,12 @@ class AllForSale extends Component {
                           <h3>{property.title}</h3>
                         </div>
                       </Link>
+                      <div>
+                        {user
+                          ? <div className="delete" data-id={property.id} onClick={(e) => this.handleClick(e)}>X</div>
+                          : null
+                        }
+                      </div>
                     </div>
                   )
                 })
@@ -53,10 +70,7 @@ const mapStateToProps = function(state) {
 
 const mapDispatchToProps = function(dispatch) {
   return {
-    onLoadForSales: function() {
-      const thunk = fetchForSales();
-      dispatch(thunk)
-    }
+    destroyForSaleProperty: (property) => dispatch(destroyForSaleProperty(property))
   }
 }
 

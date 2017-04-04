@@ -28,7 +28,7 @@ router.delete('/:id', (req, res, next) => {
   .then(forSale => {
     forSale.destroy()
   })
-  .then(() => {res.sendStatus(204)})
+  .then((destroyedProperty) => {res.status(204).send(destroyedProperty)})
   .catch(next)
 })
 
