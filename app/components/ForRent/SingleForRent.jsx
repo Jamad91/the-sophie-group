@@ -4,9 +4,17 @@ import { fetchSingleForRent } from '../../action-creators/forRent';
 import ContactRentForm from './ContactRentForm'
 
 class SingleForRent extends Component {
+  // constructor (props) {
+  //   super(props)
+  //   this.handleClick = this.handleClick.bind(this)
+  // }
+  //
+  // handleClick(evt) {
+  //   let propertyId = +evt.target.dataset.id
+  //   this.props.destroyForRentProperty(propertyId)
+  // }
 
   render() {
-
     return (
       <div>
         <div className="container flexbox-container">

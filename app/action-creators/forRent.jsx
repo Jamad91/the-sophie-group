@@ -50,7 +50,8 @@ export const deleteForRentProperty = forRentId => ({
     forRentId
 })
 
-export const destroyforRentProperty = function(id) {
+export const destroyForRentProperty = function(id) {
+  console.log('ID', id);
   return dispatch => {
     dispatch(deleteForRentProperty(id))
     axios.delete('/api/forrent', id)

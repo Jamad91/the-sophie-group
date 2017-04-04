@@ -120,3 +120,10 @@ div.jumbotron {
   border-radius: 5%;
   border: solid black 5px;
 }
+
+.delete {
+  background: url('./assets/delete.png') no-repeat 0 px 0px;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+}

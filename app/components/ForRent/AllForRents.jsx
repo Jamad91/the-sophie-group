@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAllForRents, deleteForRentProperty } from '../../action-creators/forRent';
+import { fetchAllForRents, deleteForRentProperty, destroyForRentProperty } from '../../action-creators/forRent';
 import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
 import AddRentPropertyForm from './AddRentPropertyForm'
@@ -15,15 +15,16 @@ class AllForRent extends Component {
 
   handleClick(evt) {
     let propertyId = +evt.target.dataset.id
-    this.props.deleteForRentProperty(propertyId)
+    console.log('PROP ID', +evt.target.dataset);
+    this.props.destroyForRentProperty(propertyId)
   }
 
 
   render () {
-    console.log('STUFF',this.props);
+    // console.log('STUFF',this.props);
     const properties = this.props.forRents;
     const user = this.props.user;
-    console.log('PROERTIES', properties);
+    // console.log('PROERTIES', properties);
     return (
       <div>
         <h1 id="title">For Rent</h1>
@@ -43,8 +44,7 @@ class AllForRent extends Component {
                       </Link>
                       <div>
                         {user
-                          ? <div data-id={property.id} onClick={(e) => this.handleClick(e)}>
-                              <img className="delete" src="./assets/delete.png"/>
+                          ? <div className="delete" data-id={property.id} onClick={(e) => this.handleClick(e)}>
                             </div>
                           : null
                         }
@@ -74,7 +74,7 @@ const mapStateToProps = function (state) {
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    deleteForRentProperty: (property) => dispatch(deleteForRentProperty(property))
+    destroyForRentProperty: (property) => dispatch(destroyForRentProperty(property))
   }
 }
 
