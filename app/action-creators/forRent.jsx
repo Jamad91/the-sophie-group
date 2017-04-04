@@ -54,7 +54,7 @@ export const destroyForRentProperty = function(id) {
   console.log('ID', id);
   return dispatch => {
     dispatch(deleteForRentProperty(id))
-    axios.delete('/api/forrent', id)
-      .catch(err => console.log("Wasn't able to delete property", err))
+    axios.delete(`/api/forrent/${id}`)
+      .catch(err => console.log("Wasn't able to delete property.", err))
   }
 }

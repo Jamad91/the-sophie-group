@@ -15,7 +15,7 @@ class AllForRent extends Component {
 
   handleClick(evt) {
     let propertyId = +evt.target.dataset.id
-    console.log('PROP ID', +evt.target.dataset);
+    console.log('PROP ID', +evt.target.dataset.id);
     this.props.destroyForRentProperty(propertyId)
   }
 
@@ -44,8 +44,7 @@ class AllForRent extends Component {
                       </Link>
                       <div>
                         {user
-                          ? <div className="delete" data-id={property.id} onClick={(e) => this.handleClick(e)}>
-                            </div>
+                          ? <div className="delete" data-id={property.id} onClick={(e) => this.handleClick(e)}>X</div>
                           : null
                         }
                       </div>
