@@ -10,20 +10,46 @@ img {
   border-radius: 5%;
 }
 
+/*NAVBAR*/
+
 #navbar {
   background-color: black;
   color: #f5c800;
-  padding-top: 1%;
+  font-family: "Libre Baskerville", serif;
+  padding-bottom: 5%;
+}
+
+#company {
+  float: left;
+  display: inline;
+  margin-left: 3%;
+  margin-top: 0.5%;
+}
+
+#navlinks {
+  display: inline;
+  float: right;
+  margin-right: 5%;
+  margin-top: 42.5px;
+}
+
+#navbar h1 {
+  display: inline;
+  float: left;
 }
 
 #link {
-  color: #f5c800;
   display: inline;
-  padding: 5%;
   font-size: 120%;
+  padding: 10px;
 }
 
-h1 {
+#link p {
+  display: inline;
+  color: #f5c800;
+}
+
+#stuff {
   color: #f5c800;
 }
 
@@ -35,6 +61,7 @@ h3 {
 #title {
   margin-top: 2%;
   color: #f4c800;
+  font-family: "Libre Baskerville", serif;
 }
 
 #main_img {

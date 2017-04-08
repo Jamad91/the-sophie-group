@@ -5,28 +5,31 @@ export default class Navbar extends Component {
   render () {
     return (
       <div id="navbar">
-        <h1>The Sophie Group</h1>
-        <h3>Building Serious Wealth Over Time</h3>
+        <div id="company">
+          <h1>The Sophie Group</h1>
+        </div>
+        <div id="navlinks">
           <div id="link">
-            <Link href={"/home"}>
-              Home
+            <Link className="stuff" href={"/home"}>
+              <p>Home</p>
             </Link>
           </div>
           <div id="link">
             <Link href={"/buy"}>
-              For Sale
+              <p>Buy</p>
             </Link>
           </div>
           <div id="link">
             <Link href={"/rent"}>
-              For Rent
+              <p>Rent</p>
             </Link>
           </div>
           <div id="link">
             <Link href={"/contact"}>
-              Contact
+              <p>Contact</p>
             </Link>
           </div>
+        </div>
       </div>
     )
   }
