@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 // import ImageSlider from './ImageSlider'
 
+class MainImg extends Component {
+  render() {
+    return (
+      <div id="main_img">
+        <img src="./assets/main-house4b.jpg" />
+        <h1>Building Serious Wealth Over Time</h1>
+      </div>
+    )
+  }
+}
+
 export default class Home extends Component {
   render () {
     return (
       <div>
-        <h1 id="title">About</h1>
-        <div className="container flexbox-container">
-          <div id="main_img">
-            <img src="./assets/742_Evergreen_Terrace.png"></img>
+        <MainImg>
+          <div id="picText">
+            <p>Stuff and things</p>
           </div>
-        </div>
+        </MainImg>
+        <h1 id="title">Who We Are</h1>
         <div className="container flexbox-container">
           <div className="jumbotron">
             <p>
