@@ -8,7 +8,7 @@ class ForSaleForm extends Component {
     this.state = {
       title: "",
       description: "",
-      imageURL: ""
+      images: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,7 +19,7 @@ class ForSaleForm extends Component {
 
     newState[evt.target.name] = evt.target.value
     newState[evt.target.description] = evt.target.value
-    newState[evt.target.imageURL] = evt.target.value
+    newState[evt.target.images] = evt.target.value
 
     this.setState(newState)
   }
@@ -31,7 +31,7 @@ class ForSaleForm extends Component {
     this.setState({
       title: '',
       description: '',
-      imageURL: ''
+      images: ''
     })
     console.log('SUBMITTED!');
   }
@@ -55,7 +55,7 @@ class ForSaleForm extends Component {
               </div>
               <div className="address">
                 <span>Image Url</span>
-                <input type="text" name="imageURL" value={this.state.imageURL} onChange={this.handleChange} />
+                <input type="text" name="images" value={this.state.images} onChange={this.handleChange} />
               </div>
               <div className="address new">
                 <input type="submit" value="submit" />
@@ -70,7 +70,7 @@ class ForSaleForm extends Component {
 
 function mapStateToProps (forSale, utils) {
   return (
-    {forSale, title: utils.title, description: utils.description, imageURL: utils.imageURL}
+    {forSale, title: utils.title, description: utils.description, images: utils.images}
   )
 }
 

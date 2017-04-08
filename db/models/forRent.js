@@ -12,7 +12,7 @@ const ForRent = db.define('forRent', {
     type: Sequelize.TEXT,
     allowNull: false
   },
-  imageURL: {
+  images: {
     type: Sequelize.STRING,
     allowNull: false
   }

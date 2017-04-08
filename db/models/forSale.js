@@ -12,7 +12,7 @@ const ForSale = db.define('forSale', {
     type: Sequelize.TEXT,
     allowNull: false
   },
-  imageURL: {
+  images: {
     type: Sequelize.STRING,
     allowNull: false
   }

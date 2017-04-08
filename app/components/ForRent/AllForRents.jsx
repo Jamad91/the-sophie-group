@@ -15,7 +15,6 @@ class AllForRent extends Component {
 
   handleClick(evt) {
     let propertyId = +evt.target.dataset.id
-    console.log('PROP ID', +evt.target.dataset.id);
     this.props.destroyForRentProperty(propertyId)
   }
 
@@ -27,14 +26,15 @@ class AllForRent extends Component {
       <div>
         <h1 id="title">For Rent</h1>
           <div className="container flexbox-container">
-            <div className="jumbo">
+            <div className="jumbotron">
               {
                 properties.map(property => {
+                  var images = property.images.split(', ');
                   return (
                     <div key={property.title} className="propertyEntry">
                       <Link href={`/rent/${property.id}`}>
                         <div className="propertyImage">
-                          <img src={property.imageURL}></img>
+                          <img src={images[0]}></img>
                         </div>
                         <div className="propertyName">
                           <h3>{property.title}</h3>
