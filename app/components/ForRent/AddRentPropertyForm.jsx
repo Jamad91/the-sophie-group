@@ -38,28 +38,26 @@ class ForRentForm extends Component {
   }
 
   render() {
-    // console.log('FORM', this.props);
     return (
       <div className="container flexbox-container">
-        <div className="jumbo">
-          <div className="col-md-6 account-left">
+        <div className="jumbotron">
+          <div className="col-md-9 addpropertyform">
             <form onSubmit={ this.handleSubmit }>
-              <div className="account-top heading">
-                <h3>ADD A PROPERTY</h3>
-              </div>
-              <div className="address">
-                <span>Title</span>
+              <h3>ADD A PROPERTY</h3>
+              <div className="form-input">
+                <span>Title</span><br />
                 <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
               </div>
-              <div className="address">
-                <span>Description</span>
+              <div className="form-input">
+                <span>Description</span><br />
                 <input type="text" name="description" value={this.state.description} onChange={this.handleChange} />
               </div>
-              <div className="address">
-                <span>Image Url</span>
+              <div className="form-input">
+                <span>Images</span><br />
+                <span>(seperated with a comma and space)</span>
                 <input type="text" name="images" value={this.state.images} onChange={this.handleChange} />
               </div>
-              <div className="address new">
+              <div className="form-input">
                 <input type="submit" value="submit" />
               </div>
             </form>

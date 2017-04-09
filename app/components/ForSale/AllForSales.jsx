@@ -26,28 +26,28 @@ class AllForSale extends Component {
         <h1 id="title">For Sale</h1>
           <div className="container flexbox-container">
             <div className="jumbotron">
-              {
-                properties.map(property => {
-                  var images = property.images.split(', ');
-                  return (
-                    <div key={property.title} className="propertyEntry">
-                      <Link href={`/buy/${property.id}`}>
-                          <img src={images[0]}></img>
-                          <h3>{property.title}</h3>
-                      </Link>
-                      <div>
-                        {user
-                          ? <div className="delete" data-id={property.id} onClick={(e) => this.handleClick(e)}>X</div>
-                          : null
-                        }
+              <div className="listings">
+                {
+                  properties.map(property => {
+                    var images = property.images.split(', ');
+                    return (
+                      <div key={property.title} className="propertyEntry">
+                        <Link href={`/buy/${property.id}`}>
+                            <img src={images[0]}></img>
+                            <h3>{property.title}</h3>
+                        </Link>
+                        <div>
+                          {user
+                            ? <div className="delete" data-id={property.id} onClick={(e) => this.handleClick(e)}>X</div>
+                            : null
+                          }
+                        </div>
                       </div>
-                    </div>
-                  )
-                })
-              }
-              <div>
-                {user ? <AddSalePropertyForm /> : null}
+                    )
+                  })
+                }
               </div>
+              {user ? <AddSalePropertyForm /> : null}
             </div>
 
           </div>

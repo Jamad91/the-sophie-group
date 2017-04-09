@@ -106,14 +106,15 @@ div.jumbotron {
 .propertyEntry {
   display: inline-block;
   max-height: 30%;
-  max-width: 30%;
+  max-width: 30.75%;
   border: solid black 2px;
   margin: 1.25%;
+  float: left;
 }
 
 .propertyEntry img {
   height: 240px;
-  width: 320px;
+  width: 100%;
 }
 
 .delete {
@@ -121,6 +122,19 @@ div.jumbotron {
   width: 28px;
   height: 28px;
   position: absolute;
+}
+
+.listings {
+  display: block;
+}
+
+.addpropertyform {
+  margin-top: 2%;
+  margin-left: 16%;
+  padding-right: 50%;
+  justify-content: center;
+  align-items: center;
+  border: solid black 2px;
 }
 
 /*CONTACT*/
