@@ -32,12 +32,8 @@ class AllForSale extends Component {
                   return (
                     <div key={property.title} className="propertyEntry">
                       <Link href={`/buy/${property.id}`}>
-                        <div className="propertyImage">
                           <img src={images[0]}></img>
-                        </div>
-                        <div className="propertyName">
                           <h3>{property.title}</h3>
-                        </div>
                       </Link>
                       <div>
                         {user

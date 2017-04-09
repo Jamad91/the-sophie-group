@@ -16,11 +16,7 @@ export default class Home extends Component {
   render () {
     return (
       <div>
-        <MainImg>
-          <div id="picText">
-            <p>Stuff and things</p>
-          </div>
-        </MainImg>
+        <MainImg />
         <h1 id="title">Who We Are</h1>
         <div className="container flexbox-container">
           <div className="jumbotron">

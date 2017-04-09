@@ -33,12 +33,8 @@ class AllForRent extends Component {
                   return (
                     <div key={property.title} className="propertyEntry">
                       <Link href={`/rent/${property.id}`}>
-                        <div className="propertyImage">
-                          <img src={images[0]}></img>
-                        </div>
-                        <div className="propertyName">
-                          <h3>{property.title}</h3>
-                        </div>
+                        <img src={images[0]}></img>
+                        <h3>{property.title}</h3>
                       </Link>
                       <div>
                         {user
