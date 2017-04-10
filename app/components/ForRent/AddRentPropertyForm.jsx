@@ -19,6 +19,7 @@ class ForRentForm extends Component {
   handleChange(evt) {
     let newState = {}
 
+
     newState[evt.target.name] = evt.target.value
     newState[evt.target.address1] = evt.target.value
     newState[evt.target.address2] = evt.target.value

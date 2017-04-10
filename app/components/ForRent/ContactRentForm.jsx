@@ -35,28 +35,3 @@ export default function contactComponent({signUp}) {
   </div>
   )
 }
-
-// <form action="http://formspree.io/jdicolandrea@gmail.com" method="post" id="userInfo" onSubmit={ onContactSubmit }>
-//   <div className="account-top heading">
-//     <h3>CONTACT US ABOUT THIS PROPERTY</h3>
-//   </div>
-//   <div className="address">
-//     <span>First Name</span>
-//     <input type="text" name="firstName" />
-//   </div>
-//   <div className="address">
-//     <span>Last Name</span>
-//     <input type="text" name="lastName" />
-//   </div>
-//   <div className="address">
-//     <span>Email Address</span>
-//     <input type="text" name="email" />
-//   </div>
-//   <div className="address">
-//     <span>Questions?</span>
-//     <input type="text" name="questions" />
-//   </div>
-//   <div className="address new">
-//     <input type="submit" value="submit" />
-//   </div>
-// </form>

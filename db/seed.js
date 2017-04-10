@@ -6,15 +6,15 @@ const seedUsers = () => db.Promise.map([
 ], user => db.model('users').create(user))
 
 const seedForRents = () => db.Promise.map([
-  {title: 'house1', description: 'this is the House 1', images: "./assets/742_Evergreen_Terrace.png"},
-  {title: 'house2', description: 'this is the House 2', images: "./assets/31_Spooner_Street.jpg"},
-  {title: 'house3', description: 'this is the House 3', images: "./assets/1600_Pennsylvania_Avenue.jpg"}
+  {address1: '742 Evergreen Terrace', address2: "Springfield NY, 12345", description: 'this is the House 1', images: "./assets/742_Evergreen_Terrace.png"},
+  {address1: '31 Spooner St', address2: 'Providence, RI 12345', description: 'this is the House 2', images: "./assets/31_Spooner_Street.jpg"},
+  {address1: '1600 Pennsylvania Ave', address2: "Washington D.C. 12345", description: 'this is the House 3', images: "./assets/1600_Pennsylvania_Avenue.jpg"}
 ], forRent => db.model('forRent').create(forRent))
 
 const seedForSales = () => db.Promise.map([
-  {title: 'house3', description: 'this is the House AA', images: "./assets/1600_Pennsylvania_Avenue.jpg"},
-  {title: 'house2', description: 'this is the House BB', images: "./assets/31_Spooner_Street.jpg"},
-  {title: 'house1', description: 'this is the House CC', images: "./assets/742_Evergreen_Terrace.png"},
+  {address1: '1600 Pennsylvania Ave', address2: "Washington D.C. 12345", description: 'this is the House 3', images: "./assets/1600_Pennsylvania_Avenue.jpg"},
+  {address1: '31 Spooner St', address2: 'Providence, RI 12345', description: 'this is the House 2', images: "./assets/31_Spooner_Street.jpg"},
+  {address1: '742 Evergreen Terrace', address2: "Springfield NY, 12345", description: 'this is the House 1', images: "./assets/742_Evergreen_Terrace.png"}
 ], forSale => db.model('forSale').create(forSale))
 
 db.didSync
