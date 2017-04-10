@@ -4,7 +4,11 @@ const Sequelize = require('sequelize')
 const db = require('APP/db')
 
 const ForSale = db.define('forSale', {
-  title: {
+  address1: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  address2: {
     type: Sequelize.STRING,
     allowNull: false
   },
