@@ -18,6 +18,8 @@ class ForSaleForm extends Component {
   handleChange(evt) {
     let newState = {}
 
+
+    newState[evt.target.name] = evt.target.value
     newState[evt.target.address1] = evt.target.value
     newState[evt.target.address2] = evt.target.value
     newState[evt.target.description] = evt.target.value
@@ -76,7 +78,7 @@ class ForSaleForm extends Component {
 
 function mapStateToProps (forSale, utils) {
   return (
-    {forSale, address1: utils.address1, address2: address2, description: utils.description, images: utils.images}
+    {forSale, address1: utils.address1, address2: utils.address2, description: utils.description, images: utils.images}
   )
 }
 
