@@ -27,6 +27,7 @@ img {
 
 div.jumbotron {
   margin-top: 1%;
+  border: solid black 4px;
 }
 
 /*NAVBAR*/
@@ -135,6 +136,23 @@ div.jumbotron {
   justify-content: center;
   align-items: center;
   border: solid black 2px;
+}
+
+/*INDIVIDUAL PROPERTY*/
+div.jumbotron.property {
+  display: inline;
+  border: solid red 4px;
+}
+
+#property-info {
+  display: inline-block;
+  max-height: 25%;
+  max-width: 25%;
+  border: solid green 4px;
+}
+
+#property-contact {
+  display: inline-block;
 }
 
 /*CONTACT*/

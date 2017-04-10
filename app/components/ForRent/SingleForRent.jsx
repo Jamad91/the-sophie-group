@@ -4,29 +4,25 @@ import { fetchSingleForRent } from '../../action-creators/forRent';
 import ContactRentForm from './ContactRentForm'
 
 class SingleForRent extends Component {
-  // constructor (props) {
-  //   super(props)
-  //   this.handleClick = this.handleClick.bind(this)
-  // }
-  //
-  // handleClick(evt) {
-  //   let propertyId = +evt.target.dataset.id
-  //   this.props.destroyForRentProperty(propertyId)
-  // }
 
   render() {
+    const property = this.props.forRent
+    console.log('RENT', property);
+    console.log('images', property.images);
+    const images = property.images ? property.images.split(', ') : [property.images]
     return (
-      <div>
         <div className="container flexbox-container">
-          <div className="jumbo">
-            <h1>yo yo yo</h1>
-            {this.props.forRent.address1}
+          <div className="jumbotron property">
+            <div id="property-info">
+              <h2>{property.address1}</h2>
+              <img src={images[0]} />
+            </div>
+            <div id="property-contact">
+              <ContactRentForm />
+            </div>
           </div>
         </div>
-        <ContactRentForm />
-      </div>
     )
-
   }
 }
 

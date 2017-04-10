@@ -8,14 +8,12 @@ class SingleForSale extends Component {
   render() {
 
     return (
-      <div>
-        <div className="container flexbox-container">
-          <div className="jumbo">
-            <h1>no no no</h1>
-            {this.props.forSale.address1}
-          </div>
+      <div className="container flexbox-container">
+        <div className="jumbotron">
+          <h1>no no no</h1>
+          {this.props.forSale.address1}
+          <ContactSaleForm />
         </div>
-        <ContactSaleForm />
       </div>
     )
 
