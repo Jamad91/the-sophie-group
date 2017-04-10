@@ -31,10 +31,10 @@ class AllForRent extends Component {
                   properties.map(property => {
                     var images = property.images.split(', ');
                     return (
-                      <div key={property.title} className="propertyEntry">
+                      <div key={property.address1} className="propertyEntry">
                         <Link href={`/buy/${property.id}`}>
                             <img src={images[0]}></img>
-                            <h3>{property.title}</h3>
+                            <h3>{property.address1}</h3>
                         </Link>
                         <div>
                           {user
