@@ -6,7 +6,8 @@ class ForSaleForm extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      title: "",
+      address1: "",
+      address2: "",
       description: "",
       images: ""
     };
@@ -17,7 +18,8 @@ class ForSaleForm extends Component {
   handleChange(evt) {
     let newState = {}
 
-    newState[evt.target.name] = evt.target.value
+    newState[evt.target.address1] = evt.target.value
+    newState[evt.target.address2] = evt.target.value
     newState[evt.target.description] = evt.target.value
     newState[evt.target.images] = evt.target.value
 
@@ -29,7 +31,8 @@ class ForSaleForm extends Component {
 
     this.props.createForSale(this.state);
     this.setState({
-      title: '',
+      address1: '',
+      address2: '',
       description: '',
       images: ''
     })
@@ -44,8 +47,12 @@ class ForSaleForm extends Component {
             <form onSubmit={ this.handleSubmit }>
               <h3>ADD A PROPERTY</h3>
               <div className="form-input">
-                <span>Title</span><br />
-                <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
+                <span>Address Line 1</span><br />
+                <input type="text" name="address1" value={this.state.address1} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
+                <span>Address Line 2</span><br />
+                <input type="text" name="address2" value={this.state.address2} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Description</span><br />
@@ -69,7 +76,7 @@ class ForSaleForm extends Component {
 
 function mapStateToProps (forSale, utils) {
   return (
-    {forSale, title: utils.title, description: utils.description, images: utils.images}
+    {forSale, address1: utils.address1, address2: address2, description: utils.description, images: utils.images}
   )
 }
 

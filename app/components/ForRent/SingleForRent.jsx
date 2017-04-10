@@ -20,7 +20,7 @@ class SingleForRent extends Component {
         <div className="container flexbox-container">
           <div className="jumbo">
             <h1>yo yo yo</h1>
-            {this.props.forRent.title}
+            {this.props.forRent.address1}
           </div>
         </div>
         <ContactRentForm />

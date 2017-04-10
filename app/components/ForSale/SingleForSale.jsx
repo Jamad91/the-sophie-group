@@ -12,7 +12,7 @@ class SingleForSale extends Component {
         <div className="container flexbox-container">
           <div className="jumbo">
             <h1>no no no</h1>
-            {this.props.forSale.title}
+            {this.props.forSale.address1}
           </div>
         </div>
         <ContactSaleForm />
