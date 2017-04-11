@@ -34,9 +34,8 @@ div.jumbotron {
 
 #navbar {
   background-color: black;
-  color: #f5c800;
-  font-family: "Libre Baskerville", serif;
   padding-bottom: 75px;
+  font-family: "Libre Baskerville", serif;
 }
 
 #company {
@@ -54,6 +53,7 @@ div.jumbotron {
 }
 
 #navbar h1 {
+  color: #f5c800;
   display: inline;
   float: left;
 }
