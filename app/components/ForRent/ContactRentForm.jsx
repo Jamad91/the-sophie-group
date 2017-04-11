@@ -10,10 +10,12 @@ export default function contactComponent({signUp}) {
     console.log('SUBMIT BUTTON PRESSED')
   }
 
+  // <div className="container flexbox-container">
+  //   <div className="jumbotron">
   return (
-    <div className="container flexbox-container">
+    <div>
       <div className="jumbotron">
-        <div className="col-md-6 account-left">
+        <div className="col-lg-12 account-left">
           <form method="POST" action="http://formspree.io/jdicolandrea@gmail.com">
             <div>
               <textarea name="Name" placeholder="Name "></textarea>

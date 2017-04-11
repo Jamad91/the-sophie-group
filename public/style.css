@@ -27,7 +27,7 @@ img {
 
 div.jumbotron {
   margin-top: 1%;
-  border: solid black 4px;
+  /*border: solid black 4px;*/
 }
 
 /*NAVBAR*/
@@ -139,20 +139,37 @@ div.jumbotron {
 }
 
 /*INDIVIDUAL PROPERTY*/
-div.jumbotron.property {
+#property {
   display: inline;
-  border: solid red 4px;
+  /*border: solid red 4px;*/
+  float: left;
 }
 
 #property-info {
-  display: inline-block;
-  max-height: 25%;
-  max-width: 25%;
-  border: solid green 4px;
+  display: inline;
+  max-height: 55%;
+  max-width: 55%;
+  /*border: solid green 4px;*/
+  float: left;
+}
+
+#property-info img {
+  border: solid black 2px;
+}
+
+#property-info h4 {
+  /*font-family: "Libre Baskerville", serif;*/
+}
+
+#property-info p {
+  /*font-family: "Libre Baskerville", serif;*/
 }
 
 #property-contact {
-  display: inline-block;
+  display: inline;
+  float: right;
+  position: relative;
+  /*margin-top: -30%;*/
 }
 
 /*CONTACT*/

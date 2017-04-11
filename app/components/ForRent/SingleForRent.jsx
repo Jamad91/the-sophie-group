@@ -12,13 +12,18 @@ class SingleForRent extends Component {
     const images = property.images ? property.images.split(', ') : [property.images]
     return (
         <div className="container flexbox-container">
-          <div className="jumbotron property">
-            <div id="property-info">
-              <h2>{property.address1}</h2>
-              <img src={images[0]} />
-            </div>
-            <div id="property-contact">
-              <ContactRentForm />
+          <div className="jumbotron">
+            <div id="property">
+              <div id="property-info">
+                <img src={images[0]} />
+                <h3>{property.address1}</h3>
+                <h3>{property.address2}</h3>
+                <p>{property.description}</p>
+              </div>
+              <div id="property-contact">
+                <h2>Contact us about this property</h2>
+                <ContactRentForm />
+              </div>
             </div>
           </div>
         </div>
