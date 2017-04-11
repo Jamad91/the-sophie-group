@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleForRent } from '../../action-creators/forRent';
-import ContactRentForm from './ContactRentForm'
+import ContactRentForm from './ContactRentForm';
+import Navbar from '../Navbar';
 
 class SingleForRent extends Component {
 
@@ -11,6 +12,7 @@ class SingleForRent extends Component {
     console.log('images', property.images);
     const images = property.images ? property.images.split(', ') : [property.images]
     return (
+      <div>
         <div className="container flexbox-container">
           <div className="jumbotron">
             <div id="property">
@@ -27,6 +29,7 @@ class SingleForRent extends Component {
             </div>
           </div>
         </div>
+      </div>
     )
   }
 }

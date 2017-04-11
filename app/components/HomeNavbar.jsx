@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-export default class Navbar extends Component {
+export default class HomeNavbar extends Component {
   render () {
     return (
-      <div id="navbar">
+      <div id="home-navbar">
         <div id="company">
           <Link href={"/home"}>
             <h1>The Sophie Group</h1>

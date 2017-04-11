@@ -65,11 +65,11 @@ const onForSaleEnter = function(nextRouterState) {
   const thunk = fetchSingleForSale(forSaleId);
   store.dispatch(thunk)
 }
+// <Navbar />
 
 render (
   <Provider store={store}>
     <div>
-      <Navbar />
       <Router history={browserHistory}>
         <Route path="/">
           <IndexRoute component={ Home } />

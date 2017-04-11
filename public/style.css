@@ -32,11 +32,14 @@ div.jumbotron {
 
 /*NAVBAR*/
 
+#home-navbar {
+  padding-bottom: 75px;
+
+}
+
 #navbar {
   background-color: black;
-  color: #f5c800;
-  font-family: "Libre Baskerville", serif;
-  padding-bottom: 75px;
+  padding-bottom: -75px;
 }
 
 #company {
@@ -44,6 +47,11 @@ div.jumbotron {
   display: inline;
   margin-left: 3%;
   margin-top: 0.5%;
+}
+
+#company h1 {
+  color: #f5c800;
+  font-family: "Libre Baskerville", serif;
 }
 
 #navlinks {
@@ -66,6 +74,7 @@ div.jumbotron {
 
 #link p {
   display: inline;
+  font-family: "Libre Baskerville", serif;
   color: #f5c800;
 }
 
