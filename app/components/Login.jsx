@@ -1,14 +1,18 @@
 import React from 'react'
 
 export const Login = ({ login }) => (
-  <form onSubmit={evt => {
-    evt.preventDefault()
-    login(evt.target.username.value, evt.target.password.value)
-  } }>
-    <input name="username" />
-    <input name="password" type="password" />
-    <input type="submit" value="Login" />
-  </form>
+  <div className="container flexbox-container">
+    <div className="jumbotron">
+      <form onSubmit={evt => {
+        evt.preventDefault()
+        login(evt.target.username.value, evt.target.password.value)
+      } }>
+        <input name="username" placeholder="Username"/>
+        <input name="password" placeholder="Password" type="password" />
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+  </div>
 )
 
 import {login} from 'APP/app/reducers/auth'
