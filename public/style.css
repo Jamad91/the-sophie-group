@@ -175,17 +175,17 @@ div.jumbotron {
 /*CONTACT*/
 .contacts {
   display: inline-flex;
-  border: solid black 5px;
+  /*border: solid black 5px;*/
 }
 
-.contactEntry {
+/*.contactEntry {
   display: inline;
-}
+}*/
 
 .contactImage {
   display: inline-block;
-  max-height: 25%;
-  max-width: 25%;
+  max-height: 40%;
+  max-width: 40%;
   padding-bottom: 5%;
 }
 
@@ -199,4 +199,8 @@ div.jumbotron {
   border: solid black 4px;
   border-radius: 50%;
   display: inline;
+}
+
+.contactContent {
+  margin-top: 10%;
 }
