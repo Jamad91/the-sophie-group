@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleForRent } from '../../action-creators/forRent';
 import ContactRentForm from './ContactRentForm'
+import ImageSlider from '../ImageSlider'
 
 class SingleForRent extends Component {
 
@@ -16,6 +17,13 @@ class SingleForRent extends Component {
             <div id="property">
               <div id="property-info">
                 <img src={images[0]} />
+
+
+<ImageSlider />
+
+
+
+
                 <h3>{property.address1}</h3>
                 <h3>{property.address2}</h3>
                 <p>{property.description}</p>

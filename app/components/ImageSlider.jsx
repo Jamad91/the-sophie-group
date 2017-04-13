@@ -4,54 +4,55 @@ import ImageGallery from 'react-image-gallery';
 
 export default class ImageSlider extends Component {
 
-  handleImageLoad(event) {
-    console.log('Image loaded ', event.target)
-  }
-
   render() {
-
-    const images = [
-      {
-        original: "./assets/1600_Pennsylvania_Avenue.jpg"
-      },
-      {
-        original: "./assets/31_Spooner_Street.jpg"
-      },
-      {
-        original: "./assets/742_Evergreen_Terrace.png"
-      }
-    ]
-
     return (
-      <ImageGallery
-        items={images}
-        slideInterval={2000}
-        onImageLoad={this.handleImageLoad}/>
-    );
+    <div className="container-fluid">
+        <div id="custom_carousel" className="carousel slide" data-ride="carousel" data-interval="4000">
+            <div className="carousel-inner">
+                <div className="item active">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="top col-md-6 col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg" className="img-responsive" /></div>
+                            <div className="content col-md-6 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="item">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="top col-md-6 col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg" className="img-responsive" /></div>
+                            <div className="content col-md-6 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="item">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="top col-md-6 col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg" className="img-responsive" /></div>
+                            <div className="content col-md-6 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <a data-slide="prev" href="#custom_carousel" className="izq carousel-control">‹</a>
+            <a data-slide="next" href="#custom_carousel" className="der carousel-control">›</a>
+                    <div className="controls draggable ui-widget-content col-md-6 col-xs-12">
+                <ul className="nav ui-widget-header">
+
+                    <li data-target="#custom_carousel" data-slide-to="0" className="active"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg" /><small>Slide One</small></a></li>
+                    <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg" /><small>Slide Two</small></a></li>
+                    <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg" /><small>Slide Three</small></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+)
   }
 
 }
-
-
-
-class MyComponent extends React.Component {
-
-
-}
-
-
-// return (
-//   <Slider {...settings}>
-//     <div>
-//       <h3>1</h3>
-//       <div><img src="./assets/31_Spooner_Street.jpg"></img></div>
-//     </div>
-//     <div>
-//       <h3>2</h3>
-//       <div><img src="./assets/1600_Pennsylvania_Avenue.jpg"></img></div>
-//     </div>
-//     <div><h3>3</h3></div>
-//     <div><h3>4</h3></div>
-//     <div><h3>5</h3></div>
-//     <div><h3>6</h3></div>
-//   </Slider>
