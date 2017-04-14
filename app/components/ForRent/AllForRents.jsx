@@ -20,7 +20,7 @@ class AllForRent extends Component {
   render () {
     const properties = this.props.forRents;
     const user = this.props.user;
-
+    console.log('PROPS', this.props.forRents);
     return (
       <div>
         <h1 id="title">For Rent</h1>
@@ -29,11 +29,10 @@ class AllForRent extends Component {
               <div className="listings">
                 {
                   properties.map(property => {
-                    var images = property.images.split(', ');
                     return (
                       <div key={property.address1} className="propertyEntry">
                         <Link href={`/rent/${property.id}`}>
-                            <img src={images[0]}></img>
+                            <img src={property.mainImageUrl}></img>
                             <h3>{property.address1}</h3>
                         </Link>
                         <div>

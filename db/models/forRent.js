@@ -16,9 +16,20 @@ const ForRent = db.define('forRent', {
     type: Sequelize.TEXT,
     allowNull: false
   },
-  images: {
+  bedroomNum: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  bathroomNum: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  mainImageUrl: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  extraImageUrls: {
+    type: Sequelize.ARRAY(Sequelize.STRING)
   }
 })
 

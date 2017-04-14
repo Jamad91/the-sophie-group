@@ -12,13 +12,24 @@ const ForSale = db.define('forSale', {
     type: Sequelize.STRING,
     allowNull: false
   },
+  bedroomNum: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  bathroomNum: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
   description: {
     type: Sequelize.TEXT,
     allowNull: false
   },
-  images: {
+  mainImageUrl: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  extraImageUrls: {
+    type: Sequelize.ARRAY(Sequelize.STRING)
   }
 })
 
