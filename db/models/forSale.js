@@ -29,7 +29,7 @@ const ForSale = db.define('forSale', {
     allowNull: false
   },
   extraImageUrls: {
-    type: Sequelize.ARRAY(Sequelize.STRING)
+    type: Sequelize.STRING
   }
 })
 

@@ -4,65 +4,57 @@ import { fetchSingleForRent } from '../../action-creators/forRent';
 import ContactRentForm from './ContactRentForm'
 import ImageSlider from '../ImageSlider'
 
+'use strict'
+
 class SingleForRent extends Component {
 
   render() {
-    const property = this.props.forRent
-    console.log('RENT', property);
-    console.log('images', property.images);
-    const images = property.images ? property.images.split(', ') : [property.images]
+    const property = this.props.forRent;
+    let images;
+    property.extraImageUrls ? images = property.extraImageUrls.split(', ') : images = [];
+    // <img src={property.mainImageUrl} />
+    // console.log('OLD IMAGES', images);
+    images.unshift(property.mainImageUrl)
+    // console.log('NEW IMAGES', images);
+
+    function isImage(el, array) {
+      for (var i = 0; i < array.length; i++) {
+        if (el === array[i]) {return i}
+      }
+      return -1
+    }
     return (
         <div className="container flexbox-container">
           <div className="jumbotron">
             <div id="property">
               <div id="property-info">
-                <img src={images[0]} />
 
+                  <div className="container">
+                      <div className="card">
+                        <div className="container-fliud">
+                          <div className="wrapper row">
+                            <div className="preview col-md-6">
 
-                  <div id="custom_carousel" className="carousel slide" data-ride="carousel" data-interval="4000">
-                      <div className="carousel-inner">
-                          <div className="item active">
-                              <div className="container-fluid">
-                                  <div className="row">
-                                      <div className="top col-md-6 col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg" className="img-responsive" /></div>
-                                      <div className="content col-md-6 col-xs-12">
-                                      </div>
-                                  </div>
+                              <div className="preview-pic tab-content">
+                                <div className="tab-pane active" id={isImage(property.mainImageUrl, images)}><img src={property.mainImageUrl} /></div>
+                                <div className="tab-pane" id="pic-2"><img src="https://thumbs.dreamstime.com/z/house-2427221.jpg" /></div>
+                                <div className="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
+                                <div className="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
+                                <div className="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
                               </div>
-                          </div>
-                          <div className="item">
-                              <div className="container-fluid">
-                                  <div className="row">
-                                      <div className="top col-md-6 col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg" className="img-responsive" /></div>
-                                      <div className="content col-md-6 col-xs-12">
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div className="item">
-                              <div className="container-fluid">
-                                  <div className="row">
-                                      <div className="top col-md-6 col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg" className="img-responsive" /></div>
-                                      <div className="content col-md-6 col-xs-12">
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+                              <ul className="preview-thumbnail nav nav-tabs">
+                                <li className="active"><a data-target={`#${isImage(property.mainImageUrl, images)}`} data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab"><img src="https://thumbs.dreamstime.com/z/house-2427221.jpg" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                                <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                                <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                              </ul>
 
-
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <a data-slide="prev" href="#custom_carousel" className="izq carousel-control">‹</a>
-                      <a data-slide="next" href="#custom_carousel" className="der carousel-control">›</a>
-                              <div className="controls draggable ui-widget-content col-md-6 col-xs-12">
-                          <ul className="nav ui-widget-header">
-
-                              <li data-target="#custom_carousel" data-slide-to="0" className="active"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg" /><small>Slide One</small></a></li>
-                              <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg" /><small>Slide Two</small></a></li>
-                              <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg" /><small>Slide Three</small></a></li>
-
-                          </ul>
-                      </div>
-                  </div>
+                    </div>
 
 
 
@@ -99,3 +91,46 @@ const mapDispatchToProps = function(dispatch, ownProps) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleForRent);
+
+
+
+
+// <div id="custom_carousel" className="carousel slide" data-ride="carousel" data-interval="4000">
+//     <div className="carousel-inner">
+//         <div className="item active">
+//             <div className="container-fluid">
+//                 <div className="row">
+//                     <div className="top col-md-6 col-xs-12"><img src={property.mainImageUrl} className="img-responsive" /></div>
+//                     <div className="content col-md-6 col-xs-12">
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//         {
+//           images.map(image => {
+//             return(
+//               <div className="item">
+//                   <div className="container-fluid">
+//                       <div className="row">
+//                           <div className="top col-md-6 col-xs-12"><img src={image} className="img-responsive" /></div>
+//                           <div className="content col-md-6 col-xs-12">
+//                           </div>
+//                       </div>
+//                   </div>
+//               </div>
+//             )
+//           })
+//         }
+//     </div>
+//     <a data-slide="prev" href="#custom_carousel" className="izq carousel-control">‹</a>
+//     <a data-slide="next" href="#custom_carousel" className="der carousel-control">›</a>
+//             <div className="controls draggable ui-widget-content col-md-6 col-xs-12">
+//         <ul className="nav ui-widget-header">
+//
+//             <li data-target="#custom_carousel" data-slide-to="0" className="active"><a href="#"><img src={property.mainImageUrl} /><small>Slide One</small></a></li>
+//             <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg" /><small>Slide Two</small></a></li>
+//             <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg" /><small>Slide Three</small></a></li>
+//
+//         </ul>
+//     </div>
+// </div>

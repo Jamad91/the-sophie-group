@@ -9,7 +9,10 @@ class ForSaleForm extends Component {
       address1: "",
       address2: "",
       description: "",
-      images: ""
+      bedroomNum: 0,
+      bathroomNum: 0,
+      mainImageUrl: "",
+      extraImageUrls: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,7 +26,10 @@ class ForSaleForm extends Component {
     newState[evt.target.address1] = evt.target.value
     newState[evt.target.address2] = evt.target.value
     newState[evt.target.description] = evt.target.value
-    newState[evt.target.images] = evt.target.value
+    newState[evt.target.bedroomNum] = evt.target.value
+    newState[evt.target.bathroomNum] = evt.target.value
+    newState[evt.target.mainImageUrl] = evt.target.value
+    newState[evt.target.extraImageUrls] = evt.target.value
 
     this.setState(newState)
   }
@@ -33,10 +39,13 @@ class ForSaleForm extends Component {
 
     this.props.createForSale(this.state);
     this.setState({
-      address1: '',
-      address2: '',
-      description: '',
-      images: ''
+      address1: "",
+      address2: "",
+      description: "",
+      bedroomNum: 0,
+      bathroomNum: 0,
+      mainImageUrl: "",
+      extraImageUrls: ""
     })
     console.log('SUBMITTED!');
   }
@@ -57,13 +66,25 @@ class ForSaleForm extends Component {
                 <input type="text" name="address2" value={this.state.address2} onChange={this.handleChange} />
               </div>
               <div className="form-input">
+                <span>Number of bathrooms</span><br />
+                <input type="integer" name="bathroomNum" value={this.state.bathroomNum} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
+                <span>Number of bedrooms</span><br />
+                <input type="integer" name="bedroomNum" value={this.state.bedroomNum} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
                 <span>Description</span><br />
                 <input type="text" name="description" value={this.state.description} onChange={this.handleChange} />
               </div>
               <div className="form-input">
-                <span>Images</span><br />
+                <span>Main Image Url</span><br />
+                <input type="text" name="mainImageUrl" value={this.state.mainImageUrl} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
+                <span>Other Image Urls</span><br />
                 <span>(seperated with a comma and space)</span>
-                <input type="text" name="images" value={this.state.images} onChange={this.handleChange} />
+                <input type="text" name="extraImageUrls" value={this.state.extraImageUrls} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <input type="submit" value="submit" />

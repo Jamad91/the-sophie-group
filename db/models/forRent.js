@@ -29,7 +29,7 @@ const ForRent = db.define('forRent', {
     allowNull: false
   },
   extraImageUrls: {
-    type: Sequelize.ARRAY(Sequelize.STRING)
+    type: Sequelize.STRING
   }
 })
 
