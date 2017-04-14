@@ -37,18 +37,31 @@ class SingleForRent extends Component {
 
                               <div className="preview-pic tab-content">
                                 <div className="tab-pane active" id={isImage(property.mainImageUrl, images)}><img src={property.mainImageUrl} /></div>
-                                <div className="tab-pane" id="pic-2"><img src="https://thumbs.dreamstime.com/z/house-2427221.jpg" /></div>
-                                <div className="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
-                                <div className="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
-                                <div className="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+
+                                {
+                                  images.map(image=>{
+                                    return(
+                                      <div className="tab-pane" key={isImage(image, images)} id={isImage(image, images)}><img src={image} /></div>
+                                    )
+                                  })
+                                }
                               </div>
                               <ul className="preview-thumbnail nav nav-tabs">
-                                <li className="active"><a data-target={`#${isImage(property.mainImageUrl, images)}`} data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                <li><a data-target="#pic-2" data-toggle="tab"><img src="https://thumbs.dreamstime.com/z/house-2427221.jpg" /></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                              </ul>
+                              {
+                                images.map(image => {
+                                  return (
+                                          <li key={`#${isImage(image, images)}`}><a data-target={`#${isImage(image, images)}`} data-toggle="tab"><img src={image} /></a></li>
+                                    )
+                                })
+                              }
+                            </ul>
+
+                              <br />
+                              <br />
+                              <br />
+                              <br />
+                              <br />
+
 
                             </div>
                           </div>
