@@ -29,11 +29,12 @@ class SingleForRent extends Component {
             <div id="property">
               <div id="property-info">
 
-                  <div className="container">
-                      <div className="card">
-                        <div className="container-fliud">
+                  <div>
+                      <div>
+                        <div>
+                          <h3>{property.address1}</h3>
                           <div className="wrapper row">
-                            <div className="preview col-md-6">
+                            <div className="preview col-md-12">
 
                               <div className="preview-pic tab-content">
                                 <div className="tab-pane active" id={isImage(property.mainImageUrl, images)}><img src={property.mainImageUrl} /></div>
@@ -55,29 +56,17 @@ class SingleForRent extends Component {
                                 })
                               }
                             </ul>
-
-                              <br />
-                              <br />
-                              <br />
-                              <br />
-                              <br />
-
-
                             </div>
+                            <div><p>Bedrooms: {property.bedroomNum}</p></div>
+                            <div><p>Bathrooms: {property.bathroomNum}</p><br /></div>
+                            <div><p>{property.description}</p></div>
                           </div>
                         </div>
                       </div>
                     </div>
-
-
-
-
-                <h3>{property.address1}</h3>
-                <h3>{property.address2}</h3>
-                <p>{property.description}</p>
               </div>
               <div id="property-contact">
-                <h2>Contact us about this property</h2>
+                <h3>Contact us about this property</h3>
                 <ContactRentForm />
               </div>
             </div>
