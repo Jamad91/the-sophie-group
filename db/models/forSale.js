@@ -12,6 +12,10 @@ const ForSale = db.define('forSale', {
     type: Sequelize.STRING,
     allowNull: false
   },
+  description: {
+    type: Sequelize.TEXT,
+    allowNull: false
+  },
   bedroomNum: {
     type: Sequelize.INTEGER,
     allowNull: false
@@ -20,8 +24,8 @@ const ForSale = db.define('forSale', {
     type: Sequelize.INTEGER,
     allowNull: false
   },
-  description: {
-    type: Sequelize.TEXT,
+  squareFeet: {
+    type: Sequelize.STRING,
     allowNull: false
   },
   mainImageUrl: {

@@ -28,7 +28,6 @@ img {
 div.jumbotron {
   margin-top: 1%;
   background-color: #e5e0eb
-  /*border: solid black 4px;*/
 }
 
 /*NAVBAR*/
@@ -142,7 +141,6 @@ div.jumbotron {
 /*INDIVIDUAL PROPERTY*/
 #property {
   display: inline;
-  /*border: solid red 4px;*/
   float: left;
 }
 
@@ -150,38 +148,60 @@ div.jumbotron {
   display: inline;
   max-height: 55%;
   max-width: 55%;
-  /*border: solid green 4px;*/
   float: left;
+  margin-right: -5%;
+}
+
+#address {
+  float: left;
+  display: block;
 }
 
 #property-info img {
   border: solid black 2px;
 }
 
-#property-info h4 {
-  /*font-family: "Libre Baskerville", serif;*/
-}
-
-#property-info p {
-  /*font-family: "Libre Baskerville", serif;*/
+#property-description {
+  float: left;
 }
 
 #property-contact {
   display: inline;
   float: right;
   position: relative;
-  /*margin-top: -30%;*/
+}
+
+#property-contact h3 {
+  margin-top: -10%;
+}
+
+.jumbotron.contact {
+  margin-top: -5%;
+  margin-left: 5%;
+  margin-right: 2%;
+}
+
+#specs {
+  /*margin-left: 5%;*/
+  /*border: solid blue 4px;*/
+  font-size: 150%;
+  float: left;
+  padding-right: 5%;
+  padding-left: 2%;
+  text-align: left;
+}
+
+.row {
+  /*border: solid blue 2px;*/
+  /*padding-right: 10%;*/
+  margin-right: -25%;
+  /*margin-left: 3%;*/
 }
 
 /*CONTACT*/
 .contacts {
   display: inline-flex;
-  /*border: solid black 5px;*/
 }
-
-/*.contactEntry {
-  display: inline;
-}*/
 
 .contactImage {
   display: inline-block;

@@ -14,8 +14,8 @@ export default function contactComponent({signUp}) {
   //   <div className="jumbotron">
   return (
     <div>
-      <div className="jumbotron">
-        <div className="col-lg-12 account-left">
+      <div className="jumbotron contact">
+        <div className="col-md-4 account-left">
           <form method="POST" action="http://formspree.io/jdicolandrea@gmail.com">
             <div>
               <textarea name="Name" placeholder="Name "></textarea>
