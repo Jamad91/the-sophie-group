@@ -20,7 +20,6 @@ class AllForSale extends Component {
   render () {
     const properties = this.props.forSales;
     const user = this.props.user;
-
     return (
       <div>
         <h1 id="title">For Sale</h1>
@@ -37,7 +36,7 @@ class AllForSale extends Component {
                         </Link>
                         <div>
                           {user
-                            ? <div className="delete" data-id={property.id} onClick={(e) => this.handleClick(e)}>X</div>
+                            ? <button className="delete" data-id={property.id} onClick={(e) => this.handleClick(e)}>Delete</button>
                             : null
                           }
                         </div>

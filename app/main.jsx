@@ -75,11 +75,9 @@ render (
           <IndexRoute component={ Home } />
           <Route path="home" component={Home} />
           <Route path="buy" component={AllForSales} onEnter={onForSalesEnter} />
-          <Route path="buy/add" component={AddSalePropertyForm} />
           <Route path="buy/:id" component={SingleForSale} onEnter={onForSaleEnter} />
           <Route path="but/:id/contact" component={ContactSaleForm} />
           <Route path="rent" component={AllForRents} onEnter={onForRentsEnter} />
-          <Route path="rent/add" component={AddRentPropertyForm} />
           <Route path="rent/:id" component={SingleForRent} onEnter={onForRentEnter} />
           <Route path="rent/:id/contact" component={ContactRentForm} />
           <Route path="contact" component={Contact} />

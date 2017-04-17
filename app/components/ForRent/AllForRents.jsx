@@ -36,7 +36,7 @@ class AllForRent extends Component {
                         </Link>
                         <div>
                           {user
-                            ? <div className="delete" data-id={property.id} onClick={(e) => this.handleClick(e)}>X</div>
+                            ? <button className="delete" data-id={property.id} onClick={(e) => this.handleClick(e)}>Delete</button>
                             : null
                           }
                         </div>

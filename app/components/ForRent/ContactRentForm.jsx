@@ -10,8 +10,6 @@ export default function contactComponent({signUp}) {
     console.log('SUBMIT BUTTON PRESSED')
   }
 
-  // <div className="container flexbox-container">
-  //   <div className="jumbotron">
   return (
     <div>
       <div className="jumbotron contact">

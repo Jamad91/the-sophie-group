@@ -15,7 +15,6 @@ body, html {
 img {
   max-width: 100%;
   max-height: 100%;
-  border: solid black 4px;
 }
 
 .flexbox-container{
@@ -111,6 +110,7 @@ div.jumbotron {
   border: solid black 2px;
   margin: 1.25%;
   float: left;
+  font-family: "Libre Baskerville", serif;
 }
 
 .propertyEntry img {
@@ -118,8 +118,7 @@ div.jumbotron {
   width: 100%;
 }
 
-.delete {
-  background: url('./assets/delete.png') no-repeat 0 px 0px;
+.delete button{
   width: 28px;
   height: 28px;
   position: absolute;
@@ -131,8 +130,6 @@ div.jumbotron {
 
 .addpropertyform {
   margin-top: 2%;
-  margin-left: 16%;
-  padding-right: 50%;
   justify-content: center;
   align-items: center;
   border: solid black 2px;
@@ -155,6 +152,7 @@ div.jumbotron {
 #address {
   float: left;
   display: block;
+  font-family: "Libre Baskerville", serif;
 }
 
 #property-info img {
@@ -163,6 +161,12 @@ div.jumbotron {
 
 #property-description {
   float: left;
+  font-family: "Libre Baskerville", serif;
+}
+
+#property-description p {
+  margin-top: 10%;
+  font-size: 125%;
 }
 
 #property-contact {
@@ -172,7 +176,9 @@ div.jumbotron {
 }
 
 #property-contact h3 {
-  margin-top: -10%;
+  margin-top: -8%;
+  font-family: "Libre Baskerville", serif;
+  font-size: 150%;
 }
 
 .jumbotron.contact {
@@ -182,8 +188,6 @@ div.jumbotron {
 }
 
 #specs {
-  /*margin-left: 5%;*/
-  /*border: solid blue 4px;*/
   font-size: 150%;
   float: left;
   padding-right: 5%;
@@ -192,10 +196,7 @@ div.jumbotron {
 }
 
 .row {
-  /*border: solid blue 2px;*/
-  /*padding-right: 10%;*/
   margin-right: -25%;
-  /*margin-left: 3%;*/
 }
 
 /*CONTACT*/
@@ -224,4 +225,5 @@ div.jumbotron {
 
 .contactContent {
   margin-top: 10%;
+  font-family: "Libre Baskerville", serif;
 }

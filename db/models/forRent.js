@@ -25,7 +25,7 @@ const ForRent = db.define('forRent', {
     allowNull: false
   },
   squareFeet: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: false
   },
   mainImageUrl: {

@@ -12,9 +12,9 @@ export default class Contact extends Component {
                 <img id="chanoPic" src="./assets/profile-user.jpg"></img>
               </div>
               <div className="contactContent">
-                <strong>Phone:</strong>
+                <h4><strong>Phone:</strong></h4>
                 <p>(631) 835-7293</p>
-                <strong>Email:</strong>
+                <h4><strong>Email:</strong></h4>
                 <p>chano.rivera@thesophiegroup.com</p>
               </div>
             </div>
@@ -23,9 +23,9 @@ export default class Contact extends Component {
                 <img id="chanoPic" src="./assets/profile-user.jpg"></img>
               </div>
               <div className="contactContent">
-                <strong>Phone:</strong>
+                <h4><strong>Phone:</strong></h4>
                 <p>(631) 835-7293</p>
-                <strong>Email:</strong>
+                <h4><strong>Email:</strong></h4>
                 <p>kelley.rivera@thesophiegroup.com</p>
               </div>
             </div>

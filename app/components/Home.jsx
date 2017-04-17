@@ -5,7 +5,7 @@ class MainImg extends Component {
   render() {
     return (
       <div id="main_img">
-        <img src="./assets/main-house4b.jpg" />
+        <img src="./assets/main_img.jpg" />
         <h1>Building Serious Wealth Over Time</h1>
       </div>
     )

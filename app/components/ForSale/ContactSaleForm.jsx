@@ -11,9 +11,9 @@ export default function contactComponent({signUp}) {
   }
 
   return (
-    <div className="container flexbox-container">
-      <div className="jumbo">
-        <div className="col-md-6 account-left">
+    <div>
+      <div className="jumbotron contact">
+        <div className="col-md-4 account-left">
           <form method="POST" action="http://formspree.io/jdicolandrea@gmail.com">
             <div>
               <textarea name="Name" placeholder="Name "></textarea>

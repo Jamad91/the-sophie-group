@@ -25,7 +25,7 @@ const ForSale = db.define('forSale', {
     allowNull: false
   },
   squareFeet: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: false
   },
   mainImageUrl: {

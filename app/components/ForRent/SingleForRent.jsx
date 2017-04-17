@@ -4,18 +4,13 @@ import { fetchSingleForRent } from '../../action-creators/forRent';
 import ContactRentForm from './ContactRentForm'
 import ImageSlider from '../ImageSlider'
 
-'use strict'
-
 class SingleForRent extends Component {
 
   render() {
     const property = this.props.forRent;
     let images;
     property.extraImageUrls ? images = property.extraImageUrls.split(', ') : images = [];
-    // <img src={property.mainImageUrl} />
-    // console.log('OLD IMAGES', images);
     images.unshift(property.mainImageUrl)
-    // console.log('NEW IMAGES', images);
 
     function isImage(el, array) {
       for (var i = 0; i < array.length; i++) {
@@ -23,6 +18,7 @@ class SingleForRent extends Component {
       }
       return -1
     }
+
     return (
         <div className="container flexbox-container">
           <div className="jumbotron">

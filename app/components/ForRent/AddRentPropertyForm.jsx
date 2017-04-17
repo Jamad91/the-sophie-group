@@ -12,6 +12,7 @@ class ForRentForm extends Component {
       description: "",
       bedroomNum: 0,
       bathroomNum: 0,
+      squareFeet: 0,
       mainImageUrl: "",
       extraImageUrls: ""
     };
@@ -29,6 +30,7 @@ class ForRentForm extends Component {
     newState[evt.target.description] = evt.target.value
     newState[evt.target.bedroomNum] = evt.target.value
     newState[evt.target.bathroomNum] = evt.target.value
+    newState[evt.target.squareFeet] = evt.target.value
     newState[evt.target.mainImageUrl] = evt.target.value
     newState[evt.target.extraImageUrls] = evt.target.value
 
@@ -45,6 +47,7 @@ class ForRentForm extends Component {
       description: "",
       bedroomNum: 0,
       bathroomNum: 0,
+      squareFeet: 0,
       mainImageUrl: "",
       extraImageUrls: ""
     })
@@ -55,7 +58,7 @@ class ForRentForm extends Component {
     return (
       <div className="container flexbox-container">
         <div className="jumbotron">
-          <div className="col-md-9 addpropertyform">
+          <div className="col-lg-12 addpropertyform">
             <form onSubmit={ this.handleSubmit }>
               <h3>ADD A PROPERTY</h3>
               <div className="form-input">
@@ -75,6 +78,10 @@ class ForRentForm extends Component {
                 <input type="integer" name="bedroomNum" value={this.state.bedroomNum} onChange={this.handleChange} />
               </div>
               <div className="form-input">
+                <span>Square Footage</span><br />
+                <input type="integer" name="squareFeet" value={this.state.squareFeet} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
                 <span>Description</span><br />
                 <input type="text" name="description" value={this.state.description} onChange={this.handleChange} />
               </div>
@@ -84,7 +91,7 @@ class ForRentForm extends Component {
               </div>
               <div className="form-input">
                 <span>Other Image Urls</span><br />
-                <span>(seperated with a comma and space)</span>
+                <span>(seperated with a comma and space)</span><br />
                 <input type="text" name="extraImageUrls" value={this.state.extraImageUrls} onChange={this.handleChange} />
               </div>
               <div className="form-input">
@@ -100,7 +107,7 @@ class ForRentForm extends Component {
 
 function mapStateToProps (forRent, utils) {
   return (
-    {forRent, address1: utils.address1, address2: utils.address2, description: utils.description, images: utils.images}
+    {forRent, address1: utils.address1, address2: utils.address2, bathroomNum: utils.bathroomNum, bedroomNum: utils.bedroomNum, squareFeet: utils.squareFeet, description: utils.description, images: utils.images}
   )
 }
 
