@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleForRent } from '../../action-creators/forRent';
-import ContactRentForm from './ContactRentForm'
 import ImageSlider from '../ImageSlider'
 
 class SingleForRent extends Component {
@@ -65,7 +64,31 @@ class SingleForRent extends Component {
               </div>
               <div id="property-contact">
                 <h3>Contact us about this property</h3>
-                <ContactRentForm />
+                  <div id="property-contact">
+                    <h3>Contact us about this property</h3>
+                      <div className="jumbotron contact">
+                        <div className="col-md-4 account-left">
+                          <form method="POST" action="http://formspree.io/jdicolandrea@gmail.com">
+                            <input type="hidden" name="_subject" value={property.address1} />
+                            <input type="hidden" name="_cc" value="zeekyn@gmail.com" />
+                            <div>
+                              <textarea name="Name" placeholder="Name "></textarea>
+                            </div>
+                            <div>
+                              <textarea name="Phone" placeholder="Phone Number "></textarea>
+                            </div>
+                            <div>
+                              <textarea name="Email" placeholder="Email "></textarea>
+                            </div>
+                            <div>
+                              <textarea name="Questions" placeholder="Questions? "></textarea>
+                            </div>
+                            <button type="submit">Send</button>
+                          </form>
+                        </div>
+                      <div className="clearfix"></div>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>

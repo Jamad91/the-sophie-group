@@ -19,13 +19,11 @@ import Contact from './components/Contact';
 import AllForSales from './components/ForSale/AllForSales';
 import SingleForSale from './components/ForSale/SingleForSale';
 import AddSalePropertyForm from './components/ForSale/AddSalePropertyForm';
-import ContactSaleForm from './components/ForSale/ContactSaleForm';
 
 // FOR RENT COMPONENTS
 import AllForRents from './components/ForRent/AllForRents';
 import SingleForRent from './components/ForRent/SingleForRent';
 import AddRentPropertyForm from './components/ForRent/AddRentPropertyForm';
-import ContactRentForm from './components/ForRent/ContactRentForm';
 
 // ACTIONS
 import { fetchAllForRents, fetchSingleForRent } from './action-creators/forRent';
@@ -76,10 +74,8 @@ render (
           <Route path="home" component={Home} />
           <Route path="buy" component={AllForSales} onEnter={onForSalesEnter} />
           <Route path="buy/:id" component={SingleForSale} onEnter={onForSaleEnter} />
-          <Route path="but/:id/contact" component={ContactSaleForm} />
           <Route path="rent" component={AllForRents} onEnter={onForRentsEnter} />
           <Route path="rent/:id" component={SingleForRent} onEnter={onForRentEnter} />
-          <Route path="rent/:id/contact" component={ContactRentForm} />
           <Route path="contact" component={Contact} />
           <Route path="login" component={ExampleApp} />
         </Route>
