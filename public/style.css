@@ -29,6 +29,10 @@ div.jumbotron {
   background-color: #e5e0eb
 }
 
+.notFound {
+  text-align: left;
+}
+
 /*NAVBAR*/
 
 #navbar {

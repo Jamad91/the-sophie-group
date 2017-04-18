@@ -78,6 +78,7 @@ render (
           <Route path="rent/:id" component={SingleForRent} onEnter={onForRentEnter} />
           <Route path="contact" component={Contact} />
           <Route path="login" component={ExampleApp} />
+          <Route path='*' component={NotFound} />
         </Route>
       </Router>
     </div>
