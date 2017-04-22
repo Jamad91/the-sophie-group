@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { fetchSingleForSale } from '../../action-creators/forSale';
 import ImageSlider from '../ImageSlider'
+import GMap from '../Map';
 
 class SingleForSale extends Component {
 
@@ -88,6 +89,7 @@ class SingleForSale extends Component {
               </div>
             </div>
           </div>
+          <GMap />
         </div>
       </div>    )
 
