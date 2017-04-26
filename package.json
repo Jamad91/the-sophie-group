@@ -60,6 +60,7 @@
     "react-dom": "^15.3.2",
     "react-image-gallery": "^0.7.15",
     "react-image-slider": "^0.1.0",
+    "react-promise": "^1.1.2",
     "react-redux": "^4.4.5",
     "react-responsive-carousel": "^3.1.5",
     "react-router": "^3.0.0",
