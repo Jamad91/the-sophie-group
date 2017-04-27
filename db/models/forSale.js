@@ -34,6 +34,10 @@ const ForSale = db.define('forSale', {
   },
   extraImageUrls: {
     type: Sequelize.STRING
+  },
+  sold: {
+    type: Sequelize.BOOLEAN,
+    defualtValue: false
   }
 })
 

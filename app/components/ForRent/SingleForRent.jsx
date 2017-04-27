@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleForRent } from '../../action-creators/forRent';
 import ImageSlider from '../ImageSlider'
+import GMap from '../Map'
 
 class SingleForRent extends Component {
 
@@ -18,10 +19,15 @@ class SingleForRent extends Component {
       return -1
     }
 
+    const fullAddress = `${property.address1} ${property.address2}`
+
     return (
         <div className="container flexbox-container">
           <div className="jumbotron">
-            <div id="address"><h2>{property.address1}</h2></div>
+            <div id="address">
+              <h2>{property.address1}</h2>
+              <h2>{property.address2}</h2>
+            </div>
             <div id="property">
               <div id="property-info">
                 <div className="wrapper row">
@@ -64,31 +70,29 @@ class SingleForRent extends Component {
               </div>
               <div id="property-contact">
                 <h3>Contact us about this property</h3>
-                  <div id="property-contact">
-                    <h3>Contact us about this property</h3>
-                      <div className="jumbotron contact">
-                        <div className="col-md-4 account-left">
-                          <form method="POST" action="http://formspree.io/jdicolandrea@gmail.com">
-                            <input type="hidden" name="_subject" value={property.address1} />
-                            <input type="hidden" name="_cc" value="zeekyn@gmail.com" />
-                            <div>
-                              <textarea name="Name" placeholder="Name "></textarea>
-                            </div>
-                            <div>
-                              <textarea name="Phone" placeholder="Phone Number "></textarea>
-                            </div>
-                            <div>
-                              <textarea name="Email" placeholder="Email "></textarea>
-                            </div>
-                            <div>
-                              <textarea name="Questions" placeholder="Questions? "></textarea>
-                            </div>
-                            <button type="submit">Send</button>
-                          </form>
+                  <div className="jumbotron contact">
+                    <div className="col-md-4 account-left">
+                      <form method="POST" action="http://formspree.io/jdicolandrea@gmail.com">
+                        <input type="hidden" name="_subject" value={property.address1} />
+                        <input type="hidden" name="_cc" value="zeekyn@gmail.com" />
+                        <div>
+                          <textarea name="Name" placeholder="Name "></textarea>
                         </div>
-                      <div className="clearfix"></div>
+                        <div>
+                          <textarea name="Phone" placeholder="Phone Number "></textarea>
+                        </div>
+                        <div>
+                          <textarea name="Email" placeholder="Email "></textarea>
+                        </div>
+                        <div>
+                          <textarea name="Questions" placeholder="Questions? "></textarea>
+                        </div>
+                        <button type="submit">Send</button>
+                      </form>
                     </div>
-                  </div>
+                  <div className="clearfix"></div>
+                  <GMap fullAddress={fullAddress} />
+                </div>
               </div>
             </div>
           </div>

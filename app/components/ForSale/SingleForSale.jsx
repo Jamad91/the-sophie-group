@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import { fetchSingleForSale } from '../../action-creators/forSale';
 import ImageSlider from '../ImageSlider'
 import GMap from '../Map';
-// import Map from 'google-maps-react';
 
 
 class SingleForSale extends Component {
@@ -26,7 +25,10 @@ class SingleForSale extends Component {
     return (
       <div className="container flexbox-container">
         <div className="jumbotron">
-          <div id="address"><h2>{property.address1}</h2></div>
+          <div id="address">
+            <h2>{property.address1}</h2>
+            <h2>{property.address2}</h2>
+          </div>
           <div id="property">
             <div id="property-info">
               <div className="wrapper row">
@@ -90,8 +92,8 @@ class SingleForSale extends Component {
                     </form>
                   </div>
                 <div className="clearfix"></div>
+                <GMap fullAddress={fullAddress}/>
               </div>
-              <GMap fullAddress={fullAddress}/>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
 import AddSalePropertyForm from './AddSalePropertyForm';
 
-class AllForSale extends Component {
+class AllSold extends Component {
   constructor (props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
@@ -22,13 +22,13 @@ class AllForSale extends Component {
     const user = this.props.user;
     return (
       <div>
-        <h1 id="title">For Sale</h1>
+        <h1 id="title">Sold</h1>
           <div className="container flexbox-container">
             <div className="jumbotron">
               <div className="listings">
                 {
                   properties.map(property => {
-                    if (!property.sold) {
+                    if (property.sold) {
                       return (
                         <div key={property.address1} className="propertyEntry">
                           <Link href={`/buy/${property.id}`}>
@@ -58,6 +58,7 @@ class AllForSale extends Component {
 }
 
 const mapStateToProps = function(state) {
+  console.log('STATE', state);
   return ({
     forSales: state.forSalesReducer.allForSales,
     user: state.auth
@@ -70,4 +71,4 @@ const mapDispatchToProps = function(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AllForSale);
+export default connect(mapStateToProps, mapDispatchToProps)(AllSold);

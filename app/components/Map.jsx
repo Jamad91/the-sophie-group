@@ -37,11 +37,10 @@ export default class Gmap extends Component {
 
         <div id="map">
           <Map google={google}
-             onMapLoad={this.handleMapLoad}
-             style={{width: '20%', height: '45%', position: 'relative'}}
-             className={'address'}
+             style={{width: '20%', height: '25%', position: 'absolute'}}
+             className={'map'}
              center={this.state.coordinates}
-             zoom={16}
+             zoom={15}
              containerStyle={{}}
              initialCenter={this.state.coordinates}
              visible={true}>

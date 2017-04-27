@@ -22,6 +22,11 @@ export default class Navbar extends Component {
             </Link>
           </div>
           <div id="link">
+            <Link href={"/sold"}>
+              <p>Sold</p>
+            </Link>
+          </div>
+          <div id="link">
             <Link href={"/contact"}>
               <p>Contact</p>
             </Link>
