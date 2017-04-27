@@ -26,6 +26,9 @@ import AllForRents from './components/ForRent/AllForRents';
 import SingleForRent from './components/ForRent/SingleForRent';
 import AddRentPropertyForm from './components/ForRent/AddRentPropertyForm';
 
+// BLOG COMPONENTS
+import AllBlogPosts from './components/Blog/AllBlogPosts';
+
 // ACTIONS
 import { fetchAllForRents, fetchSingleForRent } from './action-creators/forRent';
 import { fetchAllForSales, fetchSingleForSale } from './action-creators/forSale';
@@ -78,6 +81,7 @@ render (
           <Route path="sold" component={AllSold} onEnter={onForSalesEnter} />
           <Route path="rent" component={AllForRents} onEnter={onForRentsEnter} />
           <Route path="rent/:id" component={SingleForRent} onEnter={onForRentEnter} />
+          <Route path="blog" component={AllBlogPosts} />
           <Route path="contact" component={Contact} />
           <Route path="login" component={ExampleApp} />
           <Route path='*' component={NotFound} />

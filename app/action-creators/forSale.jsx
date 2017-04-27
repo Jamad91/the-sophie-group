@@ -1,4 +1,9 @@
-import {RECEIVE_ALL_FOR_SALES, SELECT_SINGLE_FOR_SALE, ADD_FOR_SALE_PROPERTY, DELETE_FOR_SALE_PROPERTY} from 'APP/app/constants';
+import {
+  RECEIVE_ALL_FOR_SALES,
+  SELECT_SINGLE_FOR_SALE,
+  ADD_FOR_SALE_PROPERTY,
+  DELETE_FOR_SALE_PROPERTY
+} from 'APP/app/constants';
 
 import axios from 'axios';
 
@@ -41,7 +46,7 @@ export const createForSale = function(info) {
   return dispatch => {
     dispatch(addForSaleProperty(info))
     axios.post('/api/forsale', info)
-      .catch(err => console.log("Weren't able to add property", err))
+      .catch(err => console.error("Wasn't able to add property", err))
     }
 }
 
@@ -54,6 +59,6 @@ export const destroyForSaleProperty = function(id) {
   return dispatch => {
     dispatch(deleteForSaleProperty(id))
     axios.delete(`/api/forsale/${id}`)
-      .catch(err => console.log("Wasn't able to delete property.", err))
+      .catch(err => console.error("Wasn't able to delete property.", err))
   }
 }

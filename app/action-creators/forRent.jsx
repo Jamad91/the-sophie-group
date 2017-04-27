@@ -1,4 +1,9 @@
-import {RECEIVE_ALL_FOR_RENTS, SELECT_SINGLE_FOR_RENT, ADD_FOR_RENT_PROPERTY, DELETE_FOR_RENT_PROPERTY} from 'APP/app/constants';
+import {
+  RECEIVE_ALL_FOR_RENTS,
+  SELECT_SINGLE_FOR_RENT,
+  ADD_FOR_RENT_PROPERTY,
+  DELETE_FOR_RENT_PROPERTY
+} from 'APP/app/constants';
 
 import axios from 'axios';
 
@@ -41,7 +46,7 @@ export const createForRent = function(info) {
   return dispatch => {
     dispatch(addForRentProperty(info))
     axios.post('/api/forrent', info)
-      .catch(err => console.log("Wasn't able to add property", err))
+      .catch(err => console.error("Wasn't able to add property", err))
     }
 }
 
@@ -54,6 +59,6 @@ export const destroyForRentProperty = function(id) {
   return dispatch => {
     dispatch(deleteForRentProperty(id))
     axios.delete(`/api/forrent/${id}`)
-      .catch(err => console.log("Wasn't able to delete property.", err))
+      .catch(err => console.error("Wasn't able to delete property.", err))
   }
 }
