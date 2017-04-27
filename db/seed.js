@@ -17,6 +17,11 @@ const seedForSales = () => db.Promise.map([
   {address1: '60-24 Woodbine St.', address2: "Ridgewood NY 11385", description: 'this is the House 1', bedroomNum: 4, bathroomNum: 2, squareFeet: 400, mainImageUrl: "https://upload.wikimedia.org/wikipedia/en/c/ca/742_Evergreen_Terrace.png", extraImageUrls: "http://img11.deviantart.net/2f29/i/2012/292/d/4/simpson__s_house_cutaway_second_floor_by_ajdelong-d5ib3qa.jpg, https://s-media-cache-ak0.pinimg.com/originals/09/8a/15/098a15e3b90c6e2b63bc1941f64f63d2.jpg", sold: false}
 ], forSale => db.model('forSale').create(forSale))
 
+const seedBlogPosts = () => db.Promise.map([
+  {title: 'test 1', content: 'first blog post'},
+  {title: 'test 2', content: 'second blog post'},
+], blog => db.model('blog').create(blog))
+
 db.didSync
   .then(() => db.sync({force: true}))
   .then(seedUsers)
@@ -25,5 +30,7 @@ db.didSync
   .then(forSales => console.log(`Seeded ${forSales.length} forSales OK`))
   .then(seedForRents)
   .then(forRents => console.log(`Seeded ${forRents.length} forRents OK`))
+  .then(seedBlogPosts)
+  .then(blogPosts => console.log(`Seeded ${blogPosts.length} blog posts OK`))
   .catch(error => console.error(error))
   .finally(() => db.close())
