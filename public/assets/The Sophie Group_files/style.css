@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("./assets/crimson_wallpaper.png");
+  text-align: center;
+}
+
+body, html {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.flexbox-container{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+div.jumbotron {
+  margin-top: 1%;
+  background-color: #e5e0eb
+}
+
+.notFound {
+  text-align: left;
+}
+
+/*NAVBAR*/
+
+#navbar {
+  background-color: black;
+  padding-bottom: 75px;
+  font-family: "Libre Baskerville", serif;
+}
+
+#company {
+  float: left;
+  display: inline;
+  margin-left: 3%;
+  margin-top: 0.5%;
+}
+
+#navlinks {
+  display: inline;
+  float: right;
+  margin-right: 5%;
+  margin-top: 42.5px;
+}
+
+#navbar h1 {
+  color: #f5c800;
+  display: inline;
+  float: left;
+}
+
+#link {
+  display: inline;
+  font-size: 120%;
+  padding: 10px;
+}
+
+#link p {
+  display: inline;
+  color: #f5c800;
+}
+
+/*HOME PAGE*/
+
+#title {
+  margin-top: 2%;
+  color: #f4c800;
+  font-family: "Libre Baskerville", serif;
+}
+
+#main_img {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+#main_img img {
+  opacity: 0.95;
+}
+
+#main_img h1 {
+  position: absolute;
+  top: -1%;
+  width: 100%;
+  color: black;
+  font-family: "Libre Baskerville", serif;
+  font-size: 350%;
+}
+
+#picText {
+  padding: 50%;
+  border: solid black 5px;
+}
+
+/*PROPERTY LISTINGS*/
+
+.propertyEntry {
+  display: inline-block;
+  max-height: 30%;
+  max-width: 30.75%;
+  border: solid black 2px;
+  margin: 1.25%;
+  float: left;
+  font-family: "Libre Baskerville", serif;
+}
+
+.propertyEntry img {
+  height: 240px;
+  width: 100%;
+}
+
+.delete button{
+  width: 28px;
+  height: 28px;
+  position: absolute;
+}
+
+.listings {
+  display: block;
+}
+
+.addpropertyform {
+  margin-top: 2%;
+  justify-content: center;
+  align-items: center;
+  border: solid black 2px;
+}
+
+/*INDIVIDUAL PROPERTY*/
+#property {
+  display: inline;
+  float: left;
+}
+
+#property-info {
+  display: inline;
+  max-height: 55%;
+  max-width: 55%;
+  float: left;
+  margin-right: -5%;
+}
+
+#address {
+  float: left;
+  display: block;
+  font-family: "Libre Baskerville", serif;
+}
+
+#property-info img {
+  border: solid black 2px;
+}
+
+#property-description {
+  float: left;
+  font-family: "Libre Baskerville", serif;
+}
+
+#property-description p {
+  margin-top: 10%;
+  font-size: 125%;
+}
+
+#property-contact {
+  display: inline;
+  float: right;
+  position: relative;
+}
+
+#property-contact h3 {
+  margin-top: -8%;
+  font-family: "Libre Baskerville", serif;
+  font-size: 150%;
+}
+
+.jumbotron.contact {
+  margin-top: -5%;
+  margin-left: 5%;
+  margin-right: 2%;
+}
+
+#specs {
+  font-size: 150%;
+  float: left;
+  padding-right: 5%;
+  padding-left: 2%;
+  text-align: left;
+}
+
+.row {
+  margin-right: -25%;
+}
+
+/*CONTACT*/
+.contacts {
+  display: inline-flex;
+}
+
+.contactImage {
+  display: inline-block;
+  max-height: 40%;
+  max-width: 40%;
+  padding-bottom: 5%;
+}
+
+#chanoPic {
+  border: solid black 4px;
+  border-radius: 50%;
+  display: inline;
+}
+
+#kelleyPic {
+  border: solid black 4px;
+  border-radius: 50%;
+  display: inline;
+}
+
+.contactContent {
+  margin-top: 10%;
+  font-family: "Libre Baskerville", serif;
+}

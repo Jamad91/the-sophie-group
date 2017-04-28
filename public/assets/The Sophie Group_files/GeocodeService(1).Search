@@ -1,0 +1,70 @@
+/**/_xdc_._z1t6t4 && _xdc_._z1t6t4( {
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "60-24",
+               "short_name" : "60-24",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Woodbine Street",
+               "short_name" : "Woodbine St",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Flushing",
+               "short_name" : "Flushing",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Queens",
+               "short_name" : "Queens",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Queens County",
+               "short_name" : "Queens County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "New York",
+               "short_name" : "NY",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "11385",
+               "short_name" : "11385",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "60-24 Woodbine St, Flushing, NY 11385, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.707,
+               "lng" : -73.899636
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.7083489802915,
+                  "lng" : -73.8982870197085
+               },
+               "southwest" : {
+                  "lat" : 40.7056510197085,
+                  "lng" : -73.90098498029151
+               }
+            }
+         },
+         "place_id" : "ChIJ45iOO4NewokRdFcfQ0d24lc",
+         "types" : [ "street_address" ]
+      }
+   ],
+   "status" : "OK"
+}
+ )

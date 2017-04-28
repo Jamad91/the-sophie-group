@@ -103,6 +103,8 @@ class SingleForSale extends Component {
 }
 
 const mapStateToProps = function(state) {
+  console.log('state', state);
+
   return {
     forSale: state.forSalesReducer.selectedForSale
   }
