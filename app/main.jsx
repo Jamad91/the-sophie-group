@@ -32,6 +32,7 @@ import AllBlogPosts from './components/Blog/AllBlogPosts';
 // ACTIONS
 import { fetchAllForRents, fetchSingleForRent } from './action-creators/forRent';
 import { fetchAllForSales, fetchSingleForSale } from './action-creators/forSale';
+import { fetchAllBlogPosts, fetchSingleBlogPost } from './action-creators/blog';
 
 
 const ExampleApp = connect(
@@ -68,6 +69,11 @@ const onForSaleEnter = function(nextRouterState) {
   store.dispatch(thunk)
 }
 
+const onBlogPostsEnter = function() {
+  const thunk = fetchAllBlogPosts();
+  store.dispatch(thunk);
+}
+
 render (
   <Provider store={store}>
     <div>
@@ -81,7 +87,7 @@ render (
           <Route path="sold" component={AllSold} onEnter={onForSalesEnter} />
           <Route path="rent" component={AllForRents} onEnter={onForRentsEnter} />
           <Route path="rent/:id" component={SingleForRent} onEnter={onForRentEnter} />
-          <Route path="blog" component={AllBlogPosts} />
+          <Route path="blog" component={AllBlogPosts} onEnter={onBlogPostsEnter}/>
           <Route path="contact" component={Contact} />
           <Route path="login" component={ExampleApp} />
           <Route path='*' component={NotFound} />

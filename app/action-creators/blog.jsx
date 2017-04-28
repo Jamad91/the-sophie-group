@@ -59,6 +59,6 @@ export const destroyBlogPost = function(id) {
   return dispatch => {
     dispatch(deleteBlogPost(id))
     axios.delete(`/api/blog/${id}`)
-      .catch(err => console.error("Wasn't able to delete blog post", err);)
+      .catch(err => console.error("Wasn't able to delete blog post", err))
   }
 }
