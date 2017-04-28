@@ -14,4 +14,4 @@ const Blog = db.define('blog', {
   }
 })
 
-module.exports = ForRent;
+module.exports = Blog;

@@ -8,7 +8,8 @@ const User = require('./user')
 const OAuth = require('./oauth')
 const ForSale = require('./forSale')
 const ForRent = require('./forRent')
+const Blog = require('./blog')
 
 OAuth.belongsTo(User)
 User.hasOne(OAuth)
-module.exports = {User, ForSale, ForRent}
+module.exports = {User, ForSale, ForRent, Blog}
