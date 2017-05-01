@@ -39,7 +39,7 @@ class ForSaleForm extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
 
-    this.props.createForRent(this.state);
+    this.props.createForSale(this.state);
     this.setState({
       address1: "",
       address2: "",

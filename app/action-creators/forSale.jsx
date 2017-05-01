@@ -62,3 +62,17 @@ export const destroyForSaleProperty = function(id) {
       .catch(err => console.error("Wasn't able to delete property.", err))
   }
 }
+
+const editForSaleProperty = (forSaleId, forSaleInfo) => ({
+  type: UPDATE_FOR_SALE_PROPERTY,
+  forSaleId,
+  forSaleInfo
+})
+
+export const updateForSale = function(id, info) {
+  return dispatch => {
+    dispatch(editForSaleProperty(id, info))
+    axios.put(`api/forsale/${id}`)
+      .catch(err => console.error("Wasn't albe to update property.", err))
+  }
+}

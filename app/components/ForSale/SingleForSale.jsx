@@ -3,12 +3,15 @@ import {connect} from 'react-redux';
 import { fetchSingleForSale } from '../../action-creators/forSale';
 import ImageSlider from '../ImageSlider'
 import GMap from '../Map';
+import UpdateForSale from './UpdateForSale';
+import { Link } from 'react-router';
 
 
 class SingleForSale extends Component {
 
   render() {
     const property = this.props.forSale;
+    const user = this.props.user
     let images;
     property.extraImageUrls ? images = property.extraImageUrls.split(', ') : images = [];
     images.unshift(property.mainImageUrl)
@@ -67,6 +70,12 @@ class SingleForSale extends Component {
                   </div>
                 </div>
               </div>
+              <div>
+                {user
+                  ? <button><Link href={`/buy/${property.id}/update`}>UPDATE</Link></button>
+                  : null
+                }
+              </div>
               <div id="property-description"><p>{property.description}</p></div>
             </div>
             <div id="property-contact">
@@ -106,7 +115,8 @@ const mapStateToProps = function(state) {
   console.log('state', state);
 
   return {
-    forSale: state.forSalesReducer.selectedForSale
+    forSale: state.forSalesReducer.selectedForSale,
+    user: state.auth
   }
 }
 

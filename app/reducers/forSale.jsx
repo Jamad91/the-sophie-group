@@ -2,7 +2,8 @@ import {
   RECEIVE_ALL_FOR_SALES,
   SELECT_SINGLE_FOR_SALE,
   ADD_FOR_SALE_PROPERTY,
-  DELETE_FOR_SALE_PROPERTY
+  DELETE_FOR_SALE_PROPERTY,
+  UPDATE_FOR_SALE_PROPERTY
 } from 'APP/app/constants';
 
 const DEFAULT_STATE = {
@@ -31,6 +32,9 @@ function forSalesReducer (state = DEFAULT_STATE, action) {
       })
       newState.allForSales = d2
       return newState
+      break;
+    case UPDATE_FOR_SALE_PROPERTY:
+      newState.selectForSale = action.forSale;
       break;
     default:
       return state;
