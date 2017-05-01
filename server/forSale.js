@@ -32,4 +32,11 @@ router.delete('/:id', (req, res, next) => {
   .catch(next)
 })
 
+router.put(':/id', (req, res, next) => {
+  ForSale.findById(req.params.id)
+  .then(forSale => forSale.update(req.body))
+  .then(res.status(201).send('Property updated!'))
+  .catch(next)
+})
+
 module.exports = router;

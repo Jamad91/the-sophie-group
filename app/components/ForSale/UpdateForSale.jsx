@@ -39,8 +39,6 @@ class UpdateForSaleForm extends Component {
     newState[evt.target.extraImageUrls] = evt.target.value
     newState[evt.target.sold] = evt.target.value
 
-    console.log('sold',this.state.sold);
-    console.log('PROPS',this.props);
     this.setState(newState)
   }
 
@@ -48,9 +46,36 @@ class UpdateForSaleForm extends Component {
     evt.preventDefault();
     let property = this.props.forSale
 
+    if(!this.state.address1) {
+      this.state.address1 = property.address1
+    }
+    if(!this.state.address2) {
+      this.state.address2 = property.address2
+    }
+    if(!this.state.bathroomNum) {
+      this.state.bathroomNum = property.bathroomNum
+    }
+    if(!this.state.bedroomNum) {
+      this.state.bedroomNum = property.bedroomNum
+    }
+    if(!this.state.squareFeet) {
+      this.state.squareFeet = property.squareFeet
+    }
+    if(!this.state.description) {
+      this.state.description = property.description
+    }
+    if(!this.state.mainImageUrl) {
+      this.state.mainImageUrl = property.mainImageUrl
+    }
+    if(!this.state.extraImageUrls) {
+      this.state.extraImageUrls = property.extraImageUrls
+    }
+
+    console.log('STATE',this.state);
+    console.log('PROPS',this.props.forSale);
 
 
-    this.props.updateForSale(this.props.forSale.id, );
+    this.props.updateForSale(this.props.forSale.id, this.state);
     this.setState({
       address1: "",
       address2: "",
@@ -132,11 +157,7 @@ function mapStateToProps (state) {
   return (
     {
       forSale: state.forSalesReducer.selectedForSale,
-      user: state.auth,
-      address1: state.forSalesReducer.selectedForSale.address1,
-      address2: state.forSalesReducer.selectedForSale.address2,
-      description: state.forSalesReducer.selectedForSale.description,
-      images: state.forSalesReducer.selectedForSale.images
+      user: state.auth
     }
   )
 }

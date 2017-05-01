@@ -71,9 +71,10 @@ const editForSaleProperty = (forSaleId, forSaleInfo) => ({
 })
 
 export const updateForSale = function(id, info) {
+  // console.log('maybe', info);
   return dispatch => {
     dispatch(editForSaleProperty(id, info))
-    axios.put(`api/forsale/${id}`)
-      .catch(err => console.error("Wasn't albe to update property.", err))
+    axios.put(`/api/forsale/${id}`, info)
+      .catch(err => console.error("Wasn't able to update property.", err))
   }
 }
