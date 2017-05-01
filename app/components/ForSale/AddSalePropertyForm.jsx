@@ -104,10 +104,4 @@ class ForSaleForm extends Component {
   }
 }
 
-function mapStateToProps (forSale, utils) {
-  return (
-    {forSale, address1: utils.address1, address2: utils.address2, description: utils.description, images: utils.images}
-  )
-}
-
-export default connect(mapStateToProps, {createForSale})(ForSaleForm);
+export default connect(() => {return {}}, {createForSale})(ForSaleForm);

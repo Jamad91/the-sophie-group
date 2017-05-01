@@ -11,7 +11,7 @@ class SingleForSale extends Component {
 
   render() {
     const property = this.props.forSale;
-    const user = this.props.user
+    const user = this.props.user;
     let images;
     property.extraImageUrls ? images = property.extraImageUrls.split(', ') : images = [];
     images.unshift(property.mainImageUrl)

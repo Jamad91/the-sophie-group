@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import {fetchSingleForSale} from '../../action-creators/forSale'
-import { fetchSingleForSale, updateForSale } from 'APP/app/action-creators/forSale'
+import { updateForSale } from 'APP/app/action-creators/forSale'
 import NotFound from '../NotFound'
 
 class UpdateForSaleForm extends Component {
@@ -9,17 +8,17 @@ class UpdateForSaleForm extends Component {
   constructor(props) {
     super(props);
     let property = this.props.forSale
-    console.log('props', property);
+    // console.log('propserty', property);
     this.state = {
-      address1: property.address1,
-      address2: property.address2,
-      description: property.description,
-      bedroomNum: property.bedroomNum,
-      bathroomNum: property.bathroomNum,
-      squareFeet: property.squareFeet,
-      mainImageUrl: property.mainImageUrl,
-      extraImageUrls: property.extraImageUrls,
-      sold: property.sold
+      address1: "",
+      address2: "",
+      description: "",
+      bedroomNum: 0,
+      bathroomNum: 0,
+      squareFeet: 0,
+      mainImageUrl: "",
+      extraImageUrls: "",
+      sold: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +26,7 @@ class UpdateForSaleForm extends Component {
 
   handleChange(evt) {
     let newState = {}
-
+    // console.log('so so sos', this.props);
 
     newState[evt.target.name] = evt.target.value
     newState[evt.target.address1] = evt.target.value
@@ -38,24 +37,30 @@ class UpdateForSaleForm extends Component {
     newState[evt.target.squareFeet] = evt.target.value
     newState[evt.target.mainImageUrl] = evt.target.value
     newState[evt.target.extraImageUrls] = evt.target.value
+    newState[evt.target.sold] = evt.target.value
 
+    console.log('sold',this.state.sold);
+    console.log('PROPS',this.props);
     this.setState(newState)
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
+    let property = this.props.forSale
 
-    this.props.updateForSale(this.state);
+
+
+    this.props.updateForSale(this.props.forSale.id, );
     this.setState({
-      address1: property.address1,
-      address2: property.address2,
-      description: property.description,
-      bedroomNum: property.bedroomNum,
-      bathroomNum: property.bathroomNum,
-      squareFeet: property.squareFeet,
-      mainImageUrl: property.mainImageUrl,
-      extraImageUrls: property.extraImageUrls,
-      sold: property.sold
+      address1: "",
+      address2: "",
+      description: "",
+      bedroomNum: 0,
+      bathroomNum: 0,
+      squareFeet: 0,
+      mainImageUrl: "",
+      extraImageUrls: "",
+      sold: false
     })
     console.log('SUBMITTED!');
   }
@@ -63,7 +68,8 @@ class UpdateForSaleForm extends Component {
 
   render() {
     let property = this.props.forSale
-    console.log('here here',property);
+    // console.log('property', property);
+    // console.log('here here',this.props);
     if (!this.props.user) {return (<NotFound />)}
     return(
       <div className="container flexbox-container">
@@ -105,6 +111,13 @@ class UpdateForSaleForm extends Component {
                 <input type="text" name="extraImageUrls" value={this.state.extraImageUrls} onChange={this.handleChange} />
               </div>
               <div className="form-input">
+                <span>Sold</span><br />
+                <select name="sold"  onChange={this.handleChange}>
+                  <option value={false}>No</option>
+                  <option value={true}>Yes</option>
+                </select>
+              </div>
+              <div className="form-input">
                 <input type="submit" value="submit" />
               </div>
             </form>
@@ -115,63 +128,26 @@ class UpdateForSaleForm extends Component {
   }
 }
 
-function mapStateToProps (state, utils) {
-  console.log('STATE', state);
+function mapStateToProps (state) {
   return (
     {
       forSale: state.forSalesReducer.selectedForSale,
       user: state.auth,
-      address1: utils.address1,
-      address2: utils.address2,
-      description: utils.description,
-      images: utils.images}
+      address1: state.forSalesReducer.selectedForSale.address1,
+      address2: state.forSalesReducer.selectedForSale.address2,
+      description: state.forSalesReducer.selectedForSale.description,
+      images: state.forSalesReducer.selectedForSale.images
+    }
   )
 }
 
 const mapDispatchToProps = function(dispatch, ownProps) {
   return {
-    onLoadSingleForSale: function() {
-      const forSaleId = ownProps.param.forSaleId;
-      const thunk = fetchSingleForSale(forSaleId);
-      dispatch(thunk)
-    },
-    updateForSale
+    updateForSale: (propertyId, propertyInfo) => {
+      dispatch(updateForSale(propertyId, propertyInfo))
+    }
   }
 }
 
 
-export default connect(mapStateToProps, {mapDispatchToProps})(UpdateForSaleForm);
-
-
-
-// <div className="container flexbox-container">
-//   <div className="jumbotron">
-//     <h1>UPDATE PROPERTY</h1>
-//     <span>Address Line 1: {property.address1}</span><button>Edit</button><br />
-//     <span>Address Line 2: {property.address2}</span><button>Edit</button><br />
-//     <span>Bathroom Number: {property.bathroomNum}</span><button>Edit</button><br />
-//     <span>Bedroom Number: {property.bedroomNum}</span><button>Edit</button><br />
-//     <span>Square Feet: {property.squareFeet}</span><button>Edit</button><br />
-//     <span>Main Image URL: {property.mainImageUrl}</span><button>Edit</button><br />
-//     <span>Other Image URLs: {property.extraImageUrls}<button>Edit</button></span><br />
-//     <span>Sold: {!property.sold ? "No" : "Yes"}<button>Edit</button></span>
-//   </div>
-// </div>
-// const mapStateToProps = function(state) {
-//   return {
-//     forSale: state.forSalesReducer.selectedForSale,
-//     user: state.auth
-//   }
-// }
-//
-// const mapDispatchToProps = function(dispatch, ownProps) {
-//   return {
-//     onLoadSingleForSale: function() {
-//       const forSaleId = ownProps.param.forSaleId;
-//       const thunk = fetchSingleForSale(forSaleId);
-//       dispatch(thunk)
-//     }
-//   }
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(UpdateForSale);
+export default connect(mapStateToProps, mapDispatchToProps)(UpdateForSaleForm);

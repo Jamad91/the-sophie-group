@@ -6,7 +6,7 @@ const NotFound = props => {
   return (
     <div className="container flexbox-container">
       <div className="jumbotron">
-        <img src="./assets/frown_face.png"></img><h1>Whoops!</h1>
+        <h1>Whoops!</h1>
         <h3>I couldn't find the page at route "{pathname}"</h3>
         <h3>Check your url and try again!</h3>
       </div>

@@ -18,6 +18,7 @@ class AllForSale extends Component {
 
 
   render () {
+    console.log('props', this.props);
     const properties = this.props.forSales;
     const user = this.props.user;
     return (
