@@ -2,7 +2,8 @@ import {
   RECEIVE_ALL_FOR_RENTS,
   SELECT_SINGLE_FOR_RENT,
   ADD_FOR_RENT_PROPERTY,
-  DELETE_FOR_RENT_PROPERTY
+  DELETE_FOR_RENT_PROPERTY,
+  UPDATE_FOR_RENT_PROPERTY
 } from 'APP/app/constants';
 
 import axios from 'axios';
@@ -60,5 +61,20 @@ export const destroyForRentProperty = function(id) {
     dispatch(deleteForRentProperty(id))
     axios.delete(`/api/forrent/${id}`)
       .catch(err => console.error("Wasn't able to delete property.", err))
+  }
+}
+
+const editForRentProperty = (forRentId, forRentInfo) => ({
+  type: UPDATE_FOR_RENT_PROPERTY,
+  forRentId,
+  forRentInfo
+})
+
+export const updateForRent = function(id, info) {
+  return dispatch => {
+    dispatch(editForRentProperty(id, info))
+    axios.put(`/api/forRent/${id}`, info)
+      .then(res => res.data)
+      .catch(err => console.error("Wasn't able to update property", err))
   }
 }

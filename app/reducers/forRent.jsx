@@ -2,7 +2,8 @@ import {
   RECEIVE_ALL_FOR_RENTS,
   SELECT_SINGLE_FOR_RENT,
   ADD_FOR_RENT_PROPERTY,
-  DELETE_FOR_RENT_PROPERTY
+  DELETE_FOR_RENT_PROPERTY,
+  UPDATE_FOR_RENT_PROPERTY
 } from 'APP/app/constants';
 
 const DEFAULT_STATE = {
@@ -31,6 +32,9 @@ function forRentsReducer (state = DEFAULT_STATE, action) {
       })
       newState.allForRents = d2
       return newState
+      break;
+    case UPDATE_FOR_RENT_PROPERTY:
+      newState.selectedForRent = action.forRentInfo
       break;
     default:
       return state
