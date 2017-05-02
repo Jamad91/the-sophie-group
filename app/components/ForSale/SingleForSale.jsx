@@ -4,7 +4,6 @@ import { fetchSingleForSale } from '../../action-creators/forSale';
 import ImageSlider from '../ImageSlider'
 import GMap from '../Map';
 import UpdateForSale from './UpdateForSale';
-import { Link } from 'react-router';
 
 
 class SingleForSale extends Component {
@@ -70,7 +69,7 @@ class SingleForSale extends Component {
                   </div>
                 </div>
               </div>
-              <UpdateForSale />
+              {user ? <UpdateForSale /> : null}
               <div id="property-description"><p>{property.description}</p></div>
             </div>
             <div id="property-contact">
@@ -107,8 +106,6 @@ class SingleForSale extends Component {
 }
 
 const mapStateToProps = function(state) {
-  console.log('state', state);
-
   return {
     forSale: state.forSalesReducer.selectedForSale,
     user: state.auth

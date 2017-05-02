@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleForRent } from '../../action-creators/forRent';
-import ImageSlider from '../ImageSlider'
-import GMap from '../Map'
+import ImageSlider from '../ImageSlider';
+import GMap from '../Map';
+import UpdateForRent from './UpdateForRent';
 
 class SingleForRent extends Component {
 
   render() {
     const property = this.props.forRent;
+    const user = this.props.user;
     let images;
     property.extraImageUrls ? images = property.extraImageUrls.split(', ') : images = [];
     images.unshift(property.mainImageUrl)
@@ -67,6 +69,7 @@ class SingleForRent extends Component {
                   </div>
                 </div>
                 <div id="property-description"><p>{property.description}</p></div>
+                {user ? <UpdateForRent /> : null}
               </div>
               <div id="property-contact">
                 <h3>Contact us about this property</h3>
@@ -103,7 +106,8 @@ class SingleForRent extends Component {
 
 const mapStateToProps = function(state) {
   return {
-    forRent: state.forRentsReducer.selectedForRent
+    forRent: state.forRentsReducer.selectedForRent,
+    user: state.auth
   }
 }
 

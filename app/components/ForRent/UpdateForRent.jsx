@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateForSale } from 'APP/app/action-creators/forSale'
+import { updateForRent } from 'APP/app/action-creators/forRent'
 
-class UpdateForSaleForm extends Component {
+class UpdateForRentForm extends Component {
 
   constructor(props) {
     super(props);
-    let property = this.props.forSale
+    let property = this.props.forRent
     this.state = {
       address1: "",
       address2: "",
@@ -15,8 +15,7 @@ class UpdateForSaleForm extends Component {
       bathroomNum: 0,
       squareFeet: 0,
       mainImageUrl: "",
-      extraImageUrls: "",
-      sold: false
+      extraImageUrls: ""
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,14 +33,13 @@ class UpdateForSaleForm extends Component {
     newState[evt.target.squareFeet] = evt.target.value
     newState[evt.target.mainImageUrl] = evt.target.value
     newState[evt.target.extraImageUrls] = evt.target.value
-    newState[evt.target.sold] = evt.target.value
 
     this.setState(newState)
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
-    let property = this.props.forSale
+    let property = this.props.forRent
 
     if(!this.state.address1) {
       this.state.address1 = property.address1
@@ -68,7 +66,7 @@ class UpdateForSaleForm extends Component {
       this.state.extraImageUrls = property.extraImageUrls
     }
 
-    this.props.updateForSale(this.props.forSale.id, this.state);
+    this.props.updateForRent(this.props.forRent.id, this.state);
     this.setState({
       address1: "",
       address2: "",
@@ -77,15 +75,14 @@ class UpdateForSaleForm extends Component {
       bathroomNum: 0,
       squareFeet: 0,
       mainImageUrl: "",
-      extraImageUrls: "",
-      sold: false
+      extraImageUrls: ""
     })
     console.log('SUBMITTED!');
   }
 
 
   render() {
-    let property = this.props.forSale
+    let property = this.props.forRent
     return (
       <div className="container flexbox-container">
         <div className="jumbotron">
@@ -126,13 +123,6 @@ class UpdateForSaleForm extends Component {
                 <input type="text" name="extraImageUrls" value={this.state.extraImageUrls} onChange={this.handleChange} />
               </div>
               <div className="form-input">
-                <span>Sold</span><br />
-                <select name="sold"  onChange={this.handleChange}>
-                  <option value={false}>No</option>
-                  <option value={true}>Yes</option>
-                </select>
-              </div>
-              <div className="form-input">
                 <input type="submit" value="submit" />
               </div>
             </form>
@@ -146,18 +136,18 @@ class UpdateForSaleForm extends Component {
 function mapStateToProps (state) {
   return (
     {
-      forSale: state.forSalesReducer.selectedForSale
+      forRent: state.forRentsReducer.selectedForRent
     }
   )
 }
 
 const mapDispatchToProps = function(dispatch, ownProps) {
   return {
-    updateForSale: (propertyId, propertyInfo) => {
-      dispatch(updateForSale(propertyId, propertyInfo))
+    updateForRent: (propertyId, propertyInfo) => {
+      dispatch(updateForRent(propertyId, propertyInfo))
     }
   }
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(UpdateForSaleForm);
+export default connect(mapStateToProps, mapDispatchToProps)(UpdateForRentForm);
