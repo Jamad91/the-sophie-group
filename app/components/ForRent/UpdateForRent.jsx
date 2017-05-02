@@ -91,36 +91,36 @@ class UpdateForRentForm extends Component {
               <h3>UPDATE A PROPERTY</h3>
               <div className="form-input">
                 <span>Address Line 1</span><br />
-                <input type="text" name="address1" value={this.state.address1} onChange={this.handleChange} />
+                <textarea rows="2" cols="50" name="address1" value={this.state.address1} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Address Line 2</span><br />
-                <input type="text" name="address2" value={this.state.address2} onChange={this.handleChange} />
+                <textarea rows="1" cols="50" name="address2" value={this.state.address2} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Number of bathrooms</span><br />
-                <input type="integer" name="bathroomNum" value={this.state.bathroomNum} onChange={this.handleChange} />
+                <textarea rows="1" cols="50" name="bathroomNum" value={this.state.bathroomNum} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Number of bedrooms</span><br />
-                <input type="integer" name="bedroomNum" value={this.state.bedroomNum} onChange={this.handleChange} />
+                <textarea rows="1" cols="50" name="bedroomNum" value={this.state.bedroomNum} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Square Footage</span><br />
-                <input type="integer" name="squareFeet" value={this.state.squareFeet} onChange={this.handleChange} />
+                <textarea rows="1" cols="50" name="squareFeet" value={this.state.squareFeet} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Description</span><br />
-                <input type="text" name="description" value={this.state.description} onChange={this.handleChange} />
+                <textarea rows="5" cols="50" name="description" value={this.state.description} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Main Image Url</span><br />
-                <input type="text" name="mainImageUrl" value={this.state.mainImageUrl} onChange={this.handleChange} />
+                <textarea rows="2" cols="50" name="mainImageUrl" value={this.state.mainImageUrl} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Other Image Urls</span><br />
                 <span>(seperated with a comma and space)</span><br />
-                <input type="text" name="extraImageUrls" value={this.state.extraImageUrls} onChange={this.handleChange} />
+                <textarea rows="4" cols="50" name="extraImageUrls" onChange={this.handleChange}></textarea>
               </div>
               <div className="form-input">
                 <input type="submit" value="submit" />

@@ -4,6 +4,7 @@ import { fetchSingleForRent } from '../../action-creators/forRent';
 import ImageSlider from '../ImageSlider';
 import GMap from '../Map';
 import UpdateForRent from './UpdateForRent';
+import NotFound from '../NotFound'
 
 class SingleForRent extends Component {
 
@@ -22,7 +23,6 @@ class SingleForRent extends Component {
     }
 
     const fullAddress = `${property.address1} ${property.address2}`
-
     return (
       <div>
         <h1 id="title">For Sale</h1>
