@@ -75,6 +75,6 @@ export const updateForRent = function(id, info) {
     dispatch(editForRentProperty(id, info))
     axios.put(`/api/forRent/${id}`, info)
       .then(res => res.data)
-      .catch(err => console.error("Wasn't able to update property", err))
+      .catch(err => console.error("Wasn't able to update property.", err))
   }
 }

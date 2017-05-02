@@ -17,6 +17,13 @@ router.get('/:id', (req, res, next) => {
   .catch(next)
 })
 
+router.put('/:id', (req, res, next) => {
+  ForRent.findById(req.params.id)
+  .then(forRent => forRent.update(req.body))
+  .then(updated => res.status(201).json(updated))
+  .catch(next)
+})
+
 router.post('/', (req, res, next) => {
   ForRent.create(req.body)
   .then(forRent => res.status(201).json(forRent))
