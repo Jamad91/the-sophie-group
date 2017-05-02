@@ -70,12 +70,7 @@ class SingleForSale extends Component {
                   </div>
                 </div>
               </div>
-              <div>
-                {user
-                  ? <button><Link href={`/buy/${property.id}/update`}>UPDATE</Link></button>
-                  : null
-                }
-              </div>
+              <UpdateForSale />
               <div id="property-description"><p>{property.description}</p></div>
             </div>
             <div id="property-contact">

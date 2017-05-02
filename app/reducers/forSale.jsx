@@ -34,14 +34,11 @@ function forSalesReducer (state = DEFAULT_STATE, action) {
       return newState
       break;
     case UPDATE_FOR_SALE_PROPERTY:
-      // console.log('new new york', newState.selectedForSale);
-      // console.log('old old york', action);
       newState.selectedForSale = action.forSaleInfo
       break;
     default:
       return state;
   }
-  console.log('new jack',newState.selectedForSale);
   return newState
 };
 

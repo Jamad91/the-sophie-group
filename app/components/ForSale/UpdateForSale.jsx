@@ -95,7 +95,7 @@ class UpdateForSaleForm extends Component {
     let property = this.props.forSale
     // console.log('property', property);
     // console.log('here here',this.props);
-    if (!this.props.user) {return (<NotFound />)}
+    // if (!this.props.user) {return (<NotFound />)}
     return(
       <div className="container flexbox-container">
         <div className="jumbotron">

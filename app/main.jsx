@@ -19,7 +19,7 @@ import Contact from './components/Contact';
 import AllForSales from './components/ForSale/AllForSales';
 import SingleForSale from './components/ForSale/SingleForSale';
 import AddSalePropertyForm from './components/ForSale/AddSalePropertyForm';
-import UpdateForSale from './components/ForSale/UpdateForSale';
+// import UpdateForSale from './components/ForSale/UpdateForSale';
 import AllSold from './components/ForSale/AllSold';
 
 // FOR RENT COMPONENTS
@@ -74,6 +74,7 @@ const onBlogPostsEnter = function() {
   const thunk = fetchAllBlogPosts();
   store.dispatch(thunk);
 }
+// <Route path="buy/:id/update" component={UpdateForSale} onEnter={onForSaleEnter}/>
 
 render (
   <Provider store={store}>
@@ -85,7 +86,6 @@ render (
           <Route path="home" component={Home} />
           <Route path="buy" component={AllForSales} onEnter={onForSalesEnter} />
           <Route path="buy/:id" component={SingleForSale} onEnter={onForSaleEnter} />
-          <Route path="buy/:id/update" component={UpdateForSale} onEnter={onForSaleEnter}/>
           <Route path="sold" component={AllSold} onEnter={onForSalesEnter} />
           <Route path="rent" component={AllForRents} onEnter={onForRentsEnter} />
           <Route path="rent/:id" component={SingleForRent} onEnter={onForRentEnter} />
