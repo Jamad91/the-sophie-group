@@ -24,13 +24,16 @@ img {
   align-items: center;
 }
 
-div.jumbotron {
+.jumbotron {
   margin-top: 1%;
   background-color: #e5e0eb
 }
 
-.notFound {
-  text-align: left;
+.frown-face {
+  background-image: url('./assets/frown_face.png');
+  background-repeat: no-repeat;
+  padding-bottom: 85%;
+  margin-left: 10%;
 }
 
 /*NAVBAR*/
@@ -51,6 +54,8 @@ div.jumbotron {
 #navlinks {
   display: inline;
   float: right;
+  margin-left: -50px;
+  align-items: right;
   margin-right: 5%;
   margin-top: 42.5px;
 }

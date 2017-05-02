@@ -4,6 +4,7 @@ import { fetchSingleForSale } from '../../action-creators/forSale';
 import ImageSlider from '../ImageSlider'
 import GMap from '../Map';
 import UpdateForSale from './UpdateForSale';
+import Navbar from '../Navbar';
 
 
 class SingleForSale extends Component {
@@ -25,7 +26,9 @@ class SingleForSale extends Component {
     const fullAddress = `${property.address1} ${property.address2}`
 
     return (
-      <div className="container flexbox-container">
+      <div>
+      <h1 id="title">For Sale</h1>
+      <div className="container flexbox-container float">
         <div className="jumbotron">
           <div id="address">
             <h2>{property.address1}</h2>
@@ -69,8 +72,8 @@ class SingleForSale extends Component {
                   </div>
                 </div>
               </div>
-              {user ? <UpdateForSale /> : null}
               <div id="property-description"><p>{property.description}</p></div>
+              {user ? <UpdateForSale /> : null}
             </div>
             <div id="property-contact">
               <h3>Contact us about this property</h3>
@@ -99,6 +102,7 @@ class SingleForSale extends Component {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>    )
 

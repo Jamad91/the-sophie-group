@@ -74,7 +74,6 @@ const onBlogPostsEnter = function() {
   const thunk = fetchAllBlogPosts();
   store.dispatch(thunk);
 }
-// <Route path="buy/:id/update" component={UpdateForSale} onEnter={onForSaleEnter}/>
 
 render (
   <Provider store={store}>

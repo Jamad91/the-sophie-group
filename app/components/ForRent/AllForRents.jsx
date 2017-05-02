@@ -33,6 +33,7 @@ class AllForRent extends Component {
                         <Link href={`/rent/${property.id}`}>
                             <img src={property.mainImageUrl}></img>
                             <h3>{property.address1}</h3>
+                            <h3>{property.address2}</h3>
                         </Link>
                         <div>
                           {user

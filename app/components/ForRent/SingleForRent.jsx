@@ -24,6 +24,8 @@ class SingleForRent extends Component {
     const fullAddress = `${property.address1} ${property.address2}`
 
     return (
+      <div>
+        <h1 id="title">For Sale</h1>
         <div className="container flexbox-container">
           <div className="jumbotron">
             <div id="address">
@@ -98,6 +100,7 @@ class SingleForRent extends Component {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
     )

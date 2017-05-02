@@ -27,7 +27,7 @@ export default class Navbar extends Component {
             </Link>
           </div>
           <div id="link">
-            <Link href={"/blog"}>
+            <Link href={"/news"}>
               <p>News</p>
             </Link>
           </div>

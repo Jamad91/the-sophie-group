@@ -87,8 +87,6 @@ class UpdateForSaleForm extends Component {
   render() {
     let property = this.props.forSale
     return (
-      <div className="container flexbox-container">
-        <div className="jumbotron">
           <div className="col-lg-12 addpropertyform">
             <form onSubmit={ this.handleSubmit }>
               <h3>UPDATE A PROPERTY</h3>
@@ -137,8 +135,6 @@ class UpdateForSaleForm extends Component {
               </div>
             </form>
           </div>
-        </div>
-      </div>
     )
   }
 }
