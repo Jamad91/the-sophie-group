@@ -13,7 +13,8 @@ class ForSaleForm extends Component {
       bathroomNum: 0,
       squareFeet: 0,
       mainImageUrl: "",
-      extraImageUrls: ""
+      extraImageUrls: "",
+      sold: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,6 +33,8 @@ class ForSaleForm extends Component {
     newState[evt.target.squareFeet] = evt.target.value
     newState[evt.target.mainImageUrl] = evt.target.value
     newState[evt.target.extraImageUrls] = evt.target.value
+    newState[evt.target.sold] = evt.target.value
+
 
     this.setState(newState)
   }
@@ -48,7 +51,8 @@ class ForSaleForm extends Component {
       bathroomNum: 0,
       squareFeet: 0,
       mainImageUrl: "",
-      extraImageUrls: ""
+      extraImageUrls: "",
+      sold: false
     })
     console.log('SUBMITTED!');
   }
@@ -60,42 +64,49 @@ class ForSaleForm extends Component {
           <div className="col-lg-12 addpropertyform">
             <form onSubmit={ this.handleSubmit }>
               <h3>ADD A PROPERTY</h3>
-              <div className="form-input">
-                <span>Address Line 1</span><br />
-                <input type="text" name="address1" value={this.state.address1} onChange={this.handleChange} />
-              </div>
-              <div className="form-input">
-                <span>Address Line 2</span><br />
-                <input type="text" name="address2" value={this.state.address2} onChange={this.handleChange} />
-              </div>
-              <div className="form-input">
-                <span>Number of bathrooms</span><br />
-                <input type="integer" name="bathroomNum" value={this.state.bathroomNum} onChange={this.handleChange} />
-              </div>
-              <div className="form-input">
-                <span>Number of bedrooms</span><br />
-                <input type="integer" name="bedroomNum" value={this.state.bedroomNum} onChange={this.handleChange} />
-              </div>
-              <div className="form-input">
-                <span>Square Footage</span><br />
-                <input type="integer" name="squareFeet" value={this.state.squareFeet} onChange={this.handleChange} />
-              </div>
-              <div className="form-input">
-                <span>Description</span><br />
-                <input type="text" name="description" value={this.state.description} onChange={this.handleChange} />
-              </div>
-              <div className="form-input">
-                <span>Main Image Url</span><br />
-                <input type="text" name="mainImageUrl" value={this.state.mainImageUrl} onChange={this.handleChange} />
-              </div>
-              <div className="form-input">
-                <span>Other Image Urls</span><br />
-                <span>(seperated with a comma and space)</span><br />
-                <input type="text" name="extraImageUrls" value={this.state.extraImageUrls} onChange={this.handleChange} />
-              </div>
-              <div className="form-input">
-                <input type="submit" value="submit" />
-              </div>
+                <div className="form-input">
+                  <span>Address Line 1</span><br />
+                  <textarea rows="2" cols="50" name="address1" value={this.state.address1} onChange={this.handleChange} />
+                </div>
+                <div className="form-input">
+                  <span>Address Line 2</span><br />
+                  <textarea rows="1" cols="50" name="address2" value={this.state.address2} onChange={this.handleChange} />
+                </div>
+                <div className="form-input">
+                  <span>Number of bathrooms</span><br />
+                  <textarea rows="1" cols="50" name="bathroomNum" value={this.state.bathroomNum} onChange={this.handleChange} />
+                </div>
+                <div className="form-input">
+                  <span>Number of bedrooms</span><br />
+                  <textarea rows="1" cols="50" name="bedroomNum" value={this.state.bedroomNum} onChange={this.handleChange} />
+                </div>
+                <div className="form-input">
+                  <span>Square Footage</span><br />
+                  <textarea rows="1" cols="50" name="squareFeet" value={this.state.squareFeet} onChange={this.handleChange} />
+                </div>
+                <div className="form-input">
+                  <span>Description</span><br />
+                  <textarea rows="5" cols="50" name="description" value={this.state.description} onChange={this.handleChange} />
+                </div>
+                <div className="form-input">
+                  <span>Main Image Url</span><br />
+                  <textarea rows="2" cols="50" name="mainImageUrl" value={this.state.mainImageUrl} onChange={this.handleChange} />
+                </div>
+                <div className="form-input">
+                  <span>Other Image Urls</span><br />
+                  <span>(seperated with a comma and space)</span><br />
+                  <textarea rows="4" cols="50" name="extraImageUrls" onChange={this.handleChange}></textarea>
+                </div>
+                <div className="form-input">
+                  <span>Sold</span><br />
+                  <select name="sold"  onChange={this.handleChange}>
+                    <option value={false}>No</option>
+                    <option value={true}>Yes</option>
+                  </select>
+                </div>
+                <div className="form-input">
+                  <input type="submit" value="submit" />
+                </div>
             </form>
           </div>
         </div>
