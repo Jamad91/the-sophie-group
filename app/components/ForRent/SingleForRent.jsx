@@ -9,7 +9,25 @@ class SingleForRent extends Component {
 
   render() {
     const property = this.props.forRent;
+    let features = [];
+    if (property.features) {
+      features = property.features.split(', ')
+    }
+
     const user = this.props.user;
+
+    function priceConvert(price) {
+        let rev = String(price).split('')
+        var j = 1;
+        for(var i = rev.length - 1; i >= 0; i--) {
+          if (j % 3 === 0 && i != 0) {
+            rev.splice(i, 0, ',')
+          }
+          j++;
+        }
+        return rev
+    }
+
     let images;
     property.extraImageUrls ? images = property.extraImageUrls.split(', ') : images = [];
     images.unshift(property.mainImageUrl)
@@ -59,6 +77,9 @@ class SingleForRent extends Component {
                   </div>
                   <div id="specs">
                     <div className="row title">
+                      <strong><h2>${priceConvert(property.price)}</h2></strong>
+                    </div>
+                    <div className="row title">
                       <strong><em><h3>Facts</h3></em></strong>
                     </div>
                     <div className="row">
@@ -77,19 +98,22 @@ class SingleForRent extends Component {
                     <div className="row title">
                       <strong><em><h3>Features</h3></em></strong>
                     </div>
-                    <div className="row">
-                      <h4>Bedrooms: {property.bedroomNum}</h4>
-                    </div>
-                    <div className="row">
-                      <h4>Bathrooms: {property.bathroomNum}</h4>
-                    </div>
+                    {
+                      features.map(feature => {
+                        return (
+                          <div className="row" key={feature}>
+                            <h4>{feature}</h4>
+                          </div>
+                        )
+                      })
+                    }
                   </div>
                 </div>
                 <div id="property-description"><p>{property.description}</p></div>
                 {user ? <UpdateForRent /> : null}
               </div>
               <div id="property-contact">
-                <h3>Contact us about this property</h3>
+                <h2>Contact us about this property</h2>
                   <div className="jumbotron contact">
                     <div className="col-md-4 account-left">
                       <form method="POST" action="http://formspree.io/jdicolandrea@gmail.com">

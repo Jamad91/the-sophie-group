@@ -10,6 +10,11 @@ class SingleForSale extends Component {
 
   render() {
     const property = this.props.forSale;
+    let features = [];
+    if (property.features) {
+      features = property.features.split(', ')
+    }
+
     const user = this.props.user;
 
     function priceConvert(price) {
@@ -95,19 +100,22 @@ class SingleForSale extends Component {
                   <div className="row title">
                     <strong><em><h3>Features</h3></em></strong>
                   </div>
-                  <div className="row">
-                    <h4>Bedrooms: {property.bedroomNum}</h4>
-                  </div>
-                  <div className="row">
-                    <h4>Bathrooms: {property.bathroomNum}</h4>
-                  </div>
+                  {
+                    features.map(feature => {
+                      return (
+                        <div className="row" key={feature}>
+                          <h4>{feature}</h4>
+                        </div>
+                      )
+                    })
+                  }
                 </div>
               </div>
               <div id="property-description"><p>{property.description}</p></div>
               {user ? <UpdateForSale /> : null}
             </div>
             <div id="property-contact">
-              <h3>Contact us about this property</h3>
+              <h2>Contact us about this property</h2>
                 <div className="jumbotron contact">
                   <div className="col-md-4 account-left">
                     <form method="POST" action="http://formspree.io/jdicolandrea@gmail.com">
@@ -135,7 +143,6 @@ class SingleForSale extends Component {
           </div>
         </div>
         </div>
-        <hr />
       </div>
     )
   }

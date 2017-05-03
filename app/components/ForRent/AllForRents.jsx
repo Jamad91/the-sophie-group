@@ -20,6 +20,20 @@ class AllForRent extends Component {
   render () {
     const properties = this.props.forRents;
     const user = this.props.user;
+
+    function priceConvert(price) {
+        let rev = String(price).split('')
+        var j = 1;
+        for(var i = rev.length - 1; i >= 0; i--) {
+          if (j % 3 === 0 && i != 0) {
+            rev.splice(i, 0, ',')
+          }
+          j++;
+        }
+        return rev
+    }
+
+
     return (
       <div>
         <h1 id="title">For Rent</h1>
@@ -34,7 +48,7 @@ class AllForRent extends Component {
                           <h3>{property.address1}</h3>
                           <h3>{property.address2}</h3>
                           <img src={property.mainImageUrl}></img>
-                          <h3>${property.price}</h3>
+                          <h3>${priceConvert(property.price)}</h3>
                           <span>Size: {property.squareFeet} ft²</span><br />
                           <span>Bathrooms: {property.bathroomNum}</span><br />
                           <span>Bedrooms: {property.bedroomNum}</span><br />

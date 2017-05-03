@@ -16,6 +16,10 @@ const ForRent = db.define('forRent', {
     type: Sequelize.TEXT,
     allowNull: false
   },
+  price: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
   bedroomNum: {
     type: Sequelize.INTEGER,
     allowNull: false
@@ -26,6 +30,14 @@ const ForRent = db.define('forRent', {
   },
   squareFeet: {
     type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  lotSize: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  features: {
+    type: Sequelize.STRING,
     allowNull: false
   },
   mainImageUrl: {

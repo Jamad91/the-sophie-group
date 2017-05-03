@@ -38,7 +38,6 @@ img {
 
 div.map {
   max-height: 20%;
-  /*padding-bottom: -60%;*/
   margin-bottom: 200px;
 }
 
@@ -171,9 +170,14 @@ hr {
 }
 
 /*INDIVIDUAL PROPERTY*/
+#address h2 {
+  color: #434343;
+}
+
 #property {
   display: inline;
   float: left;
+  color: #434343;
 }
 
 #property-info {
@@ -192,7 +196,8 @@ hr {
 }
 
 #property-info img {
-  border: solid black 2px;
+  border: solid gray 2px;
+  box-shadow: 5px 2px 5px #888888;
 }
 
 #property-description {
@@ -212,8 +217,8 @@ hr {
   position: relative;
 }
 
-#property-contact h3 {
-  margin-top: -0.5%;
+#property-contact h2 {
+  margin-top: 2%;
   font-family: "Libre Baskerville", serif;
   font-size: 150%;
 }
@@ -230,6 +235,7 @@ hr {
   padding-right: 5%;
   padding-left: 2%;
   text-align: left;
+  margin-top: -3%;
 }
 
 .row {

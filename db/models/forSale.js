@@ -36,6 +36,10 @@ const ForSale = db.define('forSale', {
     type: Sequelize.INTEGER,
     allowNull: false
   },
+  features: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   mainImageUrl: {
     type: Sequelize.STRING,
     allowNull: false
@@ -46,7 +50,7 @@ const ForSale = db.define('forSale', {
   sold: {
     type: Sequelize.BOOLEAN,
     defualtValue: false
-  }
+  },
 })
 
 module.exports = ForSale;
