@@ -46,6 +46,14 @@ const ForRent = db.define('forRent', {
   },
   extraImageUrls: {
     type: Sequelize.STRING
+  },
+  zillow: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  mls: {
+    type: Sequelize.STRING,
+    allowNull: false
   }
 })
 

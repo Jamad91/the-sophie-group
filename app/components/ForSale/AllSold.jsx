@@ -20,6 +20,19 @@ class AllSold extends Component {
   render () {
     const properties = this.props.forSales;
     const user = this.props.user;
+
+    function priceConvert(price) {
+        let rev = String(price).split('')
+        var j = 1;
+        for(var i = rev.length - 1; i >= 0; i--) {
+          if (j % 3 === 0 && i != 0) {
+            rev.splice(i, 0, ',')
+          }
+          j++;
+        }
+        return rev
+    }
+
     return (
       <div>
         <h1 id="title">Sold</h1>
@@ -32,8 +45,13 @@ class AllSold extends Component {
                       return (
                         <div key={property.address1} className="propertyEntry">
                           <Link href={`/buy/${property.id}`}>
-                              <img src={property.mainImageUrl}></img>
-                              <h3>{property.address1}</h3>
+                            <h3>{property.address1}</h3>
+                            <h3>{property.address2}</h3>
+                            <img src={property.mainImageUrl}></img>
+                            <h3>${priceConvert(property.price)}</h3>
+                            <span>Size: {property.squareFeet} ft²</span><br />
+                            <span>Bathrooms: {property.bathroomNum}</span><br />
+                            <span>Bedrooms: {property.bedroomNum}</span><br />
                           </Link>
                           <div>
                             {user
@@ -49,7 +67,6 @@ class AllSold extends Component {
               </div>
               {user ? <AddSalePropertyForm /> : null}
             </div>
-
           </div>
       </div>
     )
@@ -58,7 +75,6 @@ class AllSold extends Component {
 }
 
 const mapStateToProps = function(state) {
-  console.log('STATE', state);
   return ({
     forSales: state.forSalesReducer.allForSales,
     user: state.auth

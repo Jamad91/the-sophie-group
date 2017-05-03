@@ -10,12 +10,17 @@ class UpdateForRentForm extends Component {
     this.state = {
       address1: "",
       address2: "",
+      price: 0,
       description: "",
       bedroomNum: 0,
       bathroomNum: 0,
       squareFeet: 0,
+      lotSize: 0,
+      features: "",
       mainImageUrl: "",
-      extraImageUrls: ""
+      extraImageUrls: "",
+      zillow: "",
+      mls: ""
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,10 +32,13 @@ class UpdateForRentForm extends Component {
     newState[evt.target.name] = evt.target.value
     newState[evt.target.address1] = evt.target.value
     newState[evt.target.address2] = evt.target.value
+    newState[evt.target.price] = evt.target.value
     newState[evt.target.description] = evt.target.value
     newState[evt.target.bedroomNum] = evt.target.value
     newState[evt.target.bathroomNum] = evt.target.value
     newState[evt.target.squareFeet] = evt.target.value
+    newState[evt.target.lotSize] = evt.target.value
+    newState[evt.target.features] = evt.target.value
     newState[evt.target.mainImageUrl] = evt.target.value
     newState[evt.target.extraImageUrls] = evt.target.value
 
@@ -47,6 +55,9 @@ class UpdateForRentForm extends Component {
     if(!this.state.address2) {
       this.state.address2 = property.address2
     }
+    if(!this.state.price) {
+      this.state.price = property.price
+    }
     if(!this.state.bathroomNum) {
       this.state.bathroomNum = property.bathroomNum
     }
@@ -55,6 +66,12 @@ class UpdateForRentForm extends Component {
     }
     if(!this.state.squareFeet) {
       this.state.squareFeet = property.squareFeet
+    }
+    if(!this.state.lotSize) {
+      this.state.lotSize = property.lotSize
+    }
+    if(!this.state.features) {
+      this.state.features = property.features
     }
     if(!this.state.description) {
       this.state.description = property.description
@@ -65,17 +82,28 @@ class UpdateForRentForm extends Component {
     if(!this.state.extraImageUrls) {
       this.state.extraImageUrls = property.extraImageUrls
     }
+    if(!this.state.zillow) {
+      this.state.zillow = property.zillow
+    }
+    if(!this.state.mls) {
+      this.state.mls = property.mls
+    }
 
     this.props.updateForRent(this.props.forRent.id, this.state);
     this.setState({
       address1: "",
       address2: "",
+      price: 0,
       description: "",
       bedroomNum: 0,
       bathroomNum: 0,
       squareFeet: 0,
+      lotSize: 0,
+      features: "",
       mainImageUrl: "",
-      extraImageUrls: ""
+      extraImageUrls: "",
+      zillow: "",
+      mls: ""
     })
     console.log('SUBMITTED!');
   }
@@ -88,7 +116,7 @@ class UpdateForRentForm extends Component {
         <div className="jumbotron">
           <div className="col-lg-12 addpropertyform">
             <form onSubmit={ this.handleSubmit }>
-              <h3>UPDATE A PROPERTY</h3>
+              <h3>UPDATE THIS PROPERTY</h3>
               <div className="form-input">
                 <span>Address Line 1</span><br />
                 <textarea rows="2" cols="50" name="address1" value={this.state.address1} onChange={this.handleChange} />
@@ -96,6 +124,14 @@ class UpdateForRentForm extends Component {
               <div className="form-input">
                 <span>Address Line 2</span><br />
                 <textarea rows="1" cols="50" name="address2" value={this.state.address2} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
+                <span>Price</span><br />
+                <textarea rows="1" cols="50" name="price" value={this.state.price} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
+                <span>Description</span><br />
+                <textarea rows="5" cols="50" name="description" value={this.state.description} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Number of bathrooms</span><br />
@@ -110,8 +146,13 @@ class UpdateForRentForm extends Component {
                 <textarea rows="1" cols="50" name="squareFeet" value={this.state.squareFeet} onChange={this.handleChange} />
               </div>
               <div className="form-input">
-                <span>Description</span><br />
-                <textarea rows="5" cols="50" name="description" value={this.state.description} onChange={this.handleChange} />
+                <span>Lot Size</span><br />
+                <textarea rows="1" cols="50" name="lotSize" value={this.state.lotSize} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
+                <span>Features</span><br />
+                <span>(seperated with a comma and space)</span><br />
+                <textarea rows="2" cols="50" name="features" value={this.state.features} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Main Image Url</span><br />
@@ -123,6 +164,15 @@ class UpdateForRentForm extends Component {
                 <textarea rows="4" cols="50" name="extraImageUrls" onChange={this.handleChange}></textarea>
               </div>
               <div className="form-input">
+                <span>Zillow</span><br />
+                <textarea rows="2" cols="50" name="zillow" value={this.state.zillow} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
+                <span>MLS</span><br />
+                <textarea rows="2" cols="50" name="mls" value={this.state.mls} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
+                <h3>After hitting submit, refresh before making more changes</h3>
                 <input type="submit" value="submit" />
               </div>
             </form>

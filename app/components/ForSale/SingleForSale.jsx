@@ -109,6 +109,16 @@ class SingleForSale extends Component {
                       )
                     })
                   }
+                  <br />
+                  <div className="row title">
+                    <strong><em><h3>Other Postings</h3></em></strong>
+                  </div>
+                  <div className="row">
+                    <h4><a href={property.zillow}>Zillow</a></h4>
+                  </div>
+                  <div className="row">
+                    <h4><a href={`http://${property.mls}`}>MLS</a></h4>
+                  </div>
                 </div>
               </div>
               <div id="property-description"><p>{property.description}</p></div>

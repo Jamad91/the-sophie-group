@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import { fetchSingleForRent } from '../../action-creators/forRent';
 import GMap from '../Map';
 import UpdateForRent from './UpdateForRent';
@@ -13,6 +14,8 @@ class SingleForRent extends Component {
     if (property.features) {
       features = property.features.split(', ')
     }
+
+    console.log('mls', property.mls);
 
     const user = this.props.user;
 
@@ -92,7 +95,7 @@ class SingleForRent extends Component {
                       <h4>Size: {property.squareFeet} ft²</h4>
                     </div>
                     <div className="row">
-                      <h4>Lot Size: {property.squareFeet} ft²</h4>
+                      <h4>Lot Size: {property.lotSize} ft²</h4>
                     </div>
                     <br />
                     <div className="row title">
@@ -107,6 +110,16 @@ class SingleForRent extends Component {
                         )
                       })
                     }
+                    <br />
+                    <div className="row title">
+                      <strong><em><h3>Other Postings</h3></em></strong>
+                    </div>
+                    <div className="row">
+                      <h4><a href={property.zillow}>Zillow</a></h4>
+                    </div>
+                    <div className="row">
+                      <h4><a href={`http://${property.mls}`}>MLS</a></h4>
+                    </div>
                   </div>
                 </div>
                 <div id="property-description"><p>{property.description}</p></div>

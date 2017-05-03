@@ -12,12 +12,12 @@ const ForSale = db.define('forSale', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  description: {
-    type: Sequelize.TEXT,
-    allowNull: false
-  },
   price: {
     type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  description: {
+    type: Sequelize.TEXT,
     allowNull: false
   },
   bedroomNum: {
@@ -51,6 +51,14 @@ const ForSale = db.define('forSale', {
     type: Sequelize.BOOLEAN,
     defualtValue: false
   },
+  zillow: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  mls: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
 })
 
 module.exports = ForSale;
