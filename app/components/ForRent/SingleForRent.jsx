@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSingleForRent } from '../../action-creators/forRent';
-import ImageSlider from '../ImageSlider';
 import GMap from '../Map';
 import UpdateForRent from './UpdateForRent';
 import NotFound from '../NotFound'
@@ -25,7 +24,7 @@ class SingleForRent extends Component {
     const fullAddress = `${property.address1} ${property.address2}`
     return (
       <div>
-        <h1 id="title">For Sale</h1>
+        <h1 id="title">For Rent</h1>
         <div className="container flexbox-container">
           <div className="jumbotron">
             <div id="address">
@@ -59,14 +58,30 @@ class SingleForRent extends Component {
                   </ul>
                   </div>
                   <div id="specs">
-                    <div className="row">
-                      <div className="rowEntry">Bedrooms: {property.bedroomNum}</div>
+                    <div className="row title">
+                      <strong><em><h3>Facts</h3></em></strong>
                     </div>
                     <div className="row">
-                      <div className="rowEntry">Bathrooms: {property.bathroomNum}</div>
+                      <h4>Bedrooms: {property.bedroomNum}</h4>
                     </div>
                     <div className="row">
-                      <div className="rowEntry">Size: {property.squareFeet} ft²</div>
+                      <h4>Bathrooms: {property.bathroomNum}</h4>
+                    </div>
+                    <div className="row">
+                      <h4>Size: {property.squareFeet} ft²</h4>
+                    </div>
+                    <div className="row">
+                      <h4>Lot Size: {property.squareFeet} ft²</h4>
+                    </div>
+                    <br />
+                    <div className="row title">
+                      <strong><em><h3>Features</h3></em></strong>
+                    </div>
+                    <div className="row">
+                      <h4>Bedrooms: {property.bedroomNum}</h4>
+                    </div>
+                    <div className="row">
+                      <h4>Bathrooms: {property.bathroomNum}</h4>
                     </div>
                   </div>
                 </div>
@@ -96,8 +111,8 @@ class SingleForRent extends Component {
                       </form>
                     </div>
                   <div className="clearfix"></div>
-                  <GMap fullAddress={fullAddress} />
                 </div>
+                <GMap fullAddress={fullAddress} />
               </div>
             </div>
           </div>

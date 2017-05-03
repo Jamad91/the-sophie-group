@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { fetchSingleForSale } from '../../action-creators/forSale';
-import ImageSlider from '../ImageSlider'
 import GMap from '../Map';
 import UpdateForSale from './UpdateForSale';
 import Navbar from '../Navbar';
@@ -12,6 +11,19 @@ class SingleForSale extends Component {
   render() {
     const property = this.props.forSale;
     const user = this.props.user;
+
+    function priceConvert(price) {
+        let rev = String(price).split('')
+        var j = 1;
+        for(var i = rev.length - 1; i >= 0; i--) {
+          if (j % 3 === 0 && i != 0) {
+            rev.splice(i, 0, ',')
+          }
+          j++;
+        }
+        return rev
+    }
+
     let images;
     property.extraImageUrls ? images = property.extraImageUrls.split(', ') : images = [];
     images.unshift(property.mainImageUrl)
@@ -27,7 +39,7 @@ class SingleForSale extends Component {
 
     return (
       <div>
-      <h1 id="title">For Sale</h1>
+      {property.sold ? <h1 id="title">Sold</h1> : <h1 id="title">For Sale</h1>}
       <div className="container flexbox-container float">
         <div className="jumbotron">
           <div id="address">
@@ -61,14 +73,33 @@ class SingleForSale extends Component {
                 </ul>
                 </div>
                 <div id="specs">
-                  <div className="row">
-                    <div className="rowEntry">Bedrooms: {property.bedroomNum}</div>
+                  <div className="row title">
+                    <strong><h2>${priceConvert(property.price)}</h2></strong>
+                  </div>
+                  <div className="row title">
+                    <strong><em><h3>Facts</h3></em></strong>
                   </div>
                   <div className="row">
-                    <div className="rowEntry">Bathrooms: {property.bathroomNum}</div>
+                    <h4>Bedrooms: {property.bedroomNum}</h4>
                   </div>
                   <div className="row">
-                    <div className="rowEntry">Size: {property.squareFeet} ft²</div>
+                    <h4>Bathrooms: {property.bathroomNum}</h4>
+                  </div>
+                  <div className="row">
+                    <h4>Size: {property.squareFeet} ft²</h4>
+                  </div>
+                  <div className="row">
+                    <h4>Lot Size: {property.lotSize} ft²</h4>
+                  </div>
+                  <br />
+                  <div className="row title">
+                    <strong><em><h3>Features</h3></em></strong>
+                  </div>
+                  <div className="row">
+                    <h4>Bedrooms: {property.bedroomNum}</h4>
+                  </div>
+                  <div className="row">
+                    <h4>Bathrooms: {property.bathroomNum}</h4>
                   </div>
                 </div>
               </div>
@@ -98,8 +129,8 @@ class SingleForSale extends Component {
                     </form>
                   </div>
                 <div className="clearfix"></div>
-                <GMap fullAddress={fullAddress}/>
               </div>
+              <GMap fullAddress={fullAddress}/>
             </div>
           </div>
         </div>

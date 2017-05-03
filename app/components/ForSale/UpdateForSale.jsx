@@ -10,6 +10,7 @@ class UpdateForSaleForm extends Component {
     this.state = {
       address1: "",
       address2: "",
+      price: 0,
       description: "",
       bedroomNum: 0,
       bathroomNum: 0,
@@ -28,6 +29,7 @@ class UpdateForSaleForm extends Component {
     newState[evt.target.name] = evt.target.value
     newState[evt.target.address1] = evt.target.value
     newState[evt.target.address2] = evt.target.value
+    newState[evt.target.price] = evt.target.value
     newState[evt.target.description] = evt.target.value
     newState[evt.target.bedroomNum] = evt.target.value
     newState[evt.target.bathroomNum] = evt.target.value
@@ -48,6 +50,9 @@ class UpdateForSaleForm extends Component {
     }
     if(!this.state.address2) {
       this.state.address2 = property.address2
+    }
+    if(!this.state.price) {
+      this.state.price = property.price
     }
     if(!this.state.bathroomNum) {
       this.state.bathroomNum = property.bathroomNum
@@ -72,6 +77,7 @@ class UpdateForSaleForm extends Component {
     this.setState({
       address1: "",
       address2: "",
+      price: 0,
       description: "",
       bedroomNum: 0,
       bathroomNum: 0,
@@ -97,6 +103,10 @@ class UpdateForSaleForm extends Component {
               <div className="form-input">
                 <span>Address Line 2</span><br />
                 <textarea rows="1" cols="50" name="address2" value={this.state.address2} onChange={this.handleChange} />
+              </div>
+              <div className="form-input">
+                <span>Price</span><br />
+                <textarea rows="1" cols="50" name="price" value={this.state.price} onChange={this.handleChange} />
               </div>
               <div className="form-input">
                 <span>Number of bathrooms</span><br />

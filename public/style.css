@@ -36,6 +36,10 @@ img {
   margin-left: 10%;
 }
 
+#map {
+  margin-bottom: 100%;
+}
+
 /*NAVBAR*/
 
 #navbar {
@@ -162,6 +166,7 @@ img {
   float: left;
   display: block;
   font-family: "Libre Baskerville", serif;
+  text-align: left;
 }
 
 #property-info img {
@@ -171,6 +176,7 @@ img {
 #property-description {
   float: left;
   font-family: "Libre Baskerville", serif;
+  text-align: left;
 }
 
 #property-description p {
@@ -206,6 +212,7 @@ img {
 
 .row {
   margin-right: -25%;
+  margin-bottom: -15%;
 }
 
 /*CONTACT*/

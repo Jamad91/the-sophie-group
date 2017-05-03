@@ -16,6 +16,10 @@ const ForSale = db.define('forSale', {
     type: Sequelize.TEXT,
     allowNull: false
   },
+  price: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
   bedroomNum: {
     type: Sequelize.INTEGER,
     allowNull: false
@@ -25,6 +29,10 @@ const ForSale = db.define('forSale', {
     allowNull: false
   },
   squareFeet: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  lotSize: {
     type: Sequelize.INTEGER,
     allowNull: false
   },

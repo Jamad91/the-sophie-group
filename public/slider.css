@@ -29,7 +29,9 @@ img {
 
 .preview-thumbnail.nav-tabs {
   border: none;
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-bottom: 10%;
+}
   .preview-thumbnail.nav-tabs li {
     width: 18%;
     margin-right: 2.5%; }
