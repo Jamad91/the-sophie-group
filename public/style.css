@@ -243,6 +243,25 @@ hr {
   margin-bottom: -15%;
 }
 
+/*BLOG*/
+
+#singlePost p {
+  text-align: left;
+}
+
+#postHeader {
+  display: inline;
+}
+
+#postHeader h1 {
+  text-align: left;
+}
+
+#postHeader h4 {
+  text-align: right;
+  padding-bottom: 3%;
+}
+
 /*CONTACT*/
 .contacts {
   display: inline-flex;

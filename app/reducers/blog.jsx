@@ -14,14 +14,14 @@ function blogPostsReducer (state = DEFAULT_STATE, action) {
   const newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_ALL_BLOG_POSTS:
-      newState.allBlogPosts = action.allBlogPosts;
+      newState.allBlogPosts = action.allBlogPosts.reverse()
       break;
     case SELECT_SINGLE_BLOG_POST:
       newState.selectedBlogPost = action.blogPost;
       break;
     case ADD_BLOG_POST:
       let dummy = newState.allBlogPosts.slice(0);
-      dummy.push(action.blogPostInfo);
+      dummy.unshift(action.blogPostInfo);
       newState.allBlogPosts = dummy;
       break;
     case DELETE_BLOG_POST:

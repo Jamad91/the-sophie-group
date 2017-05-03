@@ -46,7 +46,7 @@ export const createBlogPost = function(info) {
   return dispatch => {
     dispatch(addBlogPost(info))
     axios.post('/api/blog', info)
-      .cath(err => console.error("Wasn't able to add blog post", err))
+      .catch(err => console.error("Wasn't able to add blog post", err))
     }
 }
 
