@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 
 const NotFound = props => {
   const {pathname} = props.location || {pathname: '<< no path >>'}
@@ -12,6 +13,10 @@ const NotFound = props => {
           <div className="frown-face"></div>
           <h3>I couldn't find the page at route "{pathname}"</h3>
           <h3>Check your url and try again!</h3>
+          <div id="footer">
+            <hr />
+            <Footer />
+          </div>
         </div>
       </div>
     </div>

@@ -297,6 +297,26 @@ hr {
 
 .contactBio {
   float: right;
-  display: inline;
   font-family: "Libre Baskerville", serif;
+  display: inline;
+}
+
+/*FOOTER*/
+.footer {
+  display: block;
+  margin-top: 50%;
+}
+
+.single-footer {
+  display: block;
+  margin-top: 75%;
+}
+
+#multi-footer {
+  display: block;
+  margin-top: 75%;
+}
+
+#footer img {
+  max-width: 3.5%;
 }

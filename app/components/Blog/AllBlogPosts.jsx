@@ -5,6 +5,7 @@ import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
 import AddBlogPostForm from './AddBlogPostForm';
 import UpdateBlogPost from './UpdateBlogPost';
+import Footer from '../Footer';
 
 // let updating = false
 
@@ -82,6 +83,9 @@ class AllBlogPosts extends Component {
                 })
               }
               {this.props.user ? <AddBlogPostForm /> : null}
+
+                <Footer />
+    
             </div>
         </div>
       </div>

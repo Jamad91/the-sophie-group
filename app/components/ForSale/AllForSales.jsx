@@ -4,6 +4,8 @@ import { fetchAllForRents, destroyForSaleProperty } from '../../action-creators/
 import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
 import AddSalePropertyForm from './AddSalePropertyForm';
+import Footer from '../Footer';
+
 
 class AllForSale extends Component {
   constructor (props) {
@@ -66,6 +68,10 @@ class AllForSale extends Component {
                 }
               </div>
               {user ? <AddSalePropertyForm /> : null}
+              <div className="footer">
+                <hr />
+                <Footer />
+              </div>
             </div>
           </div>
       </div>

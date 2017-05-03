@@ -5,6 +5,7 @@ import { fetchSingleForRent } from '../../action-creators/forRent';
 import GMap from '../Map';
 import UpdateForRent from './UpdateForRent';
 import NotFound from '../NotFound'
+import Footer from '../Footer';
 
 class SingleForRent extends Component {
 
@@ -152,7 +153,11 @@ class SingleForRent extends Component {
                 <GMap fullAddress={fullAddress} />
               </div>
             </div>
+          <div className="single-footer">
+            <hr />
+            <Footer />
           </div>
+        </div>
           </div>
         </div>
     )

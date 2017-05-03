@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 
 export const Login = ({ login }) => (
   <div>
@@ -13,6 +14,10 @@ export const Login = ({ login }) => (
           <input name="password" placeholder="Password" type="password" />
           <input type="submit" value="Login" />
         </form>
+        <div id="footer">
+          <hr />
+          <Footer />
+        </div>
       </div>
     </div>
   </div>

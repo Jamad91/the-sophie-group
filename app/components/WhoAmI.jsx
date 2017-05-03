@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 
 export const WhoAmI = ({ user, logout }) => (
   <div>
@@ -10,6 +11,10 @@ export const WhoAmI = ({ user, logout }) => (
             <h3>Welcome {user && user.name.split(' ')[0]}!</h3>
           </span><br />
           <button className="logout" onClick={logout}>Logout</button>
+        </div>
+        <div id="footer">
+          <hr />
+          <Footer />
         </div>
       </div>
     </div>

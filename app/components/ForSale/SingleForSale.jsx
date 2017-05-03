@@ -4,6 +4,7 @@ import { fetchSingleForSale } from '../../action-creators/forSale';
 import GMap from '../Map';
 import UpdateForSale from './UpdateForSale';
 import Navbar from '../Navbar';
+import Footer from '../Footer';
 
 
 class SingleForSale extends Component {
@@ -150,6 +151,10 @@ class SingleForSale extends Component {
               </div>
               <GMap fullAddress={fullAddress}/>
             </div>
+          </div>
+          <div className="single-footer">
+            <hr />
+            <Footer />
           </div>
         </div>
         </div>
