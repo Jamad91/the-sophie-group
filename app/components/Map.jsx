@@ -35,9 +35,9 @@ export default class Gmap extends Component {
     if (!this.state.coordinates) {return (<h1>Loading...</h1>)}
       return (
 
-        <div id="map">
+        <div className="map">
           <Map google={google}
-             style={{width: '20%', height: '25%', position: 'absolute'}}
+             style={{width: '17.5%', height: '190%'}}
              className={'map'}
              center={this.state.coordinates}
              zoom={15}

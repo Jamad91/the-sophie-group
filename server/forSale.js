@@ -20,7 +20,9 @@ router.get('/:id', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
   ForSale.findById(req.params.id)
   .then(forSale => forSale.update(req.body))
-  .then(updated => res.status(201).json(updated))
+  .then(updated => {
+    res.status(201).json(updated).redirect('..')
+  })
   .catch(next)
 })
 

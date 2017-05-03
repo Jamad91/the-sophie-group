@@ -135,8 +135,9 @@ class SingleForSale extends Component {
           </div>
         </div>
         </div>
-      </div>    )
-
+        <hr />
+      </div>
+    )
   }
 }
 

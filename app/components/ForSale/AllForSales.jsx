@@ -32,9 +32,13 @@ class AllForSale extends Component {
                       return (
                         <div key={property.address1} className="propertyEntry">
                           <Link href={`/buy/${property.id}`}>
-                              <img src={property.mainImageUrl}></img>
-                              <h3>{property.address1}</h3>
-                              <h3>{property.address2}</h3>
+                            <h3>{property.address1}</h3>
+                            <h3>{property.address2}</h3>
+                            <img src={property.mainImageUrl}></img>
+                            <h3>${property.price}</h3>
+                            <span>Size: {property.squareFeet} ft²</span><br />
+                            <span>Bathrooms: {property.bathroomNum}</span><br />
+                            <span>Bedrooms: {property.bedroomNum}</span><br />
                           </Link>
                           <div>
                             {user
@@ -50,7 +54,6 @@ class AllForSale extends Component {
               </div>
               {user ? <AddSalePropertyForm /> : null}
             </div>
-
           </div>
       </div>
     )
