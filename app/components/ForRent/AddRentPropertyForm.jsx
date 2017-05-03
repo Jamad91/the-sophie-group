@@ -130,7 +130,7 @@ class ForRentForm extends Component {
               </div>
               <div className="form-input">
                 <h3>After hitting submit, refresh page before visiting newly added property.</h3>
-                <input type="submit" value="submit" />
+                <input type="submit" value="Submit" />
               </div>
             </form>
           </div>

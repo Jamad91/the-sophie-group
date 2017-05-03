@@ -78,6 +78,7 @@ hr {
 
 #navbar h1:hover {
   color: #f59f00;
+  transition: 0.5s;
 }
 
 #link {
@@ -92,7 +93,8 @@ hr {
 }
 
 #link p:hover {
-  color: #f59f00
+  color: #f59f00;
+  transition: 0.4s;
 }
 
 /*HOME PAGE*/
@@ -148,11 +150,33 @@ hr {
   border-bottom: 2px solid gray;
 }
 
-.propertyEntry :hover {
-  height: 250px;
-  width: 150%;
+.propertyEntry:hover {
+  background-color: #a1a1a1;
+  transition: 0.3s;
+}
+
+button {
+  background-color: #7bb2ea;
+  width: 100%;
+  height: 150%;
+}
+
+button:hover {
+  background-color: #3c8ad7;
   transition: 0.2s;
 }
+
+input {
+  background-color: #7bb2ea;
+  width: 100%;
+  height: 150%;
+}
+
+input:hover {
+  background-color: #3c8ad7;
+  transition: 0.2s;
+}
+
 
 .propertyEntry h3 {
   color: #434343;
@@ -213,6 +237,7 @@ hr {
   border: solid gray 2px;
   box-shadow: 5px 2px 5px #888888;
 }
+
 
 #property-description {
   float: left;
@@ -334,4 +359,8 @@ hr {
 #footer img {
   max-width: 3.5%;
   border-radius: 25%;
+}
+
+#footer img:hover {
+  opacity: 0.8;
 }

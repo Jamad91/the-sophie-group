@@ -42,6 +42,11 @@ img {
     .preview-thumbnail.nav-tabs li a {
       padding: 0;
       margin: 0; }
+      .preview-thumbnail.nav-tabs li img:hover {
+        opacity: 0.85;
+        transition: 0.15s;
+        filter: grayscale(0.5);
+      }
     .preview-thumbnail.nav-tabs li:last-of-type {
       margin-right: 0; }
 
