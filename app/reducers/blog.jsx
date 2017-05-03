@@ -2,7 +2,8 @@ import {
   RECEIVE_ALL_BLOG_POSTS,
   SELECT_SINGLE_BLOG_POST,
   ADD_BLOG_POST,
-  DELETE_BLOG_POST
+  DELETE_BLOG_POST,
+  UPDATE_BLOG_POST
 } from 'APP/app/constants'
 
 const DEFAULT_STATE = {
@@ -32,6 +33,9 @@ function blogPostsReducer (state = DEFAULT_STATE, action) {
       newState.allBlogPosts = d2;
       return newState;
       break;
+    case UPDATE_BLOG_POST:
+      newState.selectedBlogPost = action.blogPostInfo
+      break
     default:
       return state
   }

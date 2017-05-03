@@ -2,7 +2,8 @@ import {
   RECEIVE_ALL_BLOG_POSTS,
   SELECT_SINGLE_BLOG_POST,
   ADD_BLOG_POST,
-  DELETE_BLOG_POST
+  DELETE_BLOG_POST,
+  UPDATE_BLOG_POST
 } from 'APP/app/constants';
 
 import axios from 'axios';
@@ -60,5 +61,20 @@ export const destroyBlogPost = function(id) {
     dispatch(deleteBlogPost(id))
     axios.delete(`/api/blog/${id}`)
       .catch(err => console.error("Wasn't able to delete blog post", err))
+  }
+}
+
+const editBlogPost = (blogPostId, blogPostInfo) => ({
+  type: UPDATE_BLOG_POST,
+  blogPostId,
+  blogPostInfo
+})
+
+export const updateBlogPost = function(id, info) {
+  return dispatch => {
+    dispatch(editBlogPost(id, info))
+    axios.put(`api/forRent/${id}`, info)
+      .then(res => res.data)
+      .catch(err => console.error("Wasn't able to update blog post", err))
   }
 }

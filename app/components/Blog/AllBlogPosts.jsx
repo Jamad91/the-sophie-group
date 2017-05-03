@@ -1,12 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAllForBlogPosts, destroyBlogPost } from '../../action-creators/blog'
+import { fetchAllForBlogPosts, destroyBlogPost, updateBlogPost } from '../../action-creators/blog'
 import { WhoAmI } from '../WhoAmI';
 import { Link } from 'react-router';
 import AddBlogPostForm from './AddBlogPostForm';
+import UpdateBlogPost from './UpdateBlogPost';
+
+// let updating = false
+
 
 class AllBlogPosts extends Component {
+  constructor (props) {
+    super(props)
+    this.handleDeleteClick = this.handleDeleteClick.bind(this)
+  }
+
+  handleDeleteClick(evt) {
+    let blogPostId = +evt.target.dataset.id
+    this.props.destroyBlogPost(blogPostId)
+  }
+
+  // handleUpdateClick(evt) {
+  //   // let blogPostId = +evt.target.dataset.id
+  //   // this.props.updateBlogPost(blogPostId)
+  //   updating = true
+  // }
+
   render() {
+    // console.log('updating', updating);
     const posts = this.props.blogPosts;
 
     let date;
@@ -49,6 +70,12 @@ class AllBlogPosts extends Component {
                         <h4>{message}</h4>
                       </div>
                       <p>{post.content}</p>
+                        <div>
+                          {this.props.user
+                            ? <button className="delete" data-id={post.id} onClick={(e) => this.handleDeleteClick(e)}>Delete</button>
+                            : null
+                          }
+                        </div>
                       <hr />
                     </div>
                   )
@@ -71,7 +98,8 @@ const mapStateToProps = function(state) {
 
 const mapDispatchToProps = function(dispatch) {
   return {
-    destroyBlogPost: (post) => dispatch(destroyBlogPost(post))
+    destroyBlogPost: (post) => dispatch(destroyBlogPost(post)),
+    updateBlogPost: (post) => dispatch(updateBlogPost(post))
   }
 }
 

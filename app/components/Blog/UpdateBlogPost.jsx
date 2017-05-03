@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createBlogPost } from 'APP/app/action-creators/blog'
+import { updateBlogPost } from 'APP/app/action-creators/blog'
 
-class AddBlogPostForm extends Component {
+class UpdateBlogPost extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -14,7 +14,6 @@ class AddBlogPostForm extends Component {
   }
 
   handleChange(evt) {
-    console.log(this.props);
     let newState = {}
     newState[evt.target.name] = evt.target.value
     newState[evt.target.title] = evt.target.value
@@ -26,7 +25,17 @@ class AddBlogPostForm extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
 
-    this.props.createBlogPost(this.state);
+    let post = this.props.blogPost.blogPostsReducer.selectedBlogPost
+
+    if(!this.state.title) {
+      this.state.title = post.title
+    }
+
+    if(!this.state.content) {
+      this.state.content = post.content
+    }
+
+    this.props.updateBlogPost(this.state);
     this.setState(this.state);
     this.setState({
       title: "",
@@ -42,7 +51,7 @@ class AddBlogPostForm extends Component {
         <div className="jumbotron">
           <div className="col-lg-12 addpropertyform">
             <form onSubmit={ this.handleSubmit }>
-              <h3>ADD A POST</h3>
+              <h3>UPDATE THIS POST</h3>
               <div className="form-input">
                 <span>Title</span><br />
                 <textarea rows="1" cols="50" name="title" value={this.state.title} onChange={this.handleChange} />
@@ -68,4 +77,4 @@ function mapStateToProps (blogPost) {
   )
 }
 
-export default connect(mapStateToProps, {createBlogPost})(AddBlogPostForm);
+export default connect(mapStateToProps, {updateBlogPost})(UpdateBlogPost);
