@@ -76,6 +76,10 @@ hr {
   float: left;
 }
 
+#navbar h1:hover {
+  color: #f59f00;
+}
+
 #link {
   display: inline;
   font-size: 120%;
@@ -85,6 +89,10 @@ hr {
 #link p {
   display: inline;
   color: #f5c800;
+}
+
+#link p:hover {
+  color: #f59f00
 }
 
 /*HOME PAGE*/
@@ -130,7 +138,7 @@ hr {
   margin: 1.25%;
   float: left;
   font-family: "Libre Baskerville", serif;
-  box-shadow: 5px 2px 5px #888888;
+  box-shadow: 7px 7px 5px #888888;
 }
 
 .propertyEntry img {
@@ -138,6 +146,12 @@ hr {
   width: 100%;
   border-top: 1px solid gray;
   border-bottom: 2px solid gray;
+}
+
+.propertyEntry :hover {
+  height: 250px;
+  width: 150%;
+  transition: 0.2s;
 }
 
 .propertyEntry h3 {
@@ -319,4 +333,5 @@ hr {
 
 #footer img {
   max-width: 3.5%;
+  border-radius: 25%;
 }
