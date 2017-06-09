@@ -118,7 +118,7 @@ hr {
 
 #main_img h1 {
   position: absolute;
-  top: -1%;
+  top: -1.5%;
   width: 100%;
   color: black;
   font-family: "Libre Baskerville", serif;
@@ -198,6 +198,7 @@ input:hover {
 
 .listings {
   display: block;
+  /*padding-bottom: 15%;*/
 }
 
 .addpropertyform {
@@ -348,11 +349,6 @@ input:hover {
 }
 
 .single-footer {
-  display: block;
-  margin-top: 75%;
-}
-
-#multi-footer {
   display: block;
   margin-top: 75%;
 }
