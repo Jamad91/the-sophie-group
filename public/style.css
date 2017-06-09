@@ -309,6 +309,7 @@ input:hover {
 
 .contactEntry {
   display: inline-flex;
+  padding-bottom: 5%;
 }
 
 .contactImage {
@@ -323,7 +324,7 @@ input:hover {
   border: solid gray 2px;
   /*border-radius: 50%;*/
   display: inline;
-  max-width: 200%;
+  max-width: 150%;
 }
 
 .contactInfo {
