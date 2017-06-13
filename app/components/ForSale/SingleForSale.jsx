@@ -125,6 +125,7 @@ class SingleForSale extends Component {
               <div id="property-description"><p>{property.description}</p></div>
               {user ? <UpdateForSale /> : null}
             </div>
+            <div id="cell-map"><GMap fullAddress={fullAddress} /></div>
             <div id="property-contact">
               <h2>Contact us about this property</h2>
                 <div className="jumbotron contact">
@@ -149,7 +150,7 @@ class SingleForSale extends Component {
                   </div>
                 <div className="clearfix"></div>
               </div>
-              <GMap fullAddress={fullAddress}/>
+              <div id="desktop-map"><GMap fullAddress={fullAddress} /></div>
             </div>
           </div>
           <div className="single-footer">

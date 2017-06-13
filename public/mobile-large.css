@@ -1,0 +1,116 @@
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+#navbar {
+  background-color: black;
+  margin-bottom: -12%;
+}
+
+#company {
+  align-items: center;
+  display: inline;
+}
+
+#navlinks {
+  display: inline;
+  float: none;
+}
+
+#main_img  h1{
+  display: none
+}
+
+.propertyEntry {
+  display: inline-block;
+  max-height: 100%;
+  max-width: 100%;
+  box-shadow: 3px 3px 3px #888888;
+}
+
+#address {
+  margin-left: 2%;
+}
+
+#property {
+  margin-left: 2%;
+  text-align: center;
+  /*display: block;*/
+  /*align-items:center;*/
+  float: right;
+}
+
+#property-info {
+  display: inline;
+  max-height: 55%;
+  max-width: 100%;
+  /*float: left;*/
+  /*margin-right: -5%;*/
+  align-items: center;
+}
+
+#property-description p {
+  margin-top: 17.5%;
+  /*font-size: 100%;*/
+}
+
+#specs {
+  font-family: "Libre Baskerville", serif;
+  margin-left: 5%;
+  text-align: center;
+}
+
+.row {
+  margin-right: 0%;
+  margin-bottom: -5%;
+  text-align: left;
+}
+
+#property-contact {
+  float: none;
+}
+
+#desktop-map {
+  display: none
+}
+
+div.map > * {
+  width: 80%;
+  height: 150%;
+}
+
+#cell-map {
+  display:inline-flex;
+  align-items: flex-start;
+  width: 350px;
+}
+
+#singlePost {
+  padding: 5%;
+}
+
+.contactEntry {
+  display: block;
+  padding: 5%;
+}
+
+.contactEntry + hr {
+  /*padding: 2.5%;*/
+  margin-top: 40%;
+}
+
+.contactBio {
+  display: block;
+  padding-bottom: 15%;
+}
+
+.contactImage {
+  display: block;
+  width: 35%;
+}
+
+.single-footer {
+  margin-top: 40%;
+  /*display: none;*/
+}

@@ -32,12 +32,12 @@ export default class Gmap extends Component {
 
   render() {
     let coo = this.geocodeAddress(this.props.fullAddress);
+    // style={{width: '17.5%', height: '190%'}}
     if (!this.state.coordinates) {return (<h1>Loading...</h1>)}
       return (
 
         <div className="map">
           <Map google={google}
-             style={{width: '17.5%', height: '190%'}}
              className={'map'}
              center={this.state.coordinates}
              zoom={15}

@@ -41,6 +41,21 @@ div.map {
   margin-bottom: 200px;
 }
 
+div.map > * {
+  width: 17.5%;
+  height: 190%;
+}
+
+#desktop-map {
+  margin-top: -40%;
+  /*max-height: 5%;*/
+  /*margin-bottom: 200px;*/
+}
+
+#cell-map {
+  display: none;
+}
+
 hr {
   border: solid black 1px;
   height: 0.5px;
@@ -209,6 +224,13 @@ input:hover {
 }
 
 /*INDIVIDUAL PROPERTY*/
+#address {
+  float: left;
+  display: block;
+  font-family: "Libre Baskerville", serif;
+  text-align: left;
+}
+
 #address h2 {
   color: #434343;
 }
@@ -227,18 +249,10 @@ input:hover {
   margin-right: -5%;
 }
 
-#address {
-  float: left;
-  display: block;
-  font-family: "Libre Baskerville", serif;
-  text-align: left;
-}
-
 #property-info img {
   border: solid gray 2px;
   box-shadow: 5px 2px 5px #888888;
 }
-
 
 #property-description {
   float: left;
