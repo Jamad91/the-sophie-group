@@ -123,3 +123,7 @@ div.map > * {
 .frown-face {
   margin-left: 8%;
 }
+
+hr {
+  display: none
+}

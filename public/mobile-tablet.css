@@ -31,7 +31,7 @@ body, html {
   /*margin-bottom: 50%;*/
 }
 
-#properties-footer {
+#properties-footer > * {
   display: none;
 }
 
@@ -127,4 +127,8 @@ div.map > * {
 
 .single-footer > hr {
   margin-bottom: -100%;
+}
+
+hr {
+  display: none
 }

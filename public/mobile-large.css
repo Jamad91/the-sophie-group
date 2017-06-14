@@ -116,3 +116,7 @@ div.map > * {
 .single-footer {
   margin-top: -30%;
 }
+
+hr {
+  display: none
+}

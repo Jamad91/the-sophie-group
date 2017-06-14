@@ -141,3 +141,8 @@ div.map > * {
   margin-left: -1.7%;
   margin-bottom: 15%;
 }
+
+
+hr {
+  display: none
+}
