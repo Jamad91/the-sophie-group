@@ -69,7 +69,7 @@ class AllForRent extends Component {
               {user ? <AddRentPropertyForm /> : null}
 
 
-              <div id="properties-footer">
+              <div className="properties-footer">
                 <hr />
                 <Footer />
               </div>
