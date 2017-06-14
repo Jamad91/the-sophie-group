@@ -68,7 +68,7 @@ class AllSold extends Component {
                 }
               </div>
               {user ? <AddSalePropertyForm /> : null}
-              <div className="footer">
+              <div id="properties-footer">
                 <hr />
                 <Footer />
               </div>

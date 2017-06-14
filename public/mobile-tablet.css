@@ -5,7 +5,7 @@ body, html {
 
 #navbar {
   background-color: black;
-  margin-bottom: -12%;
+  margin-bottom: 0%;
 }
 
 #company {
@@ -15,7 +15,8 @@ body, html {
 
 #navlinks {
   display: inline;
-  float: none;
+  float: right;
+
 }
 
 #main_img  h1{
@@ -25,14 +26,14 @@ body, html {
 .propertyEntry {
   display: inline-block;
   max-height: 100%;
-  max-width: 100%;
+  max-width: 47%;
   box-shadow: 3px 3px 3px #888888;
+  /*margin-bottom: 50%;*/
 }
 
 #properties-footer {
-  display: block;
+  display: none;
 }
-
 
 #address {
   margin-left: 2%;
@@ -58,6 +59,7 @@ body, html {
 #specs {
   font-family: "Libre Baskerville", serif;
   margin-left: 5%;
+  margin-top: -20%;
   text-align: center;
 }
 
@@ -76,12 +78,12 @@ body, html {
 }
 
 div.map {
-  max-width: 90%
+  max-width: 100%
 }
 
 div.map > * {
-  width: 90%;
-  height: 150%;
+  width: 45%;
+  height: 200%;
 }
 
 #cell-map {
@@ -110,9 +112,19 @@ div.map > * {
 
 .contactImage {
   display: block;
-  width: 35%;
+  width: 25%;
 }
 
 .single-footer {
-  margin-top: 40%;
+  margin-bottom: -5%;
+  margin-top: 0%;
+  padding: 0%;
+}
+
+.single-footer > * {
+  margin-top: 300%;
+}
+
+.single-footer > hr {
+  margin-bottom: -100%;
 }
